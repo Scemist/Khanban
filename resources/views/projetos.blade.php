@@ -1,6 +1,7 @@
 @extends('templates/index')
 @section('conteudo')
-	<h1>
-		{{ $nome }}
-	</h1>
+	@foreach ($projetos as $projeto)
+		<h1>{{ $projeto->titulo }}</h1>
+		<p>{{ $projeto->descricao }}</p>
+	@endforeach
 @stop
