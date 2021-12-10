@@ -1,0 +1,12 @@
+section {
+	display: flex;
+	flex-direction: row;
+}
+article {
+	flex-grow: 1;
+	margin: 20px;
+	border-radius: 7px;
+	background-color: #ceced4;
+	padding: 4px 20px;
+	box-shadow: 1px 1px 21px #c9c9e3;
+}

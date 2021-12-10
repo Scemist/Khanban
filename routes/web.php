@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/projetos', [Controllers\ProjectController::class, 'index']);
+
+Route::get('/board', function () {
+	return view('board');
+});

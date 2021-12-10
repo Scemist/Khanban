@@ -19320,6 +19320,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/board.css":
+/*!*********************************!*\
+  !*** ./resources/css/board.css ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/index.css":
 /*!*********************************!*\
   !*** ./resources/css/index.css ***!
@@ -19650,6 +19663,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/index": 0,
+/******/ 			"css/board": 0,
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
@@ -19700,9 +19714,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/index","css/app"], () => (__webpack_require__("./resources/css/index.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/board","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/board","css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/board","css/app"], () => (__webpack_require__("./resources/css/board.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/index","css/board","css/app"], () => (__webpack_require__("./resources/css/index.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
