@@ -18,14 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projetos', [Controllers\ProjectController::class, 'index'])->name('projeto.index');
-
 Route::get('/board', function () {
 	return view('board');
 });
 
+Route::get('/projetos', [Controllers\ProjectController::class, 'index'])->name('projetos.index');
+
 Route::get('/projetos/criar', function () {
 	return view('projetosCriar');
-});
+})->name('projetos.criarForm');
 
-Route::post('/projetos', [Controllers\ProjectController::class, 'store'])->name('projeto.store');
+Route::post('/projetos', [Controllers\ProjectController::class, 'store'])->name('projetos.store');
+
+Route::get('/projetos/{id}', [Controllers\projectController::class, 'show'])->name('projetos.show');

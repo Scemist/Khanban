@@ -13,6 +13,7 @@
 				<tr>
 					<th>Título</th>
 					<th>Descrição</th>
+					<th></th>
 				</tr>
 			</thead>
 			
@@ -21,6 +22,9 @@
 				<tr>
 					<th>{{ $projeto->titulo }}</th>
 					<td>{{ $projeto->descricao }}</td>
+					<td>
+						<a href="{{ url('/projetos/' . $projeto->id) }}" id="editar">Editar</a>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

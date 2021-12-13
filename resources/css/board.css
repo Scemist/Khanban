@@ -56,6 +56,9 @@ label {
 	justify-content: space-between;
 	margin-bottom: 5px;
 }
+.tarefa:hover {
+	background: #eeeeee;
+}
 .data {
 	font-size: 12px;
 	align-self: flex-end;

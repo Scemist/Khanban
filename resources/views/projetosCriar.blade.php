@@ -8,7 +8,7 @@
 	<div id="card">
 		<h2>Criar Novo Projeto</h2>
 
-		<form action="{{ route('projeto.store') }}" method="POST">
+		<form action="{{ route('projetos.store') }}" method="POST">
 			@csrf
 
 			<fieldset>

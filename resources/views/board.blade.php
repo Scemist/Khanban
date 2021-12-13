@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="coluna-body">
-				<div class="tarefa">
+				<div class="tarefa" draggable="true">
 					<div class="nome">AnythingInTime - 666158-NTBS</div>
 					<div class="data">15/12</div>
 				</div>
@@ -41,7 +41,7 @@
 			</div>
 
 			<div class="coluna-body">
-				<div class="tarefa">
+				<div class="tarefa" draggable="true">
 					<div class="nome">AnythingInTime - 666158-NTBS</div>
 					<div class="data">15/12</div>
 				</div>
@@ -62,11 +62,11 @@
 			</div>
 
 			<div class="coluna-body">
-				<div class="tarefa">
+				<div class="tarefa" draggable="true">
 					<div class="nome">AnythingInTime - 666158-NTBS</div>
 					<div class="data">15/12</div>
 				</div>
-				<div class="tarefa">
+				<div class="tarefa" draggable="true">
 					<div class="nome">Selta - LTR-MG-14171</div>
 					<div class="data">15/12</div>
 				</div>
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="coluna-body">
-				<div class="tarefa">
+				<div class="tarefa" draggable="true">
 					<div class="nome">AnythingInTime - 666158-NTBS</div>
 					<div class="data">15/12</div>
 				</div>
@@ -108,7 +108,7 @@
 			</div>
 
 			<div class="coluna-body">
-				<div class="tarefa">
+				<div class="tarefa" draggable="true">
 					<div class="nome">AnythingInTime - 666158-NTBS</div>
 					<div class="data">15/12</div>
 				</div>

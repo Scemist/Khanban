@@ -24,3 +24,11 @@ table, th, td {
 tbody tr:hover {
 	background: #dce2ec;;
 }
+#editar {
+	padding: 6px 10px;
+	border: none;
+	background: darkgoldenrod;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+}
