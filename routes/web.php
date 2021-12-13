@@ -23,3 +23,7 @@ Route::get('/projetos', [Controllers\ProjectController::class, 'index']);
 Route::get('/board', function () {
 	return view('board');
 });
+
+Route::get('/projetos/criar', function () {
+	return view('projetosCriar');
+});

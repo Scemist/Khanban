@@ -1,0 +1,47 @@
+form > input {
+	padding: 12px;
+	border-radius: 5px;
+	background: cornflowerblue;
+	border: none;
+	margin: 10px;
+	color: white;
+}
+fieldset input, textarea {
+	padding: 11px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	margin: 10px;
+	font-size: 1.1rem;
+}
+textarea {
+	resize: none;
+	color: gray;
+}
+fieldset {
+	border: none;
+}
+#card {
+	min-width: 40vw;
+	background: white;
+	border-radius: 9px;
+	box-shadow: 1px 1px 10px lightgray;
+	margin: 20px;
+	padding: 30px;
+}	
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#cadastrar {
+	float: right;
+}
+
+fieldset {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
+	align-items: center;
+}

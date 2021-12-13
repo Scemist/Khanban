@@ -55,10 +55,10 @@
 				</button>
 				<ul>
 					<li>
-						<button>Criar Projeto</button>
+						<a href="{{ url('/projetos/criar') }}"><button>Criar Projeto</button></a>
 					</li>
 					<li>
-						<button>Gerenciar</button>
+						<a href="{{ url('/projetos/criar') }}"><button>Gerenciar</button></a>
 					</li>
 				</ul>
 			</div>
