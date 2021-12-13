@@ -14,4 +14,14 @@ class ProjectController extends Controller
 
 		return view('projetos', ['projetos' => $projetos]);
 	}
+
+	public function store(Request $request)
+	{
+		$projeto = new Project;
+		$projeto->titulo = $request->titulo;
+		$projeto->descricao = $request->descricao;
+		$projeto->save();
+
+		return redirect()->route('projeto.index');
+	}
 }

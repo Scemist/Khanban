@@ -8,15 +8,15 @@
 	<div id="card">
 		<h2>Criar Novo Projeto</h2>
 
-		<form action="" method="POST">
+		<form action="{{ route('projeto.store') }}" method="POST">
 			@csrf
 
 			<fieldset>
 					<label>Título</label>
-					<input type="text">
+					<input type="text" name="titulo">
 
 					<label>Descrição</label>
-					<textarea rows="5"></textarea>
+					<textarea rows="5" name="descricao"></textarea>
 			</fieldset>
 
 			<input type="submit" value="Cadastrar" id="cadastrar">
