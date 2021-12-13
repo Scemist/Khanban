@@ -1,12 +1,62 @@
 section {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 article {
 	flex-grow: 1;
 	margin: 20px;
+}
+.coluna-head {
+	margin-bottom: 20px;
+}
+.add-tarefa {
 	border-radius: 7px;
 	background-color: #ceced4;
-	padding: 4px 20px;
+	padding: 18px 20px;
 	box-shadow: 1px 1px 21px #c9c9e3;
+	display: flex;
+	cursor: pointer;
+}
+.add-tarefa:hover {
+	box-shadow: 2px 3px 16px #9595af;
+}
+.add-tarefa svg {
+	margin-right: 10px;
+}
+label {
+	color: #9692b4;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 8px;
+	padding-bottom: 3px;
+}
+#aguardando {
+	border-bottom: 3px solid mediumaquamarine;
+}
+#andamento {
+	border-bottom: 3px solid sandybrown;
+}
+#concluido {
+	border-bottom: 3px solid seagreen;
+}
+#espera {
+	border-bottom: 3px solid peru;
+}
+#cancelado {
+	border-bottom: 3px solid purple;
+}
+.tarefa {
+	border-radius: 7px;
+	background-color: #ffffff;
+	padding: 18px 20px;
+	box-shadow: 1px 1px 7px #c9c9e3;
+	display: flex;
+	cursor: pointer;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+.data {
+	font-size: 12px;
+	align-self: flex-end;
 }

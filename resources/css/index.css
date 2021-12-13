@@ -7,6 +7,7 @@ body {
 	display: grid;
 	grid-template-columns: 200px 1fr;
 	grid-template-rows: 7vh 87vh 6vh;
+	user-select: none;
 }
 nav {
 	grid-column: 2 / 3;
@@ -58,6 +59,11 @@ nav a {
 	text-decoration: none;
 	color: white;
 	padding: 5px;
+	display: flex;
+	align-items: center;
+}
+nav a svg {
+	margin: 3px;
 }
 aside ul, aside li {
 	list-style-type: none;
