@@ -38,7 +38,7 @@ main {
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
 
-	background-color: snow;
+	background-color: #f7f7f7;
 	color: #3b336e;
 	padding: 15px;
 	overflow: auto;
@@ -79,7 +79,7 @@ aside ul, aside li {
 	list-style-type: none;
 }
 aside button {
-	background-color: snow;
+	background-color: #f7f7f7;
 	color: #3b336e;
 	padding: 10px;
 	border: none;

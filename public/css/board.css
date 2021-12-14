@@ -50,14 +50,15 @@ label {
 	border-radius: 7px;
 	background-color: #ffffff;
 	padding: 18px 20px;
-	box-shadow: 1px 1px 7px #c9c9e3;
+	box-shadow: 0px 1px 8px #dbdbec;
 	display: flex;
 	cursor: pointer;
 	justify-content: space-between;
 	margin-bottom: 5px;
 }
 .tarefa:hover {
-	background: #eeeeee;
+	background: #e3e3e3;
+	box-shadow: none;
 }
 .data {
 	font-size: 12px;
