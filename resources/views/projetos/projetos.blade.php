@@ -23,7 +23,7 @@
 					<th>{{ $projeto->titulo }}</th>
 					<td>{{ $projeto->descricao }}</td>
 					<td>
-						<a href="{{ url('/projetos/' . $projeto->id) }}" id="editar">Editar</a>
+						<a href="{{ route('projetos.show', $projeto->id) }}" id="editar">Editar</a>
 					</td>
 				</tr>
 				@endforeach

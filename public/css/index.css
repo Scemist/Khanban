@@ -56,7 +56,7 @@ footer {
 	justify-content: center;
 }
 
-/* ------------------------------------------ */
+/* --------------------- Anything in Time ---------------------- */
 
 input, textarea {
 	cursor: pointer;
@@ -110,4 +110,36 @@ footer a {
 #logo {
 	margin-bottom: 15px;
 	font-size: larger;
+}
+.btn {
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	min-width: 70px;
+}
+.btn:hover {
+	box-shadow: 1px 1px 8px rgb(161, 161, 161);
+}
+.green {
+	background-color: green;
+	color: #ffffff;
+}
+.yellow {
+	background-color: peru;
+	color: #ffffff;
+}
+.red {
+	background-color: darkred;
+	color: #ffffff;
+}
+.blue {
+	background-color: #3b336e;
+	color: #ffffff;
+}
+.in {
+	padding: 10px 15px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	cursor: pointer;	
 }

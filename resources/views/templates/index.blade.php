@@ -90,5 +90,7 @@
 				Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a>© - 2021
 			</p>
 		</footer>		
+
+		@stack('scripts')
 	</body>
 </html>

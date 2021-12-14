@@ -8,7 +8,7 @@ use App\Models\Project;
 
 class ProjectController extends Controller
 {
-    function index() 
+    public function index() 
 	{
 		$projetos = Project::get();
 
@@ -30,5 +30,19 @@ class ProjectController extends Controller
 		$projeto = Project::find($id);
 
 		return view('projetos.projeto', ['projeto' => $projeto]);
+	}
+
+	public function update()
+	{
+		dd('haaa');
+
+		return true;
+	}
+
+	public function destroy($id)
+	{
+		Project::destroy($id);
+
+		return redirect()->route('projetos.index');
 	}
 }
