@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,20 +14,11 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('inicio');
+Route::view('/board', 'board')->name('board');
 
-Route::get('/board', function () {
-	return view('board');
-});
-
-Route::get('/projetos', [Controllers\ProjectController::class, 'index'])->name('projetos.index');
-
-Route::get('/projetos/criar', function () {
-	return view('projetosCriar');
-})->name('projetos.criarForm');
-
-Route::post('/projetos', [Controllers\ProjectController::class, 'store'])->name('projetos.store');
-
-Route::get('/projetos/{id}', [Controllers\projectController::class, 'show'])->name('projetos.show');
+// Classe de Projeto
+Route::view('/projetos/criar', 'projetosCriar')->name('projetos.create');
+Route::get('/projetos', [ProjectController::class, 'index'])->name('projetos.index');
+Route::post('/projetos', [ProjectController::class, 'store'])->name('projetos.store');
+Route::get('/projetos/{id}', [projectController::class, 'show'])->name('projetos.show');
