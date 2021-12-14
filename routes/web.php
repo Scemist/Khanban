@@ -18,7 +18,9 @@ Route::view('/', 'welcome')->name('inicio');
 Route::view('/board', 'board')->name('board');
 
 // Classe de Projeto
-Route::view('/projetos/criar', 'projetosCriar')->name('projetos.create');
-Route::get('/projetos', [ProjectController::class, 'index'])->name('projetos.index');
-Route::post('/projetos', [ProjectController::class, 'store'])->name('projetos.store');
-Route::get('/projetos/{id}', [projectController::class, 'show'])->name('projetos.show');
+Route::prefix('projetos')->group(function () {
+	Route::view('/criar', 'projetos.projetosCriar')->name('projetos.create');
+	Route::get('/', [ProjectController::class, 'index'])->name('projetos.index');
+	Route::post('/', [ProjectController::class, 'store'])->name('projetos.store');
+	Route::get('/{id}', [projectController::class, 'show'])->whereNumber('id')->name('projetos.show');
+});

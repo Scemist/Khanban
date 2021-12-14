@@ -12,7 +12,7 @@ class ProjectController extends Controller
 	{
 		$projetos = Project::get();
 
-		return view('/projetos', ['projetos' => $projetos]);
+		return view('projetos.projetos', ['projetos' => $projetos]);
 	}
 
 	public function store(Request $request)
@@ -29,6 +29,6 @@ class ProjectController extends Controller
 	{
 		$projeto = Project::find($id);
 
-		return view('/projeto', ['projeto' => $projeto]);
+		return view('projetos.projeto', ['projeto' => $projeto]);
 	}
 }
