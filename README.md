@@ -13,5 +13,9 @@
 > PHP **8.0.12**
 > 
 > Composer **2.1.14**
+> 
+> PostgreSQL 14.0
+
+## Sobre o Framework Laravel
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
