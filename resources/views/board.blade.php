@@ -17,7 +17,7 @@
 
 			<div class="coluna-body">
 				<div class="tarefa" draggable="true">
-					<div class="nome">AnythingInTime - 666158-NTBS</div>
+					<div class="nome">Criação da Index</div>
 					<div class="data">15/12</div>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 
 			<div class="coluna-body">
 				<div class="tarefa" draggable="true">
-					<div class="nome">AnythingInTime - 666158-NTBS</div>
+					<div class="nome">Estilização da Página Sobre</div>
 					<div class="data">15/12</div>
 				</div>
 			</div>
@@ -51,11 +51,11 @@
 
 			<div class="coluna-body">
 				<div class="tarefa" draggable="true">
-					<div class="nome">AnythingInTime - 666158-NTBS</div>
+					<div class="nome">Organizar o DER (Banco Principal)</div>
 					<div class="data">15/12</div>
 				</div>
 				<div class="tarefa" draggable="true">
-					<div class="nome">Selta - LTR-MG-14171</div>
+					<div class="nome">Iniciar o Controller do Projeto</div>
 					<div class="data">15/12</div>
 				</div>
 			</div>
@@ -72,8 +72,8 @@
 
 			<div class="coluna-body">
 				<div class="tarefa" draggable="true">
-					<div class="nome">AnythingInTime - 666158-NTBS</div>
-					<div class="data">15/12</div>
+					<div class="nome">Backup da Semana</div>
+					<div class="data">14/12</div>
 				</div>
 			</div>
 		</article>
@@ -89,8 +89,8 @@
 
 			<div class="coluna-body">
 				<div class="tarefa" draggable="true">
-					<div class="nome">AnythingInTime - 666158-NTBS</div>
-					<div class="data">15/12</div>
+					<div class="nome">Iniciar Ferramenta de Busca</div>
+					<div class="data">23/11</div>
 				</div>
 			</div>
 		</article>
