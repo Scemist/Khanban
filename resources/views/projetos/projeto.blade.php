@@ -1,18 +1,32 @@
 @extends('templates/index')
+
+@push('styles')
+	<link rel="stylesheet" href="{{ asset('css/projeto.css') }}">
+@endpush
+
 @section('conteudo')
-	<form action="{{ route('projetos.update', $projeto->id) }}" method="GET">
-		<input type="text" value="{{ $projeto->titulo }}" class="in">
-		<input type="text" value="{{ $projeto->descricao }}" class="in">
+	<div id="card">
 
-		<input type="submit" value="Editar" class="btn yellow">
-	</form>
+		<form action="{{ route('projetos.update', $projeto->id) }}" method="POST">
+			@csrf
+			@method('PUT')
+			<fieldset>
+				<label>Títiulo do Projeto</label>
+				<input type="text" name="titulo" value="{{ $projeto->titulo }}" class="in">
 
-	<hr>
-	<form action="{{ route('projetos.destroy', $projeto->id) }}" method="POST">
-		@method('DELETE')
-		@csrf
-		<input type="submit" value="Deletar Projeto" class="btn red">
-	</form>
+				<label>Descrição do Projeto</label>
+				<textarea type="text" name="descricao" class="in">{{ $projeto->descricao }}</textarea>
+			</fieldset>
+
+			<input type="submit" value="Editar" class="btn yellow">
+		</form>
+
+		<form action="{{ route('projetos.destroy', $projeto->id) }}" method="POST">
+			@method('DELETE')
+			@csrf
+			<input type="submit" value="Deletar Projeto" class="btn red">
+		</form>
+	</div>
 @stop
 
 @push('scripts')

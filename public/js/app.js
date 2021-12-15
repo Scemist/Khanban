@@ -19307,6 +19307,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/index.css":
+/*!*********************************!*\
+  !*** ./resources/css/index.css ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -19346,10 +19359,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/projetos-form.css":
-/*!*****************************************!*\
-  !*** ./resources/css/projetos-form.css ***!
-  \*****************************************/
+/***/ "./resources/css/projeto.css":
+/*!***********************************!*\
+  !*** ./resources/css/projeto.css ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19359,10 +19372,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/index.css":
-/*!*********************************!*\
-  !*** ./resources/css/index.css ***!
-  \*********************************/
+/***/ "./resources/css/projetos-form.css":
+/*!*****************************************!*\
+  !*** ./resources/css/projetos-form.css ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19690,6 +19703,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"/js/app": 0,
 /******/ 			"css/index": 0,
 /******/ 			"css/projetos-form": 0,
+/******/ 			"css/projeto": 0,
 /******/ 			"css/projetos": 0,
 /******/ 			"css/board": 0,
 /******/ 			"css/app": 0
@@ -19742,12 +19756,13 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/board.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/projetos.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/projetos-form.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/index.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/board.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/projetos.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/projeto.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/projetos-form.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/index","css/projetos-form","css/projeto","css/projetos","css/board","css/app"], () => (__webpack_require__("./resources/css/index.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

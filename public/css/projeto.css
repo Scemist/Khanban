@@ -1,0 +1,41 @@
+fieldset {
+	border: none;
+	display: flex;
+	flex-direction: column;
+}
+fieldset .in {
+	display: block;
+	margin: 5px;
+}
+.in:first-of-type {
+	min-width: 50vw;
+}
+.in:last-child {
+	min-width: 50vw;
+	min-height: 20vh;
+	resize: none;
+}
+label:last-of-type {
+	margin-top: 20px;
+}
+label {
+	color: grey;
+}
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+#card {
+	min-width: 40vw;
+	background: white;
+	border-radius: 9px;
+	box-shadow: 1px 1px 10px lightgray;
+	margin: 20px;
+	padding: 30px;
+}
+.btn {
+	float: right;
+	min-width: 120px;
+}

@@ -32,11 +32,14 @@ class ProjectController extends Controller
 		return view('projetos.projeto', ['projeto' => $projeto]);
 	}
 
-	public function update()
+	public function update($id, Request $request)
 	{
-		dd('haaa');
+		$projeto = Project::find($id);
+		$projeto->titulo = $request->titulo;
+		$projeto->descricao = $request->descricao;
+		$projeto->save();
 
-		return true;
+		return redirect()->route('projetos.show', $id);
 	}
 
 	public function destroy($id)
