@@ -6,6 +6,15 @@
 	<img src="public/images/print-1.png">
 </p>
 
+## To Clone
+
+1. Clone the project with `git clone https://github.com/Scemist/Khanban.git`
+2. Inside *khanban* folder, run `composer install` for the vendor components
+3. Create the database in your *pgadmin*
+4. Make a copy of `.env.example` with name `.env` only and insert your databases credentials
+5. Run `php artisan migrate` in project folder
+6. Run `php artisan serve` to run the server and access by `localhost`
+
 ## Versões
 
 > Laravel Framework **8.74.0**
@@ -14,7 +23,7 @@
 > 
 > Composer **2.1.14**
 > 
-> PostgreSQL 14.0
+> PostgreSQL **14.0**
 
 ## Sobre o Framework Laravel
 
