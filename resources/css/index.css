@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+html {
+	font-size: 16px;
+}
 body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	padding: 0;
 	display: grid;
-	grid-template-columns: 200px 1fr;
+	grid-template-columns: 13rem 1fr;
 	grid-template-rows: 7vh 87vh 6vh;
 	user-select: none;
 }
@@ -19,7 +22,7 @@ nav {
 
 	background-color: #516173;
 	color: white;
-	padding: 15px;
+	padding: 1rem;
 	z-index: 1;
 	box-shadow: 1px 1px 10px rgb(179, 177, 177);
 }
@@ -30,7 +33,7 @@ aside {
 	background-color: #3b336e;
 	color: white;
 	z-index: 2;
-	padding: 15px;
+	padding: 1rem;
 }
 main {
 	grid-column: 2 / 3;
@@ -38,7 +41,7 @@ main {
 
 	background-color: #f7f7f7;
 	color: #3b336e;
-	padding: 15px;
+	padding: 1rem;
 	overflow: auto;
 }
 footer {
@@ -47,7 +50,7 @@ footer {
 
 	background-color: #516173;
 	color: white;
-	padding: 15px;
+	padding: 1rem;
 
 	display: flex;
 	flex-direction: row;
@@ -66,7 +69,7 @@ input:focus, textarea:focus {
 nav a {
 	text-decoration: none;
 	color: white;
-	padding: 5px;
+	padding: 0.4rem;
 	display: flex;
 	align-items: center;
 }
@@ -79,14 +82,14 @@ aside ul, aside li {
 aside button {
 	background-color: #f7f7f7;
 	color: #3b336e;
-	padding: 10px;
+	padding: 0.6rem;
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
 	width: 100%;
 }
 aside button:hover {
-	box-shadow: 1px 1px 15px rgb(34, 16, 42);
+	box-shadow: 1px 1px 1rem rgb(34, 16, 42);
 }
 aside ul {
 	display: flex;
@@ -106,7 +109,7 @@ footer a {
 	color: white;
 }
 #logo {
-	margin-bottom: 15px;
+	margin-bottom: 1rem;
 	font-size: larger;
 }
 .btn {
@@ -114,10 +117,10 @@ footer a {
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
-	min-width: 70px;
+	min-width: 5rem;
 }
 .btn:hover {
-	box-shadow: 1px 1px 8px rgb(161, 161, 161);
+	box-shadow: 1px 1px 0.5rem rgb(161, 161, 161);
 }
 .green {
 	background-color: green;
@@ -136,8 +139,8 @@ footer a {
 	color: #ffffff;
 }
 .in {
-	padding: 10px 15px;
+	padding: 0.3rem 1rem;
 	border: 1px solid gray;
-	border-radius: 5px;
+	border-radius: 0.3rem;
 	cursor: pointer;	
 }

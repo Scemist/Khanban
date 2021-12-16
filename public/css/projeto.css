@@ -5,7 +5,7 @@ fieldset {
 }
 fieldset .in {
 	display: block;
-	margin: 5px;
+	margin: 0.3px;
 }
 .in:first-of-type {
 	min-width: 50vw;
@@ -16,7 +16,7 @@ fieldset .in {
 	resize: none;
 }
 label:last-of-type {
-	margin-top: 20px;
+	margin-top: 1.3rem;
 }
 label {
 	color: grey;
@@ -30,12 +30,12 @@ main {
 #card {
 	min-width: 40vw;
 	background: white;
-	border-radius: 9px;
-	box-shadow: 1px 1px 10px lightgray;
-	margin: 20px;
-	padding: 30px;
+	border-radius: 0.6rem;
+	box-shadow: 1px 1px 0.3rem lightgray;
+	margin: 1.3rem;
+	padding: 2rem;
 }
 .btn {
 	float: right;
-	min-width: 120px;
+	min-width: 7.5rem;
 }

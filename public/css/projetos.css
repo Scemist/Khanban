@@ -4,7 +4,7 @@
 	border-radius: 5px;
 	min-width: 50vw;
 	display: inline-block;
-	padding: 15px 25px 25px 25px;
+	padding: 1.5rem 2rem 2rem 2rem;
 }
 main {
 	text-align: center;
@@ -18,7 +18,7 @@ thead tr {
 table, th, td {
 	border-bottom: 1px solid gray	;
 	border-collapse: collapse;
-	padding: 10px;
+	padding: 0.8rem;
 	text-align: left;
 }
 tbody tr:hover {

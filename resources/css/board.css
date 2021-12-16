@@ -8,18 +8,18 @@ article {
 	margin: 20px;
 }
 .coluna-head {
-	margin-bottom: 20px;
+	margin-bottom: 1.3rem;
 }
 .add-tarefa {
-	border-radius: 7px;
+	border-radius: 0.5rem;
 	background-color: #ceced4;
-	padding: 18px 20px;
-	box-shadow: 1px 1px 21px #c9c9e3;
+	padding: 1.1rem 1.3rem;
+	box-shadow: 1px 1px 1.3rem #c9c9e3;
 	display: flex;
 	cursor: pointer;
 }
 .add-tarefa:hover {
-	box-shadow: 2px 3px 16px #9595af;
+	box-shadow: 2px 3px 1rem #9595af;
 }
 .add-tarefa svg {
 	margin-right: 10px;
@@ -28,7 +28,7 @@ label {
 	color: #9692b4;
 	display: inline-block;
 	width: 100%;
-	margin-bottom: 8px;
+	margin-bottom: 0.5rem;
 	padding-bottom: 3px;
 }
 #aguardando {
@@ -49,8 +49,8 @@ label {
 .tarefa {
 	border-radius: 7px;
 	background-color: #ffffff;
-	padding: 18px 20px;
-	box-shadow: 0px 1px 8px #dbdbec;
+	padding: 1.1rem 1.3rem;
+	box-shadow: 0px 1px 0.5rem #dbdbec;
 	display: flex;
 	cursor: pointer;
 	justify-content: space-between;
@@ -61,6 +61,6 @@ label {
 	box-shadow: none;
 }
 .data {
-	font-size: 12px;
+	font-size: 0.7rem;
 	align-self: flex-end;
 }
