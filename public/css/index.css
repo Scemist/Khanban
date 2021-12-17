@@ -63,6 +63,24 @@ html {
 		flex-direction: row;
 		justify-content: center;
 	}
+	#burger .stick {
+		height: 2px;
+		width: 18px;
+		margin: 4px 0;
+		background: #3b336e;
+	}
+	#burger {
+		background: none;
+		padding: none;
+		border: none;
+		cursor: pointer;
+	}
+	.aside-ativa {
+		transform: translate(45vw);
+	}
+	.blur {
+		filter: blur(0.4rem);
+	}
 }
 @media (min-width: 577px) {
 	body {
@@ -120,6 +138,9 @@ html {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+	}
+	#burger {
+		display: none;
 	}
 }
 

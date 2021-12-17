@@ -5,7 +5,7 @@
 @endpush
 
 @section('conteudo')
-	<h1>Projetos Correios</h1>
+	<h1>Projetos</h1>
 
 	<div class="card">
 		<table>
