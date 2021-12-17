@@ -42,12 +42,8 @@
 					Projetos
 				</button>
 				<ul>
-					<li>
-						<a href="{{ route('projetos.create') }}"><button>Criar Projeto</button></a>
-					</li>
-					<li>
-						<a href="{{ route('projetos.index') }}"><button>Gerenciar</button></a>
-					</li>
+					<li><a href="{{ route('projetos.create') }}"><button>Criar Projeto</button></a></li>
+					<li><a href="{{ route('projetos.index') }}"><button>Gerenciar</button></a></li>
 				</ul>
 			</div>
 			
@@ -57,12 +53,8 @@
 					Usuário
 				</button>
 				<ul>
-					<li>
-						<button>Novo Usuário</button>
-					</li>
-					<li>
-						<button>Ver Usuários</button>
-					</li>
+					<li><button>Novo Usuário</button></li>
+					<li><button>Ver Usuários</button></li>
 				</ul>
 			</div>
 		</aside>
@@ -72,9 +64,7 @@
 		</main>
 
 		<footer>
-			<p>
-				Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a>© - 2021
-			</p>
+			<p>Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a>© - 2021</p>
 		</footer>		
 
 		@stack('scripts')

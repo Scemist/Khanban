@@ -2,61 +2,125 @@
 html {
 	font-size: 16px;
 }
-body {
-	margin: 0;
-	font-family: 'Open Sans', sans-serif;
-	padding: 0;
-	display: grid;
-	grid-template-columns: 13rem 1fr;
-	grid-template-rows: 7vh 87vh 6vh;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+
+@media (max-width: 576px) {
+	body {
+		margin: 0;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 45vw 100vw;
+		grid-template-rows: 7vh auto 4rem;
+		transform: translate(-45vw);
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+		        user-select: none;
+		overflow-x: hidden;
+	}
+	nav {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+		z-index: 1;
+		box-shadow: 1px 1px 10px rgb(179, 177, 177);
+	}
+	aside {
+		grid-column: 1 / 2;
+		grid-row: 1 / 4;
+	
+		background-color: #3b336e;
+		color: white;
+		z-index: 2;
+		padding: 1rem;
+		/* transform: translate(45vw); */
+	}
+	main {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+	
+		background-color: #f7f7f7;
+		color: #3b336e;
+		padding: 0 7%;
+		overflow: auto;
+	}
+	footer {
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
 }
-nav {
-	grid-column: 2 / 3;
-	grid-row: 1 / 2;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-
-	background-color: #516173;
-	color: white;
-	padding: 1rem;
-	z-index: 1;
-	box-shadow: 1px 1px 10px rgb(179, 177, 177);
-}
-aside {
-	grid-column: 1 / 2;
-	grid-row: 1 / 3;
-
-	background-color: #3b336e;
-	color: white;
-	z-index: 2;
-	padding: 1rem;
-}
-main {
-	grid-column: 2 / 3;
-	grid-row: 2 / 3;
-
-	background-color: #f7f7f7;
-	color: #3b336e;
-	padding: 1rem;
-	overflow: auto;
-}
-footer {
-	grid-column: 1 / 3;
-	grid-row: 3 / 4;
-
-	background-color: #516173;
-	color: white;
-	padding: 1rem;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+@media (min-width: 577px) {
+	body {
+		margin: 0;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 13rem 1fr;
+		grid-template-rows: 7vh 87vh 6vh;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+		        user-select: none;
+	}
+	nav {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+		z-index: 1;
+		box-shadow: 1px 1px 10px rgb(179, 177, 177);
+	}
+	aside {
+		grid-column: 1 / 2;
+		grid-row: 1 / 3;
+	
+		background-color: #3b336e;
+		color: white;
+		z-index: 2;
+		padding: 1rem;
+	}
+	main {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+	
+		background-color: #f7f7f7;
+		color: #3b336e;
+		padding: 0 7%;
+		overflow: auto;
+	}
+	footer {
+		grid-column: 1 / 3;
+		grid-row: 3 / 4;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
 }
 
 /* --------------------- Anything in Time ---------------------- */

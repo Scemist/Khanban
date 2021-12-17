@@ -12,11 +12,11 @@
 			@csrf
 
 			<fieldset>
-					<label>Título</label>
-					<input type="text" name="titulo">
+				<label>Título</label>
+				<input type="text" name="titulo">
 
-					<label>Descrição</label>
-					<textarea rows="5" name="descricao"></textarea>
+				<label>Descrição</label>
+				<textarea rows="5" name="descricao"></textarea>
 			</fieldset>
 
 			<input type="submit" value="Cadastrar" id="cadastrar">

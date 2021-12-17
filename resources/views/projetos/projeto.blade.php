@@ -6,7 +6,6 @@
 
 @section('conteudo')
 	<div id="card">
-
 		<form action="{{ route('projetos.update', $projeto->id) }}" method="POST">
 			@csrf
 			@method('PUT')
