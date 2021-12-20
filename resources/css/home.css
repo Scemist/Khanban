@@ -9,7 +9,7 @@ html {
 body {
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: 10vh auto 10vh;
+	grid-template-rows: 7vh auto 13vh;
 	grid-template-areas: "nav"
 						 "main"
 						 "footer";
@@ -19,16 +19,38 @@ body {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	user-select: none;
+	color: #3b336e;
 }
 
 nav {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	align-items: center;
 	background: brown;
+	position: sticky;
+	top: 0;
+	box-shadow: 0px 0px 8px gray;
+}
+nav div {
+	/* min-width: 20%; */
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+nav div > * {
+	padding: 0 2rem;
+}
+svg {
+	padding: 0 0.4rem;
+	height: 2rem;
+}
+nav a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 main {
-	background: burlywood;
+	background: whitesmoke;
 	min-height: 74vh;
 	padding: 3vh 2rem;
 }
@@ -60,11 +82,12 @@ fieldset {
 	font-size: 1rem;
 }
 .btn {
-	padding: 10px;
+	padding: 0.7rem 1rem;
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
-	min-width: 5rem;
+	min-width: 6rem;
+	text-align: center;
 }
 .btn:hover {
 	box-shadow: 1px 1px 0.5rem rgb(161, 161, 161);
@@ -85,13 +108,8 @@ fieldset {
 	background-color: #3b336e;
 	color: #ffffff;
 }
-.in-group {
-	display: flex;
-	flex-direction: column;
-	padding: 0.1rem 1rem;
+.white {
+	background-color: whitesmoke;
+	color: #3b336e;
 }
-fieldset {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-}
+

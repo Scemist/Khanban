@@ -16,7 +16,6 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::view('/', 'welcome')->name('inicio');
-Route::view('/board', 'board')->name('board');
 
 // Classe de Autenticação
 Route::view('/login', 'login')->name('login');
@@ -26,6 +25,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 // Classe de Projeto
 Route::group(['middleware' => 'auth'], function() {
 	Route::prefix('projetos')->group(function () {
+		Route::view('board', 'board')->name('projetos.board');
 		Route::view('/criar', 'projetos.projetos-form')->name('projetos.create');
 		Route::get('/', [ProjectController::class, 'index'])->name('projetos.index');
 		Route::get('/{id}', [projectController::class, 'show'])->whereNumber('id')->name('projetos.show');

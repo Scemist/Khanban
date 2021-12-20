@@ -18,7 +18,7 @@ class AuthController extends Controller
 		if(Auth::attempt($credenciais)) {
 			$request->session()->regenerate();
 			
-			return redirect()->intended('board');
+			return redirect()->route('projetos.board');
 		}
 
 		return redirect()->route('login');

@@ -7,7 +7,6 @@
 @section('conteudo')
 	<div class="card">
 		<h2>Faça login para acessar o sistema</h2>
-		<hr>
 
 		<form action="{{ route('auth.login') }}" method="POST">
 			@csrf
@@ -27,9 +26,13 @@
 				</div>
 			</fieldset>
 		</form>
-
+		
 		<blockquote>
-			<p>Ainda não tem cadastro? <a href="">Faça aqui!</a></p>
+			<p><a href="">Não se lembra da senha?</a></p>
 		</blockquote>
 	</div>
+
+	<blockquote>
+		<p>Ainda não tem cadastro? <a href="">Faça aqui!</a></p>
+	</blockquote>
 @stop
