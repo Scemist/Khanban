@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap);
+html {
+	font-size: 16px;
+}
+* {
+	-webkit-user-drag: none;
+}
+body {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 10vh auto 10vh;
+	grid-template-areas: "nav"
+						 "main"
+						 "footer";
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background: brown;
+}
+main {
+	background: burlywood;
+	min-height: 74vh;
+	padding: 3vh 2rem;
+}
+footer {
+	background: cadetblue;
+	color: rgb(211, 207, 189);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+nav a {
+	text-decoration: none;
+	color: cornsilk;
+}
+footer a {
+	color: cornsilk;
+}
+hr {
+	margin: 2rem 0;
+}
+fieldset {
+	border: none;
+}
+.in {
+	padding: 0.5rem 1rem;
+	border: 1px solid gray;
+	border-radius: 0.3rem;
+	cursor: pointer;	
+	font-size: 1rem;
+}
+.btn {
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	min-width: 5rem;
+}
+.btn:hover {
+	box-shadow: 1px 1px 0.5rem rgb(161, 161, 161);
+}
+.green {
+	background-color: green;
+	color: #ffffff;
+}
+.yellow {
+	background-color: peru;
+	color: #ffffff;
+}
+.red {
+	background-color: darkred;
+	color: #ffffff;
+}
+.blue {
+	background-color: #3b336e;
+	color: #ffffff;
+}
+.in-group {
+	display: flex;
+	flex-direction: column;
+	padding: 0.1rem 1rem;
+}
+fieldset {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}

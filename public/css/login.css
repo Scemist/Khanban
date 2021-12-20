@@ -1,0 +1,25 @@
+main {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+}
+.card {
+	background: whitesmoke;
+	padding: 2rem;
+	border-radius: 5px;
+	box-shadow: 1px 1px 8px rgb(151, 130, 90);
+	min-width: 40vw;
+}
+.email {
+	flex-grow: 2;
+}
+.senha {
+	flex-grow: 1;
+}
+.entrar {
+	flex-grow: 0;
+}
+blockquote {
+	text-align: right;
+}

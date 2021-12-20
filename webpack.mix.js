@@ -21,6 +21,12 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/projetos.css', 'public/css', [
         //
     ])
+    .postCss('resources/css/home.css', 'public/css', [
+        //
+    ])
+    .postCss('resources/css/login.css', 'public/css', [
+        //
+    ])
     .postCss('resources/css/projeto.css', 'public/css', [
         //
     ])

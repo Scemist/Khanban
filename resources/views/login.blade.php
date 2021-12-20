@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('templates/home')
 
-	<title>Login - Khanboard</title>
-</head>
+@push('styles')
+	<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endpush
 
-<body>
-	<main>
-		<section>
-			<form action="{{ route('auth.login') }}" method="POST">
-				@csrf
-				<fieldset>
+@section('conteudo')
+	<div class="card">
+		<h2>Faça login para acessar o sistema</h2>
+		<hr>
+
+		<form action="{{ route('auth.login') }}" method="POST">
+			@csrf
+			<fieldset>
+				<div class="in-group email">
 					<label>Email</label>
-					<input type="email" name="email">
-				</fieldset>
-
-				<fieldset>
+					<input type="email" name="email" class="in">
+				</div>
+			
+				<div class="in-group senha">
 					<label>Senha</label>
-					<input type="password" name="senha">
-				</fieldset>
+					<input type="password" name="senha" class="in">
+				</div>
 
-				<input type="submit" value="Entrar">
-			</form>
-		</section>
-	</main>
-</body>
-</html>
+				<div class="in-group entrar">
+					<input type="submit" value="Entrar" class="btn blue">
+				</div>
+			</fieldset>
+		</form>
+
+		<blockquote>
+			<p>Ainda não tem cadastro? <a href="">Faça aqui!</a></p>
+		</blockquote>
+	</div>
+@stop
