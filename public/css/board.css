@@ -3,12 +3,23 @@ section {
 	flex-direction: row;
 	flex-wrap: wrap;
 }
+.tarefa {
+	-webkit-user-drag:element;
+}
+.highlight {
+	background: midnightblue;
+}
 article {
 	flex-grow: 1;
-	margin: 20px;
+	margin: 0.3rem;
 }
 .coluna-head {
-	margin-bottom: 1.3rem;
+	/* margin-bottom: 1.3rem; */
+	padding: 0.8rem;
+}
+.coluna-body {
+	padding: 1rem;
+	border-radius: 5px;
 }
 .add-tarefa {
 	border-radius: 0.5rem;
@@ -19,7 +30,7 @@ article {
 	cursor: pointer;
 }
 .add-tarefa:hover {
-	box-shadow: 2px 3px 1rem #9595af;
+	box-shadow: 1px 1px 0.5rem rgb(161, 161, 161);
 }
 .add-tarefa svg {
 	margin-right: 10px;
