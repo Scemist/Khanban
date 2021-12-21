@@ -1,11 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/root.css": "/css/root.css",
     "/css/home.css": "/css/home.css",
-    "/css/index.css": "/css/index.css",
-    "/css/login.css": "/css/login.css",
     "/css/projetos.css": "/css/projetos.css",
     "/css/board.css": "/css/board.css",
     "/css/app.css": "/css/app.css",
+    "/css/index.css": "/css/index.css",
     "/css/projetos-form.css": "/css/projetos-form.css",
-    "/css/projeto.css": "/css/projeto.css"
+    "/css/projeto.css": "/css/projeto.css",
+    "/css/login.css": "/css/login.css"
 }

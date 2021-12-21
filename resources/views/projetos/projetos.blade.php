@@ -22,7 +22,7 @@
 				<tr>
 					<th>{{ $projeto->titulo }}</th>
 					<td>{{ $projeto->descricao }}</td>
-					<td><a href="{{ route('projetos.show', $projeto->id) }}" id="editar">Editar</a></td>
+					<td><a href="{{ route('projetos.show', $projeto->id) }}" class="btn yellow">Editar</a></td>
 				</tr>
 				@endforeach
 			</tbody>

@@ -19,7 +19,7 @@
 				<textarea rows="5" name="descricao"></textarea>
 			</fieldset>
 
-			<input type="submit" value="Cadastrar" id="cadastrar">
+			<input type="submit" value="Cadastrar" id="cadastrar" class="btn green">
 		</form>
 	</div>
 @stop
