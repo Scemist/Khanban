@@ -10,10 +10,6 @@ body {
 	padding: 0;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
 	color: var(--d-blue);
 	scroll-behavior: smooth;
 }

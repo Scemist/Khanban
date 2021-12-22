@@ -38,4 +38,7 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .postCss('resources/css/index.css', 'public/css', [
         //
+    ])
+    .js('resources/js/board.js', 'public/js', [
+        //
     ]);

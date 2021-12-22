@@ -96,21 +96,5 @@
 		</article>
 	</section>
 
-	<script>
-		const tarefas = document.querySelectorAll('.tarefa')
-		const colunasBody = document.querySelectorAll('.coluna-body')
-
-		tarefas.forEach(tarefa => {
-			tarefa.addEventListener('dragstart', dragstart)
-			// tarefa.addEventListener('drag', drag)
-			// tarefa.addEventListener('dragend', dragend)
-		})
-
-		function dragstart() {
-			colunasBody.forEach(colunaBody => colunaBody.classList.add('highlight'))
-			this.classList.add('id-dragging')
-		}
-
-		
-	</script>
+	<script src="{{ asset('js/board.js') }}"></script>
 @stop

@@ -7,7 +7,6 @@
 		grid-template-columns: 45vw 100vw;
 		grid-template-rows: 7vh auto 4rem;
 		transform: translate(-45vw);
-		user-select: none;
 		overflow-x: hidden;
 	}
 	nav {
@@ -82,7 +81,6 @@
 		display: grid;
 		grid-template-columns: 13rem 1fr;
 		grid-template-rows: 7vh 87vh 6vh;
-		user-select: none;
 	}
 	nav {
 		grid-column: 2 / 3;

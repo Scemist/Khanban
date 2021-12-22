@@ -2,24 +2,32 @@ section {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	height: 95%;
 }
 .tarefa {
 	-webkit-user-drag:element;
 }
 .highlight {
-	background: midnightblue;
+	background: var(--p-blue);
 }
 article {
 	flex-grow: 1;
+	width: 16%;
 	margin: 0.3rem;
+
+	display: flex;
+	flex-direction: column;
+}
+article * {
+	transition: 400ms;
 }
 .coluna-head {
-	/* margin-bottom: 1.3rem; */
 	padding: 0.8rem;
 }
 .coluna-body {
 	padding: 1rem;
 	border-radius: 5px;
+	flex: 1;
 }
 .add-tarefa {
 	border-radius: 0.5rem;
@@ -28,6 +36,15 @@ article {
 	box-shadow: 1px 1px 1.3rem #c9c9e3;
 	display: flex;
 	cursor: pointer;
+}
+.is-dragging {
+    opacity: 0.5;
+	/* background: var(--d-blue); */
+	cursor: help !important;
+}
+.over {
+	background-color: var(--p-green);
+	cursor: pointer !important;
 }
 .add-tarefa:hover {
 	box-shadow: 1px 1px 0.5rem rgb(161, 161, 161);
@@ -67,10 +84,10 @@ label {
 	justify-content: space-between;
 	margin-bottom: 5px;
 }
-.tarefa:hover {
-	background: #e3e3e3;
+/* .tarefa:hover {
+	background-color: #e3e3e3;
 	box-shadow: none;
-}
+} */
 .data {
 	font-size: 0.7rem;
 	align-self: flex-end;
