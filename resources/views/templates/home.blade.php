@@ -6,8 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="icon" href="{{ asset('favicon.svg') }}" sizes="any" type="image/svg+xml">
-		<link rel="stylesheet" href="{{ asset('css/root.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 		@stack('styles')
 
 		<title>Khanban</title>
@@ -36,5 +34,7 @@
 		<footer>
 			<p>Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a>© - 2021</p>
 		</footer>
+
+		<script src="{{ asset('js/skeleton.js') }}"></script>
 	</body>
 </html>

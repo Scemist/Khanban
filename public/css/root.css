@@ -1,7 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap);
 :root {
 	font-size: 16px;
-	-webkit-user-drag: none;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
@@ -24,6 +22,12 @@
 	--green: #2e8b57;
 	--p-green: #d2e1d9;
 	--d-green: #365142;
+}
+* {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
 }
 body {
 	overflow: hidden;

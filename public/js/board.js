@@ -6,8 +6,7 @@ var __webpack_exports__ = {};
 var tarefas = document.querySelectorAll('.tarefa');
 var colunasBody = document.querySelectorAll('.coluna-body');
 tarefas.forEach(function (tarefa) {
-  tarefa.addEventListener('dragstart', dragstart); // tarefa.addEventListener('drag', drag)
-
+  tarefa.addEventListener('dragstart', dragstart);
   tarefa.addEventListener('dragend', dragend);
 });
 
@@ -24,11 +23,8 @@ function dragend() {
   });
   this.classList.remove('is-dragging');
 }
-/* Aloha Moon */
-
 
 colunasBody.forEach(function (colunaBody) {
-  // colunaBody.addEventListener('dragenter', dragenter)
   colunaBody.addEventListener('dragover', dragover);
   colunaBody.addEventListener('dragleave', dragleave);
   colunaBody.addEventListener('drop', drop);

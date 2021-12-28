@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SkeletonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,9 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('projetos.destroy');
 		Route::put('/{id}', [ProjectController::class, 'update'])->name('projetos.update');
 	});
+});
+
+Route::prefix('skeleton')->group(function () {
+	Route::get("/css", function() { return Redirect::to("css/home.min.css"); })->name('skeleton.css');
+	Route::get("/js", function() { return Redirect::to("js/home.min.js"); })->name('skeleton.js');
 });

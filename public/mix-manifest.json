@@ -1,13 +1,16 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/board.js": "/js/board.js",
-    "/css/root.css": "/css/root.css",
+    "/js/skeleton.js": "/js/skeleton.js",
     "/css/home.css": "/css/home.css",
     "/css/projetos.css": "/css/projetos.css",
     "/css/board.css": "/css/board.css",
     "/css/app.css": "/css/app.css",
+    "/css/root.css": "/css/root.css",
+    "/fonts/opensans.css": "/fonts/opensans.css",
     "/css/index.css": "/css/index.css",
     "/css/projetos-form.css": "/css/projetos-form.css",
     "/css/projeto.css": "/css/projeto.css",
-    "/css/login.css": "/css/login.css"
+    "/css/login.css": "/css/login.css",
+    "/css/all.home.css": "/css/all.home.css"
 }
