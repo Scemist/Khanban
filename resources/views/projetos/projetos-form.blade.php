@@ -1,25 +1,17 @@
-@extends('templates/index')
+<div id="card">
+	<h2>Criar Novo Projeto</h2>
 
-@push('styles')
-	<link rel="stylesheet" href="{{ asset('css/projetos-form.css') }}">
-@endpush
+	<form action="{{ route('projetos.store') }}" method="POST">
+		@csrf
 
-@section('conteudo')
-	<div id="card">
-		<h2>Criar Novo Projeto</h2>
+		<fieldset>
+			<label>Título</label>
+			<input type="text" name="titulo">
 
-		<form action="{{ route('projetos.store') }}" method="POST">
-			@csrf
+			<label>Descrição</label>
+			<textarea rows="5" name="descricao"></textarea>
+		</fieldset>
 
-			<fieldset>
-				<label>Título</label>
-				<input type="text" name="titulo">
-
-				<label>Descrição</label>
-				<textarea rows="5" name="descricao"></textarea>
-			</fieldset>
-
-			<input type="submit" value="Cadastrar" id="cadastrar" class="btn green">
-		</form>
-	</div>
-@stop
+		<input type="submit" value="Cadastrar" id="cadastrar" class="btn green">
+	</form>
+</div>

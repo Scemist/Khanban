@@ -52,7 +52,7 @@
 					Projetos
 				</button>
 				<ul>
-					<li><a href="{{ route('projetos.create') }}"><button>Criar Projeto</button></a></li>
+					<li><button id="criar-projeto">Criar Projeto</button></li>
 					<li><a href="{{ route('projetos.index') }}"><button>Gerenciar</button></a></li>
 				</ul>
 			</div>
@@ -79,6 +79,46 @@
 
 		@stack('scripts')
 		<script>
+			const main = document.querySelector('main')
+			const criarProjeto = document.querySelector('#criar-projeto')
+			criarProjeto.addEventListener('click', () => { getPage() })
+
+			const getPage = function () {
+				// main.innerHTML = 'Loading'
+				if (typeof(localStorage.criarForm) == 'undefined' || localStorage.pCssVersion < 1) {
+					fetch('{{ route("projetos.create") }}')
+						.then(pagina => pagina.text())
+						.then(pagina => { getAssets(pagina) })
+				} else {
+					getAssets(localStorage.criarForm)
+				}
+			}
+
+			const getAssets = function (pagina) {
+				if (typeof(localStorage.pCssVersion) == 'undefined' || localStorage.pCssVersion < 1) {
+					localStorage.clear()
+					fetch('{{ asset('css/projetos-form.css') }}')
+						.then(css => css.text())
+						.then(css => {
+							loadPage('criarForm', css, pagina)
+							localStorage.setItem('pCssVersion', 1.0)
+							localStorage.setItem('pCss', css)
+							localStorage.setItem('criarForm', pagina)
+						})
+				} else {
+					loadPage('criarForm', localStorage.pCss, localStorage.criarForm)
+				}
+			}
+
+			function loadPage (rota, css, pagina) {
+				console.log('here')
+				const style = document.createElement('style')
+				style.textContent = css
+				main.innerHTML = pagina
+				// window.history.pushState('page2', 'Title', '/projetos/novo')
+				document.head.append(style)
+			}
+
 			const navMobile = function () {
 				const burger = document.querySelector('#burger')
 				const aside = document.querySelector('aside')
