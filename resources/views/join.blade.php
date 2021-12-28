@@ -1,16 +1,22 @@
 @extends('templates/home')
 
-@push('styles')
-	<link rel="stylesheet" href="{{ asset('css/login.css') }}">
-@endpush
-
 @section('conteudo')
 	<div class="card">
-		<h2>Faça login para acessar o sistema</h2>
+		<h2>Cadastre-se e tenha acesso a tudo</h2>
 
 		<form action="{{ route('auth.login') }}" method="POST">
 			@csrf
 			<fieldset>
+				<div class="in-group nome">
+					<label>Nome e Sobrenome</label>
+					<input type="text" name="nome" class="in">
+				</div>
+			
+				<div class="in-group celular">
+					<label>Celular</label>
+					<input type="text" name="celular" class="in">
+				</div>
+			
 				<div class="in-group email">
 					<label>Email</label>
 					<input type="email" name="email" class="in">
@@ -22,7 +28,7 @@
 				</div>
 
 				<div class="in-group entrar">
-					<input type="submit" value="Entrar" class="btn blue">
+					<input type="submit" value="Cadastrar" class="btn blue">
 				</div>
 			</fieldset>
 		</form>
@@ -33,6 +39,6 @@
 	</div>
 
 	<blockquote>
-		<p>Ainda não tem cadastro? <a href="{{ route('join') }}">Faça aqui!</a></p>
+		<p>Está de volta? <a href="{{ route('login') }}">Entre por aqui!</a></p>
 	</blockquote>
 @stop

@@ -27,3 +27,7 @@ fieldset {
 blockquote {
 	text-align: right;
 }
+label {
+	margin: 2px;
+	color: var(--o-blue);
+}

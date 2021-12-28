@@ -23,7 +23,7 @@
 			
 			<div>
 				<a href="{{ route('login') }}">Login</a>
-				<a href="" class="btn white">Criar Conta</a>
+				<a href="{{ route('join') }}" class="btn white">Criar Conta</a>
 			</div>
 		</nav>	
 

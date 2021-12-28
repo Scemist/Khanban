@@ -10,6 +10,7 @@
 	--blue: #4e3eb1;
 	--p-blue: #e4e2ec;
 	--d-blue: #3b336e;
+	--o-blue: #3b336ecc;
 
 	--red: #a52a2a;
 	--p-red: #e9e2e2;
@@ -174,4 +175,8 @@ fieldset {
 }
 blockquote {
 	text-align: right;
+}
+label {
+	margin: 2px;
+	color: var(--o-blue);
 }

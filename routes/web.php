@@ -20,6 +20,7 @@ Route::view('/', 'welcome')->name('inicio');
 
 // Classe de Autenticação
 Route::view('/login', 'login')->name('login');
+Route::view('/cadastro', 'join')->name('join');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
