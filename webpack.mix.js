@@ -12,41 +12,18 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/root.css', 'public/css', [
-    ])
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/board.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/projetos.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/home.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/login.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/projeto.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/projetos-form.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/css/index.css', 'public/css', [
-        //
-    ])
-    .postCss('resources/fonts/opensans.css', 'public/fonts', [
-        //
-    ])
-    .js('resources/js/board.js', 'public/js', [
-        //
-    ])
-    .js('resources/js/skeleton.js', 'public/js', [
-        //
-    ]);
+	.postCss('resources/css/app.css', 'public/css')
+    .postCss('resources/css/board.css', 'public/css')
+    .postCss('resources/css/criar.css', 'public/css')
+    .postCss('resources/css/home.css', 'public/css')
+    .postCss('resources/css/index.css', 'public/css')
+    .postCss('resources/css/lista.css', 'public/css')
+    .postCss('resources/css/login.css', 'public/css')
+    .postCss('resources/css/projeto.css', 'public/css')
+    .postCss('resources/css/root.css', 'public/css')
+    .postCss('resources/fonts/opensans.css', 'public/fonts')
+    .js('resources/js/board.js', 'public/js')
+    .js('resources/js/skeleton.js', 'public/js');
 
 // mix.combine('public/css', 'resources/css/all-files.css');
 mix.combine([

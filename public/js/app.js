@@ -19307,6 +19307,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/lista.css":
+/*!*********************************!*\
+  !*** ./resources/css/lista.css ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/login.css":
 /*!*********************************!*\
   !*** ./resources/css/login.css ***!
@@ -19333,10 +19346,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/index.css":
-/*!*********************************!*\
-  !*** ./resources/css/index.css ***!
-  \*********************************/
+/***/ "./resources/css/root.css":
+/*!********************************!*\
+  !*** ./resources/css/root.css ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19350,19 +19363,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./resources/fonts/opensans.css ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/css/root.css":
-/*!********************************!*\
-  !*** ./resources/css/root.css ***!
-  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19398,10 +19398,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/projetos.css":
-/*!************************************!*\
-  !*** ./resources/css/projetos.css ***!
-  \************************************/
+/***/ "./resources/css/criar.css":
+/*!*********************************!*\
+  !*** ./resources/css/criar.css ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19415,6 +19415,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./resources/css/home.css ***!
   \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/index.css":
+/*!*********************************!*\
+  !*** ./resources/css/index.css ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19740,15 +19753,16 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/index": 0,
 /******/ 			"css/home": 0,
-/******/ 			"css/projetos": 0,
+/******/ 			"css/criar": 0,
 /******/ 			"css/board": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/root": 0,
 /******/ 			"fonts/opensans": 0,
-/******/ 			"css/index": 0,
+/******/ 			"css/root": 0,
 /******/ 			"css/projeto": 0,
-/******/ 			"css/login": 0
+/******/ 			"css/login": 0,
+/******/ 			"css/lista": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -19798,16 +19812,17 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/root.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/board.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/projetos.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/home.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/login.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/projeto.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/css/index.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/home","css/projetos","css/board","css/app","css/root","fonts/opensans","css/index","css/projeto","css/login"], () => (__webpack_require__("./resources/fonts/opensans.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/board.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/criar.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/home.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/index.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/lista.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/login.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/projeto.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/css/root.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/index","css/home","css/criar","css/board","css/app","fonts/opensans","css/root","css/projeto","css/login","css/lista"], () => (__webpack_require__("./resources/fonts/opensans.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

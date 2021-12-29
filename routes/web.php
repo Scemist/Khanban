@@ -27,9 +27,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 // Classe de Projeto
 Route::group(['middleware' => 'auth'], function() {
 	Route::prefix('projetos')->group(function () {
-		Route::view('board', 'board')->name('projetos.board');
-		Route::view('/criar', 'projetos.projetos-form')->name('projetos.create');
-		Route::get('/', [ProjectController::class, 'index'])->name('projetos.index');
+		Route::view('/', 'templates/index')->name('projetos.index');
+		Route::get('/lista/pulse', [ProjectController::class, 'index'])->name('projetos.lista');
+		Route::view('/criar/pulse', 'projetos/projetos-form')->name('projetos.criar');
+		Route::view('/board/pulse', 'board');
 		Route::get('/{id}', [projectController::class, 'show'])->whereNumber('id')->name('projetos.show');
 		Route::post('/', [ProjectController::class, 'store'])->name('projetos.store');
 		Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('projetos.destroy');

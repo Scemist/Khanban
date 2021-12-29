@@ -1,0 +1,34 @@
+.card {
+	background: white;
+	box-shadow: 1px 1px 10px lightgray;
+	border-radius: 5px;
+	min-width: 50vw;
+	display: inline-block;
+	padding: 1.5rem 2rem 2rem 2rem;
+}
+main {
+	text-align: center;
+}
+table {
+	width: 100%;
+}
+thead tr {
+	background: #dce2ec;
+}
+table, th, td {
+	border-bottom: 1px solid gray	;
+	border-collapse: collapse;
+	padding: 0.8rem;
+	text-align: left;
+}
+tbody tr:hover {
+	background: #dce2ec;;
+}
+#editar {
+	padding: 6px 10px;
+	border: none;
+	background: darkgoldenrod;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+}

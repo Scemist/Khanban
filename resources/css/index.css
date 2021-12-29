@@ -146,6 +146,7 @@ nav a {
 	padding: 0.4rem;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 nav a svg {
 	margin: 3px;
