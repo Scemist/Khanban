@@ -89,5 +89,3 @@
 		</div>
 	</article>
 </section>
-
-<script src="{{ asset('js/board.js') }}"></script>

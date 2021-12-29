@@ -100,36 +100,29 @@
 			projetos.addEventListener('click', () => { initPage('lista') })
 
 			const initPage = function (rota) {
-				let hasPage = (!localStorage.getItem(rota)) ? false : true
-				let hasCss = (!localStorage.getItem(`${rota}Css`)) ? false : true
-
-				if (hasPage == true && hasCss == true) {		  // Carrega do local
-					getPage(rota, false, false)
-				} else if (hasPage == false && hasCss == false) { // Requere os dois
-					getPage(rota, true, true)
-				} else if (hasPage == false) {					  // Requere o html
-					getPage(rota, false, false)
-				} else {  										  // requere o css
-					getPage(rota, false, true)
-				}
+				document.querySelectorAll('#fileScript').forEach(e => { e.remove() })
+				let hasPage = (!localStorage.getItem(rota)) ? true : false
+				let hasCss = (!localStorage.getItem(`${rota}Css`)) ? true : false
+				let hasJs = (!localStorage.getItem(`${rota}Js`)) ? true : false
+				getPage(rota, hasPage, hasCss, hasJs)
 			}
 
-			const getPage = function (rota, page, css) {
+			const getPage = function (rota, page, css, js) {
 				if (page) {
 					console.log('Requisitando página')
 					fetch(`/projetos/${rota}/pulse`)
 						.then(pagina => pagina.text())
 						.then(pagina => { 
-							getCss(pagina, css, rota) 
+							getCss(pagina, css, rota, js) 
 							localStorage.setItem(rota, pagina)
 						})
 				} else {
 					console.log('Página local')
-					getCss(localStorage.getItem(rota), css, rota)
+					getCss(localStorage.getItem(rota), css, rota, js)
 				}
 			}
 
-			const getCss = function (page, css, rota) {
+			const getCss = function (page, css, rota, js) {
 				if (css == true) {
 					console.log('Requisitando CSS')
 					fetch(`../css/${rota}.css`)
@@ -144,15 +137,43 @@
 				}
 			}
 
-			const loadPage = function (page, css, rota) {
+			const loadPage = function (page, css, rota, js) {
 				document.querySelectorAll('style').forEach(e => { e.remove() })
 				const style = document.createElement('style')
 				style.textContent = css
 				main.innerHTML = page
 				window.history.pushState('page', 'Title', `/projetos/${rota}`)
 				document.head.append(style)
-			}
 
+				if (localStorage.getItem(`${rota}Js`)) {
+					console.log('JS local')
+					// eval(localStorage.getItem(`${rota}Js`))
+
+					let script = document.createElement('script')
+					script.setAttribute('id', 'fileScript')
+					script.innerHTML = localStorage.getItem(`${rota}Js`)
+					document.body.appendChild(script)
+				} else {
+					console.log(`/js/${rota}.js`)
+					const xhr = new XMLHttpRequest()
+
+					xhr.open('GET', `/js/${rota}.js`)
+					xhr.setRequestHeader('Content-Type', 'applicattion/x-www-form-urlencoded')
+					xhr.send()
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState === 4) {
+							if (xhr.status === 200) {
+								let script = document.createElement('script')
+								script.setAttribute('id', 'fileScript')
+								script.innerHTML = xhr.responseText
+								document.body.appendChild(script)						
+							} else {
+								console.log('No JS')
+							}
+						} 
+					}
+				}
+			}
 		</script>
 	</body>
 </html>
