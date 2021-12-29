@@ -41,3 +41,7 @@ Route::prefix('skeleton')->group(function () {
 	Route::get("/css", function() { return Redirect::to("css/home.min.css"); })->name('skeleton.css');
 	Route::get("/js", function() { return Redirect::to("js/home.min.js"); })->name('skeleton.js');
 });
+
+Route::get('/projetos/{any}', function ($search) {
+    return redirect()->route('projetos.index');
+})->where('any', '.*');
