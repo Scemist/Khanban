@@ -18,7 +18,7 @@ class AuthController extends Controller
 		if(Auth::attempt($credenciais)) {
 			$request->session()->regenerate();
 			
-			return redirect()->route('projetos.board');
+			return redirect()->route('projetos.index');
 		}
 
 		return redirect()->route('login');
@@ -27,6 +27,18 @@ class AuthController extends Controller
 	public function logout()
 	{
 		Auth::logout();
+
+		return redirect()->route('inicio');
+	}
+
+	public function join(Request $request)
+	{
+		$credencias = [
+			'nome' => $request->nome,
+			'celuar' => $request->celular,
+			'email' => $request->email,
+			'password' => $request->senha
+		];
 
 		return redirect()->route('inicio');
 	}

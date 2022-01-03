@@ -100,7 +100,7 @@
 			projetos.addEventListener('click', () => { initPage('lista') })
 
 			const initPage = function (rota) {
-				document.querySelectorAll('#fileScript').forEach(e => { e.remove() })
+				document.querySelectorAll('#fileScript').forEach(script => { script.remove() })
 				let hasPage = (!localStorage.getItem(rota)) ? true : false
 				let hasCss = (!localStorage.getItem(`${rota}Css`)) ? true : false
 				let hasJs = (!localStorage.getItem(`${rota}Js`)) ? true : false

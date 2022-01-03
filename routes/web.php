@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::view('/', 'templates/index')->name('projetos.index');
 		Route::get('/lista/pulse', [ProjectController::class, 'index'])->name('projetos.lista');
 		Route::view('/criar/pulse', 'projetos/projetos-form')->name('projetos.criar');
-		Route::view('/board/pulse', 'board');
+		Route::view('/board/{rota}', [ProjectController::class, 'board'])->name('projetos.board');
 		Route::get('/{id}', [projectController::class, 'show'])->whereNumber('id')->name('projetos.show');
 		Route::post('/', [ProjectController::class, 'store'])->name('projetos.store');
 		Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('projetos.destroy');

@@ -1,4 +1,4 @@
-localStorage.clear() // Se não comentado, irá forcar a atualizar 
+// localStorage.clear() // Se não comentado, irá forcar a atualizar 
 
 // Adicoina o css root ao HTML
 function addRootCss (cssRoot) {
@@ -42,7 +42,7 @@ if (typeof(localStorage.cssFontes) == 'undefined' || localStorage.cssVersion < 1
 else { 
 	console.log('Pegando do Local')
 	addRootCss(localStorage.cssFontes)
-} 
+}
 
 
 function localSize () {

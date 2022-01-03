@@ -3,9 +3,8 @@ var __webpack_exports__ = {};
 /*!**********************************!*\
   !*** ./resources/js/skeleton.js ***!
   \**********************************/
-localStorage.clear(); // Se não comentado, irá forcar a atualizar 
+// localStorage.clear() // Se não comentado, irá forcar a atualizar 
 // Adicoina o css root ao HTML
-
 function addRootCss(cssRoot) {
   var style = document.createElement('style');
   style.textContent = cssRoot;

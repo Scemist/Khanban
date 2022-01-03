@@ -48,4 +48,9 @@ class ProjectController extends Controller
 
 		return redirect()->route('projetos.index');
 	}
+
+	public function board($id)
+	{
+		return view('projetos.board', $id);
+	}
 }
