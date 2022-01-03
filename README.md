@@ -17,11 +17,11 @@
 
 ## Versões
 
-> Laravel Framework **8.74.0**
+> Laravel Framework **8.77.1**
 > 
-> PHP **8.0.12**
+> PHP **8.1.1**
 > 
-> Composer **2.1.14**
+> Composer **2.2.3**
 > 
 > PostgreSQL **14.0**
 
