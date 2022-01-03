@@ -4,7 +4,7 @@
 	<div class="card">
 		<h2>Cadastre-se e tenha acesso a tudo</h2>
 
-		<form action="{{ route('auth.login') }}" method="POST">
+		<form action="{{ route('user.join') }}" method="POST">
 			@csrf
 			<fieldset>
 				<div class="in-group nome">

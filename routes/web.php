@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SkeletonController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::view('/login', 'login')->name('login');
 Route::view('/cadastro', 'join')->name('join');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::post('/join', [UserController::class, 'store'])->name('user.join');
 
 // Classe de Projeto
 Route::group(['middleware' => 'auth'], function() {
