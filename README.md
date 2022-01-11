@@ -25,6 +25,45 @@
 > 
 > PostgreSQL **14.0**
 
+## Projeto
+
+<table>
+  <tr>
+    <th>Público</th>
+    <th colspan="2">Restrito</th>
+  </tr>
+  <tr>
+  	<th>Home</th>
+    <th>Início</th>
+    <th>Projeto</th>
+  </tr>
+  <tr>
+  	<td>Index</td>
+    <td>Projetos</td>
+    <td>Board</td>
+  </tr>
+  <tr>
+  	<td>Login</td>
+    <td>Conta</td>
+    <td>Tarefa</td>
+  </tr>
+  <tr>
+  	<td>Sobre</td>
+    <td>Perfil</td>
+    <td>Preferências Projeto</td>
+  </tr>
+  <tr>
+  	<td>Cadastro</td>
+    <td>Novo Projeto</td>
+    <td></td>
+  </tr>
+  <tr>
+  	<td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
 ## Sobre o Framework Laravel
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Project;
 
+/*
+|--------------------------------------------------------------------------
+| AuthController
+|--------------------------------------------------------------------------
+|
+| Responsável pela manipulação de projetos, os métodos são:
+| Index, Store, Show, Update, Destroy e Board 
+|
+*/
+
 class ProjectController extends Controller
 {
     public function index() 
@@ -49,8 +59,8 @@ class ProjectController extends Controller
 		return redirect()->route('projetos.index');
 	}
 
-	public function board($id)
+	public function board()
 	{
-		return view('projetos.board', $id);
+		return view('projetos.board');
 	}
 }

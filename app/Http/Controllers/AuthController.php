@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 
+/*
+|--------------------------------------------------------------------------
+| AuthController
+|--------------------------------------------------------------------------
+|
+| Responsável pela autenticação do usuario, os métodos são:
+| Login, Logout e Join
+|
+*/
+
 class AuthController extends Controller
 {
     public function login(Request $request)
