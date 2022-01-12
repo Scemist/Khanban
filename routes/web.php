@@ -17,13 +17,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Classe de Autenticação
 Route::view('/login', 'login')->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
-// Classe de Projeto
 Route::group(['middleware' => 'auth'], function() {
 	Route::view('/', 'index')->name('inicio');
 

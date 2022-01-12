@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-	<html lang="pt-BR">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="icon" href="{{ asset('favicon.svg') }}" sizes="any" type="image/svg+xml">
-		<link rel="stylesheet" href="{{ asset('css/root.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/project-all.css') }}">
+		@stack('styles')
 
 		<title>Khanban</title>
 	</head>
+
 	<body>
 		<nav>
 			<button id="burger">
@@ -77,103 +78,5 @@
 		</footer>		
 
 		@stack('scripts')
-		<script>
-			// Se a sessão acabou de ser criada (o usuario abriu a página agora)
-			if (typeof(sessionStorage.pLoaded) == 'undefined') {
-				// Se há localStoraged e se a versão é atualizada
-				if (typeof(localStorage.pIndex) == 'undefined' || localStorage.pVersion < 1) {
-					// Requisita o ternário atual
-					localStorage.clear()
-					// Requisita os ternários restantes
-				} else {
-					// Carrega o ternário atual
-				}
-			}
-
-			const main = document.querySelector('main')
-			const criarProjeto = document.querySelector('#criar-projeto')
-			const board = document.querySelector('#board')
-			const projetos = document.querySelector('#projetos')
-
-			criarProjeto.addEventListener('click', () => { initPage('criar') })
-			board.addEventListener('click', () => { initPage('board') })
-			projetos.addEventListener('click', () => { initPage('lista') })
-
-			const initPage = function (rota) {
-				document.querySelectorAll('#fileScript').forEach(script => { script.remove() })
-				let hasPage = (!localStorage.getItem(rota)) ? true : false
-				let hasCss = (!localStorage.getItem(`${rota}Css`)) ? true : false
-				let hasJs = (!localStorage.getItem(`${rota}Js`)) ? true : false
-				getPage(rota, hasPage, hasCss, hasJs)
-			}
-
-			const getPage = function (rota, page, css, js) {
-				if (page) {
-					console.log('Requisitando página')
-					fetch(`/projetos/${rota}/pulse`)
-						.then(pagina => pagina.text())
-						.then(pagina => { 
-							getCss(pagina, css, rota, js) 
-							localStorage.setItem(rota, pagina)
-						})
-				} else {
-					console.log('Página local')
-					getCss(localStorage.getItem(rota), css, rota, js)
-				}
-			}
-
-			const getCss = function (page, css, rota, js) {
-				if (css == true) {
-					console.log('Requisitando CSS')
-					fetch(`../css/${rota}.css`)
-						.then(cssN => cssN.text())
-						.then(cssN => { 
-							loadPage(page, cssN, rota) 
-							localStorage.setItem(`${rota}Css`, cssN)
-						})
-				} else {
-					console.log('CSS local')
-					loadPage(page, localStorage.getItem(`${rota}Css`), rota)
-				}
-			}
-
-			const loadPage = function (page, css, rota, js) {
-				document.querySelectorAll('style').forEach(e => { e.remove() })
-				const style = document.createElement('style')
-				style.textContent = css
-				main.innerHTML = page
-				window.history.pushState('page', 'Title', `/projetos/${rota}`)
-				document.head.append(style)
-
-				if (localStorage.getItem(`${rota}Js`)) {
-					console.log('JS local')
-					// eval(localStorage.getItem(`${rota}Js`))
-
-					let script = document.createElement('script')
-					script.setAttribute('id', 'fileScript')
-					script.innerHTML = localStorage.getItem(`${rota}Js`)
-					document.body.appendChild(script)
-				} else {
-					console.log(`/js/${rota}.js`)
-					const xhr = new XMLHttpRequest()
-
-					xhr.open('GET', `/js/${rota}.js`)
-					xhr.setRequestHeader('Content-Type', 'applicattion/x-www-form-urlencoded')
-					xhr.send()
-					xhr.onreadystatechange = function() {
-						if (xhr.readyState === 4) {
-							if (xhr.status === 200) {
-								let script = document.createElement('script')
-								script.setAttribute('id', 'fileScript')
-								script.innerHTML = xhr.responseText
-								document.body.appendChild(script)						
-							} else {
-								console.log('No JS')
-							}
-						} 
-					}
-				}
-			}
-		</script>
 	</body>
 </html>

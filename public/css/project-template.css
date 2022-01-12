@@ -1,0 +1,189 @@
+@media (max-width: 576px) {
+	body {
+		margin: 0;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 45vw 100vw;
+		grid-template-rows: 7vh auto 4rem;
+		transform: translate(-45vw);
+		overflow-x: hidden;
+	}
+	nav {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+		z-index: 1;
+		box-shadow: 1px 1px 10px rgb(179, 177, 177);
+	}
+	aside {
+		grid-column: 1 / 2;
+		grid-row: 1 / 4;
+	
+		background-color: #3b336e;
+		color: white;
+		z-index: 2;
+		padding: 1rem;
+		/* transform: translate(45vw); */
+	}
+	main {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+	
+		background-color: #f7f7f7;
+		color: #3b336e;
+		padding: 0 7%;
+		overflow: auto;
+	}
+	footer {
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	#burger .stick {
+		height: 2px;
+		width: 18px;
+		margin: 4px 0;
+		background: #3b336e;
+	}
+	#burger {
+		background: none;
+		padding: none;
+		border: none;
+		cursor: pointer;
+	}
+	.aside-ativa {
+		transform: translate(45vw);
+	}
+	.blur {
+		filter: blur(0.4rem);
+	}
+}
+@media (min-width: 577px) {
+	body {
+		margin: 0;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 13rem 1fr;
+		grid-template-rows: 7vh 87vh 6vh;
+	}
+	nav {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+		z-index: 1;
+		box-shadow: 1px 1px 10px rgb(179, 177, 177);
+	}
+	aside {
+		grid-column: 1 / 2;
+		grid-row: 1 / 3;
+	
+		background-color: #3b336e;
+		color: white;
+		z-index: 2;
+		padding: 1rem;
+	}
+	main {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+	
+		background-color: #f7f7f7;
+		color: #3b336e;
+		padding: 0 7%;
+		overflow: auto;
+	}
+	footer {
+		grid-column: 1 / 3;
+		grid-row: 3 / 4;
+	
+		background-color: #516173;
+		color: white;
+		padding: 1rem;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	#burger {
+		display: none;
+	}
+}
+
+/* --------------------- Anything in Time ---------------------- */
+
+input, textarea {
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}
+input:focus, textarea:focus {
+	outline: none;
+}
+nav a {
+	text-decoration: none;
+	color: white;
+	padding: 0.4rem;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+nav a svg {
+	margin: 3px;
+}
+aside ul, aside li {
+	list-style-type: none;
+}
+aside button {
+	background-color: #f7f7f7;
+	color: #3b336e;
+	padding: 0.6rem;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	width: 100%;
+}
+aside button:hover {
+	box-shadow: 1px 1px 1rem rgb(34, 16, 42);
+}
+aside ul {
+	display: flex;
+	flex-direction: column;
+}
+aside li {
+	padding: 3px;
+}
+footer p, footer a {
+	line-height: 0;
+	text-decoration: none;
+}
+footer p {
+	color: lightgray;
+}
+footer a {
+	color: white;
+}
+#logo {
+	margin-bottom: 1rem;
+	font-size: larger;
+}

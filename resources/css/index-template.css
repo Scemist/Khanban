@@ -18,7 +18,7 @@ nav {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background: var(--red);
+	background: var(--d-red);
 	position: sticky;
 	top: 0;
 	box-shadow: 0px 0px 8px gray;
@@ -47,7 +47,7 @@ main {
 	padding: 3vh 0;
 }
 footer {
-	background: var(--green);
+	background: var(--blue);
 	color: rgb(211, 207, 189);
 	display: flex;
 	align-items: center;

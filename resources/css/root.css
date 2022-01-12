@@ -6,20 +6,20 @@
 
 	--smoke: whitesmoke;
 
-	--blue: #4e3eb1;
+	--blue: #2A2275;
 	--p-blue: #e4e2ec;
 	--d-blue: #3b336e;
 	--o-blue: #3b336ecc;
 
-	--red: #a52a2a;
+	--red: #DB3E34;
 	--p-red: #e9e2e2;
-	--d-red: #690000;
+	--d-red: #4F1131;
 
-	--yellow: #e1b532;
+	--yellow: #F0E445;
 	--p-yellow: #e9e7e1;
 	--d-yellow: #5f532e;
 
-	--green: #2e8b57;
+	--green: #009990;
 	--p-green: #d2e1d9;
 	--d-green: #365142;
 }
@@ -55,7 +55,10 @@ body {
 	background-color: var(--smoke);
 	color: var(--d-blue);
 }
-
+.svg-blue {
+	fill: var(--p-blue);
+	cursor: pointer;
+}
 .btn {
 	padding: 0.7rem 1rem;
 	margin: 0.1rem;
@@ -65,8 +68,6 @@ body {
 	min-width: 6rem;
 	text-align: center;
 	text-decoration: none;
-	background: #001b4b;
-	color: white;
 }
 .btn:hover {
 	box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5);
@@ -74,7 +75,7 @@ body {
 .in {
 	padding: 0.7rem 1rem;
 	border: 1px solid gray;
-	/* border-radius: 0.3rem; */
+	border-radius: 0.3rem;
 	background-color: #97cadb;
 	border: none;
 	cursor: pointer;	

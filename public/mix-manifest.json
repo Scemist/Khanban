@@ -2,15 +2,15 @@
     "/js/app.js": "/js/app.js",
     "/js/board.js": "/js/board.js",
     "/js/skeleton.js": "/js/skeleton.js",
-    "/css/index.css": "/css/index.css",
-    "/css/home.css": "/css/home.css",
-    "/css/criar.css": "/css/criar.css",
-    "/css/board.css": "/css/board.css",
-    "/css/app.css": "/css/app.css",
-    "/fonts/opensans.css": "/fonts/opensans.css",
     "/css/root.css": "/css/root.css",
-    "/css/projeto.css": "/css/projeto.css",
     "/css/login.css": "/css/login.css",
     "/css/lista.css": "/css/lista.css",
-    "/css/all.home.css": "/css/all.home.css"
+    "/css/index-template.css": "/css/index-template.css",
+    "/css/criar.css": "/css/criar.css",
+    "/css/board.css": "/css/board.css",
+    "/fonts/opensans.css": "/fonts/opensans.css",
+    "/css/projeto.css": "/css/projeto.css",
+    "/css/project-template.css": "/css/project-template.css",
+    "/css/project-all.css": "/css/project-all.css",
+    "/css/index-all.css": "/css/index-all.css"
 }
