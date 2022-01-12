@@ -1,15 +1,20 @@
+body {
+	background-image: linear-gradient(to right bottom, #001b48, #02457a);
+	background-repeat: no-repeat;
+}
 main {
 	display: flex;
 	flex-grow: 1;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	height: 100vh;
 }
 .card {
 	background: white;
 	padding: 2rem 3rem;
-	border-radius: 7px;
-	box-shadow: 1px 1px 12px rgb(182, 182, 182);
+	/* border-radius: 7px; */
+	box-shadow: 1px 1px 12px rgb(0, 0, 0, 0.5);
 	min-width: 20vw;
 }
 fieldset {
@@ -26,6 +31,10 @@ fieldset {
 }
 blockquote {
 	text-align: right;
+	color: lightgray;
+}
+blockquote a {
+	color: snow;
 }
 label {
 	margin: 2px;

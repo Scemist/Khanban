@@ -1,9 +1,11 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap);
 :root {
 	font-size: 16px;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
 	        user-select: none;
+	font-family: 'Open Sans', sans-serif;
 
 	--smoke: whitesmoke;
 
@@ -25,6 +27,7 @@
 	--d-green: #365142;
 }
 * {
+	outline: none;
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
@@ -32,6 +35,8 @@
 }
 body {
 	overflow: hidden;
+	padding: 0;
+	margin: 0;
 }
 .green {
 	background-color: var(--green);
@@ -63,6 +68,8 @@ body {
 	min-width: 6rem;
 	text-align: center;
 	text-decoration: none;
+	background: #001b4b;
+	color: white;
 }
 .btn:hover {
 	box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5);
@@ -70,6 +77,11 @@ body {
 .in {
 	padding: 0.7rem 1rem;
 	border: 1px solid gray;
-	border-radius: 0.3rem;
+	/* border-radius: 0.3rem; */
+	background-color: #97cadb;
+	border: none;
 	cursor: pointer;	
+}
+fieldset {
+	border: none;
 }

@@ -27,6 +27,24 @@
 
 ## Projeto
 
+Enquanto a branch **master** foi mudada para um sistema Khanban fechado.
+A branch **public** está designada com o projeto original de ser um Khanban publico.
+
+### Branch **master**
+
+* Login
+* Index
+  * Projetos
+  * Novo Projeto
+  * Conta
+  * Perfil
+  * Cadastro de Usuário
+* Dashboard
+  * Tarefa
+  * Preferencias do Projeto
+
+### Branch **public**
+
 <table>
   <tr>
     <th>Público</th>

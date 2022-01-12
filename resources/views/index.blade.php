@@ -1,4 +1,4 @@
-@extends('templates/home')
+@extends('templates/index-template')
 
 @push('styles')
 	<style>

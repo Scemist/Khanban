@@ -17,27 +17,25 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::view('/', 'welcome')->name('inicio');
-
 // Classe de Autenticação
 Route::view('/login', 'login')->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::view('/cadastro', 'join')->name('join');
-Route::post('/join', [UserController::class, 'store'])->name('user.join');
+
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // Classe de Projeto
 Route::group(['middleware' => 'auth'], function() {
-	Route::prefix('projeto')->group(function () {
-		Route::view('/', 'templates/index')->name('projetos.index');
-		Route::get('/lista/pulse', [ProjectController::class, 'index'])->name('projetos.lista');
-		Route::view('/criar/pulse', 'projetos/projetos-form')->name('projetos.criar');
-		Route::get('/board', [ProjectController::class, 'board'])->name('projetos.board');
-		Route::get('/{id}', [projectController::class, 'show'])->whereNumber('id')->name('projetos.show');
-		Route::post('/', [ProjectController::class, 'store'])->name('projetos.store');
-		Route::delete('/{id}', [ProjectController::class, 'destroy'])->name('projetos.destroy');
-		Route::put('/{id}', [ProjectController::class, 'update'])->name('projetos.update');
-	});
+	Route::view('/', 'index')->name('inicio');
+
+	Route::view('/usuario/novo', 'join')->name('join');
+	Route::post('/usuario/novo', [UserController::class, 'store'])->name('user.join');
+	
+	Route::get('/projetos', [ProjectController::class, 'index'])->name('projetos.lista');
+
+	Route::get('/board/{id}', [ProjectController::class, 'project/board'])->name('projetos.board');
+
+	Route::view('/projeto/novo', 'projetos/projetos-form')->name('projetos.criar');
+	Route::post('/projeto/novo', [ProjectController::class, 'store'])->name('projetos.store');
 });
 
 Route::prefix('skeleton')->group(function () {
@@ -45,6 +43,6 @@ Route::prefix('skeleton')->group(function () {
 	Route::get("/js", function() { return Redirect::to("js/home.min.js"); })->name('skeleton.js');
 });
 
-Route::get('/projetos/{any}', function ($search) {
-    return redirect()->route('projetos.index');
+Route::get('/{any}', function ($search) {
+    return redirect()->route('inicio');
 })->where('any', '.*');
