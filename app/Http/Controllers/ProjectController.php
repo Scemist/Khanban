@@ -22,7 +22,7 @@ class ProjectController extends Controller
 	{
 		$projetos = Project::get();
 
-		return view('projetos.projetos', ['projetos' => $projetos]);
+		return view('projects', ['projetos' => $projetos]);
 	}
 
 	public function store(Request $request)

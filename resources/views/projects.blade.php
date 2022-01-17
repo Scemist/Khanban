@@ -1,4 +1,7 @@
-<h1>Projetos</h1>
+@extends('templates/project-template')
+@section('conteudo')
+
+<h1>Projetos que Estou</h1>
 
 <div class="card">
 	<table>
@@ -15,9 +18,11 @@
 			<tr>
 				<th>{{ $projeto->titulo }}</th>
 				<td>{{ $projeto->descricao }}</td>
-				<td><a href="{{ route('projetos.show', $projeto->id) }}" class="btn yellow">Editar</a></td>
+				<td><a href="{{ route('projetos.board', $projeto->id) }}" class="btn yellow">Entrar</a></td>
 			</tr>
 			@endforeach
 		</tbody>
 	</table>
 </div>
+
+@stop
