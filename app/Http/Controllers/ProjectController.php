@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 use App\Models\Project;
 
 /*
@@ -21,6 +22,13 @@ class ProjectController extends Controller
     public function index() 
 	{
 		$projetos = Project::get();
+
+		{ /* No leitor de logs */
+			
+			echo Redis::get('exportador:sascar');
+		}
+
+		die;
 
 		return view('projects', ['projetos' => $projetos]);
 	}
