@@ -23,7 +23,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::group(['middleware' => 'auth'], function() {
-	// Route::view('/', 'index')->name('inicio');
 	Route::get('/', [UserController::class, 'index'])->name('inicio');
 
 	Route::view('/usuario/novo', 'join')->name('join');
@@ -33,7 +32,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/board/{id}', [ProjectController::class, 'project/board'])->name('projetos.board');
 
-	Route::view('/projeto/novo', 'projetos/projetos-form')->name('projetos.criar');
+	Route::view('/projeto/novo', 'project-form')->name('projetos.criar');
 	Route::post('/projeto/novo', [ProjectController::class, 'store'])->name('projetos.store');
 });
 

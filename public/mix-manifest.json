@@ -4,7 +4,6 @@
     "/js/skeleton.js": "/js/skeleton.js",
     "/css/root.css": "/css/root.css",
     "/css/lista.css": "/css/lista.css",
-    "/css/index.css": "/css/index.css",
     "/css/index-template.css": "/css/index-template.css",
     "/css/criar.css": "/css/criar.css",
     "/css/board.css": "/css/board.css",
@@ -13,5 +12,6 @@
     "/css/project-template.css": "/css/project-template.css",
     "/css/login.css": "/css/login.css",
     "/css/project-all.css": "/css/project-all.css",
-    "/css/index-all.css": "/css/index-all.css"
+    "/css/index-all.css": "/css/index-all.css",
+    "/css/index.css": "/css/index.css"
 }

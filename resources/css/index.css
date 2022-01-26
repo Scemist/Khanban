@@ -30,13 +30,22 @@ main {
 	display: flex;
 }
 figure {
-	padding: 1rem 1.5rem;
 	background-color: var(--d-blue);
 	border-radius: 5px;
+	display: flex;
 }
 figure a {
 	text-decoration: none;
 	color: white;
+	padding: 1rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+}
+figure p {
+	flex: 1;
+	overflow: hidden;
+	margin: 0;
+	line-height: normal;
 }
 h3 {
 	font-size: 12px;
@@ -60,4 +69,19 @@ main > * {
 }
 .projetos > *:hover {
 	filter: drop-shadow(1px 1px 10px rgba(70, 70, 70, 0.739));
+}
+figure:last-child {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+figure:last-child a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+figure:last-child svg {
+	height: 60%;
+	width: 60%;
 }
