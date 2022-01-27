@@ -15,6 +15,10 @@
 5. Run `php artisan migrate` in project folder
 6. Run `php artisan serve` to run the server and access by `localhost`
 
+### To Develop
+
+1. Run `npm run watch` in a separated terminal, so you'll be able to edit assets in */resources* and the _Laravel Mix_ will compile to */public* folder in each modification
+
 ## Versões
 
 > Laravel Framework **8.77.1**
@@ -73,11 +77,6 @@ A branch **public** está designada com o projeto original de ser um Khanban pub
   <tr>
   	<td>Cadastro</td>
     <td>Novo Projeto</td>
-    <td></td>
-  </tr>
-  <tr>
-  	<td></td>
-    <td></td>
     <td></td>
   </tr>
 </table>
