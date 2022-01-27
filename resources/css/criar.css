@@ -9,9 +9,11 @@ form > input {
 fieldset input, textarea {
 	padding: 0.6rem;
 	border-radius: 5px;
-	border: 1px solid gray;
+	border: none;
+	background: var(--p-blue);
 	margin: 0.7rem;
 	font-size: 1rem;
+	font-family: 'Open Sans', sans-serif;
 }
 textarea {
 	resize: none;
@@ -26,7 +28,7 @@ fieldset {
 	border-radius: 9px;
 	box-shadow: 1px 1px 10px lightgray;
 	margin: 1.2rem;
-	padding: 1.5rem;
+	padding: 1.8rem 2.5rem;
 }	
 main {
 	display: flex;

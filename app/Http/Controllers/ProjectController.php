@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
 
 /*
@@ -30,9 +31,10 @@ class ProjectController extends Controller
 		$projeto = new Project;
 		$projeto->titulo = $request->titulo;
 		$projeto->descricao = $request->descricao;
+		$projeto->criador = Auth::id();
 		$projeto->save();
 
-		return redirect()->route('projetos.index');
+		return redirect()->route('inicio');
 	}
 
 	public function show($id)
@@ -61,6 +63,6 @@ class ProjectController extends Controller
 
 	public function board()
 	{
-		return view('projetos.board');
+		return view('project.board');
 	}
 }

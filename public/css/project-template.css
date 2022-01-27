@@ -17,7 +17,7 @@
 		flex-direction: row;
 		justify-content: space-around;
 	
-		background-color: #516173;
+		background-color: var(--d-blue);
 		color: white;
 		padding: 1rem;
 		z-index: 1;
@@ -27,10 +27,11 @@
 		grid-column: 1 / 2;
 		grid-row: 1 / 4;
 	
-		background-color: #3b336e;
+		background-color: var(--d-red);
 		color: white;
 		z-index: 2;
 		padding: 1rem;
+		filter: drop-shadow(2px 4px 6px rgb(0, 0, 0, 0.3));
 		/* transform: translate(45vw); */
 	}
 	main {
@@ -46,13 +47,14 @@
 		grid-column: 2 / 3;
 		grid-row: 3 / 4;
 	
-		background-color: #516173;
+		background-color: var(--d-blue);
 		color: white;
 		padding: 1rem;
 	
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		filter: drop-shadow(2px 0px 6px rgb(0, 0, 0, 0.3));
 	}
 	#burger .stick {
 		height: 2px;
@@ -80,7 +82,7 @@
 		padding: 0;
 		display: grid;
 		grid-template-columns: 13rem 1fr;
-		grid-template-rows: 7vh 87vh 6vh;
+		grid-template-rows: 7vh 86vh 7vh;
 	}
 	nav {
 		grid-column: 2 / 3;
@@ -90,7 +92,7 @@
 		flex-direction: row;
 		justify-content: space-around;
 	
-		background-color: #516173;
+		background-color: var(--d-blue);
 		color: white;
 		padding: 1rem;
 		z-index: 1;
@@ -100,10 +102,11 @@
 		grid-column: 1 / 2;
 		grid-row: 1 / 3;
 	
-		background-color: #3b336e;
+		background-color: var(--d-red);
 		color: white;
 		z-index: 2;
 		padding: 1rem;
+		filter: drop-shadow(2px 4px 6px rgb(0, 0, 0, 0.3));
 	}
 	main {
 		grid-column: 2 / 3;
@@ -118,13 +121,14 @@
 		grid-column: 1 / 3;
 		grid-row: 3 / 4;
 	
-		background-color: #516173;
+		background-color: var(--d-blue);
 		color: white;
 		padding: 1rem;
 	
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		filter: drop-shadow(2px 0px 6px rgb(0, 0, 0, 0.3));
 	}
 	#burger {
 		display: none;
@@ -142,21 +146,25 @@ input:focus, textarea:focus {
 }
 nav a {
 	text-decoration: none;
-	color: white;
+	color: #d8d3e8;
 	padding: 0.4rem;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
 }
+nav a:hover {
+	text-decoration: underline;
+}
 nav a svg {
 	margin: 3px;
+	fill: #d8d3e8;
 }
 aside ul, aside li {
 	list-style-type: none;
 }
 aside button {
-	background-color: #f7f7f7;
-	color: #3b336e;
+	background-color: #420c34;
+	color: #ffeded;;
 	padding: 0.6rem;
 	border: none;
 	border-radius: 3px;

@@ -1,4 +1,14 @@
+@extends('templates/project-template')
 
+@push('styles')
+	<link rel="stylesheet" href="{{ asset('css/board.css') }}">
+@endpush
+
+@push('scripts')
+	<script src="{{ asset('js/board.js') }}"></script>
+@endpush
+
+@section('conteudo')
 <section>
 	<article>
 		<div class="coluna-head">
@@ -89,3 +99,4 @@
 		</div>
 	</article>
 </section>
+@stop

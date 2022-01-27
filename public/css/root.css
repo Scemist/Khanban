@@ -71,9 +71,14 @@ body {
 	min-width: 6rem;
 	text-align: center;
 	text-decoration: none;
+	transition: box-shadow 170ms ease;
 }
 .btn:hover {
 	box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5);
+}
+.btn:focus-visible {
+	outline: 1px solid var(--d-red);
+	filter: brightness(90%);
 }
 .in {
 	padding: 0.7rem 1rem;

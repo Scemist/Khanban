@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth'], function() {
 	
 	Route::get('/projetos', [ProjectController::class, 'index'])->name('projetos.lista');
 
-	Route::get('/board/{id}', [ProjectController::class, 'project/board'])->name('projetos.board');
+	Route::get('/board/{id}', [ProjectController::class, 'board'])->name('projetos.board');
 
 	Route::view('/projeto/novo', 'project-form')->name('projetos.criar');
 	Route::post('/projeto/novo', [ProjectController::class, 'store'])->name('projetos.store');
