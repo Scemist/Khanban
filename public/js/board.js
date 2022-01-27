@@ -22,6 +22,7 @@ function dragend() {
     return colunaBody.classList.remove('highlight');
   });
   this.classList.remove('is-dragging');
+  window.alert('Okay');
 }
 
 colunasBody.forEach(function (colunaBody) {

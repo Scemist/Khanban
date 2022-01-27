@@ -14,6 +14,7 @@ function dragstart() {
 function dragend() {
 	colunasBody.forEach(colunaBody => colunaBody.classList.remove('highlight'))
 	this.classList.remove('is-dragging')
+	window.alert('Okay')
 }
 
 colunasBody.forEach(colunaBody => {
