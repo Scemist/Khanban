@@ -1,29 +1,41 @@
 const tarefas = document.querySelectorAll('.tarefa')
-const colunasBody = document.querySelectorAll('.coluna-body')
+const colunas = document.querySelectorAll('.coluna-body')
+const rodapes = document.querySelectorAll('.coluna-footer')
 
-class Kanboard {
-	static dragstart() {
-		colunasBody.forEach(colunaBody => colunaBody.classList.add('highlight'))
-		this.classList.add('is-dragging')
-	}
-	static dragend() {
-		colunasBody.forEach(colunaBody => colunaBody.classList.remove('highlight'))
-		this.classList.remove('is-dragging')
-		Kanboard.reorderlist()
-	}
-	static dragover() {
-		this.classList.add('over')
+class Kanban {
+	static rodapeDragover() {
 		const tarefaSendoArrastada = document.querySelector('.is-dragging')
-		this.prepend(tarefaSendoArrastada)
+		this.before(tarefaSendoArrastada)
 	}
-	static dragleave() {
+	static colunaDragover() {
+		this.classList.add('over')
+	}
+	static colunaDragleave() {
 		this.classList.remove('over')
 	}
-	static drop() {
-		this.classList.remove('over')
+	static tarefaDragover() { 
+		const tarefaSendoArrastada = document.querySelector('.is-dragging')
+		
+		if(tarefaSendoArrastada.getAttribute('data-position') > this.getAttribute('data-position')) {
+			this.before(tarefaSendoArrastada)
+		} else {
+			this.after(tarefaSendoArrastada)
+		}
+
+		Kanban.reorderIndex()
 	}
-	static reorderlist() {
-		colunasBody.forEach(coluna => {
+	static tarefaDragstart() { 
+		this.style.opacity = '0.4'
+		this.classList.add('is-dragging')
+		colunas.forEach(coluna => coluna.classList.add('highlight'))
+	}
+	static tarefaDragend() { 
+		this.style.opacity = '1'
+		this.classList.remove('is-dragging')
+		colunas.forEach(coluna => coluna.classList.remove('highlight'))
+	}
+	static reorderIndex() {
+		colunas.forEach(coluna => {
 			let count = 1
 			let tarefas = Array.from(coluna.children)
 			tarefas.forEach(tarefa => {
@@ -34,13 +46,17 @@ class Kanboard {
 	}
 }
 
-tarefas.forEach(tarefa => {
-	tarefa.addEventListener('dragstart', Kanboard.dragstart) // Acende a luz das colunas
-	tarefa.addEventListener('dragend', Kanboard.dragend) // Apaga a luz das colunas
+rodapes.forEach(rodape => 
+	rodape.addEventListener('dragover', Kanban.rodapeDragover)
+)
+
+colunas.forEach(coluna => {
+	coluna.addEventListener('dragover', Kanban.colunaDragover)
+	coluna.addEventListener('dragleave', Kanban.colunaDragleave)	
 })
 
-colunasBody.forEach(colunaBody => {
-	colunaBody.addEventListener('dragover', Kanboard.dragover) // Realça a coluna atual
-	colunaBody.addEventListener('dragleave', Kanboard.dragleave) // Tira o realce da coluna atual
-	colunaBody.addEventListener('drop', Kanboard.drop) // Tira o realce da coluna atual
+tarefas.forEach(tarefa => {
+	tarefa.addEventListener('dragover', Kanban.tarefaDragover)
+	tarefa.addEventListener('dragstart', Kanban.tarefaDragstart)
+	tarefa.addEventListener('dragend', Kanban.tarefaDragend)
 })

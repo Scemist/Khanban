@@ -10,51 +10,65 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var tarefas = document.querySelectorAll('.tarefa');
-var colunasBody = document.querySelectorAll('.coluna-body');
+var colunas = document.querySelectorAll('.coluna-body');
+var rodapes = document.querySelectorAll('.coluna-footer');
 
-var Kanboard = /*#__PURE__*/function () {
-  function Kanboard() {
-    _classCallCheck(this, Kanboard);
+var Kanban = /*#__PURE__*/function () {
+  function Kanban() {
+    _classCallCheck(this, Kanban);
   }
 
-  _createClass(Kanboard, null, [{
-    key: "dragstart",
-    value: function dragstart() {
-      colunasBody.forEach(function (colunaBody) {
-        return colunaBody.classList.add('highlight');
-      });
-      this.classList.add('is-dragging');
-    }
-  }, {
-    key: "dragend",
-    value: function dragend() {
-      colunasBody.forEach(function (colunaBody) {
-        return colunaBody.classList.remove('highlight');
-      });
-      this.classList.remove('is-dragging');
-      Kanboard.reorderlist();
-    }
-  }, {
-    key: "dragover",
-    value: function dragover() {
-      this.classList.add('over');
+  _createClass(Kanban, null, [{
+    key: "rodapeDragover",
+    value: function rodapeDragover() {
       var tarefaSendoArrastada = document.querySelector('.is-dragging');
-      this.prepend(tarefaSendoArrastada);
+      this.before(tarefaSendoArrastada);
     }
   }, {
-    key: "dragleave",
-    value: function dragleave() {
+    key: "colunaDragover",
+    value: function colunaDragover() {
+      this.classList.add('over');
+    }
+  }, {
+    key: "colunaDragleave",
+    value: function colunaDragleave() {
       this.classList.remove('over');
     }
   }, {
-    key: "drop",
-    value: function drop() {
-      this.classList.remove('over');
+    key: "tarefaDragover",
+    value: function tarefaDragover() {
+      var tarefaSendoArrastada = document.querySelector('.is-dragging');
+
+      if (tarefaSendoArrastada.getAttribute('data-position') > this.getAttribute('data-position')) {
+        this.before(tarefaSendoArrastada);
+      } else {
+        this.after(tarefaSendoArrastada);
+      }
+
+      Kanban.reorderIndex();
     }
   }, {
-    key: "reorderlist",
-    value: function reorderlist() {
-      colunasBody.forEach(function (coluna) {
+    key: "tarefaDragstart",
+    value: function tarefaDragstart() {
+      this.style.opacity = '0.4';
+      this.classList.add('is-dragging');
+      colunas.forEach(function (coluna) {
+        return coluna.classList.add('highlight');
+      });
+    }
+  }, {
+    key: "tarefaDragend",
+    value: function tarefaDragend() {
+      this.style.opacity = '1';
+      this.classList.remove('is-dragging');
+      colunas.forEach(function (coluna) {
+        return coluna.classList.remove('highlight');
+      });
+    }
+  }, {
+    key: "reorderIndex",
+    value: function reorderIndex() {
+      colunas.forEach(function (coluna) {
         var count = 1;
         var tarefas = Array.from(coluna.children);
         tarefas.forEach(function (tarefa) {
@@ -65,20 +79,20 @@ var Kanboard = /*#__PURE__*/function () {
     }
   }]);
 
-  return Kanboard;
+  return Kanban;
 }();
 
-tarefas.forEach(function (tarefa) {
-  tarefa.addEventListener('dragstart', Kanboard.dragstart); // Acende a luz das colunas
-
-  tarefa.addEventListener('dragend', Kanboard.dragend); // Apaga a luz das colunas
+rodapes.forEach(function (rodape) {
+  return rodape.addEventListener('dragover', Kanban.rodapeDragover);
 });
-colunasBody.forEach(function (colunaBody) {
-  colunaBody.addEventListener('dragover', Kanboard.dragover); // Realça a coluna atual
-
-  colunaBody.addEventListener('dragleave', Kanboard.dragleave); // Tira o realce da coluna atual
-
-  colunaBody.addEventListener('drop', Kanboard.drop); // Tira o realce da coluna atual
+colunas.forEach(function (coluna) {
+  coluna.addEventListener('dragover', Kanban.colunaDragover);
+  coluna.addEventListener('dragleave', Kanban.colunaDragleave);
+});
+tarefas.forEach(function (tarefa) {
+  tarefa.addEventListener('dragover', Kanban.tarefaDragover);
+  tarefa.addEventListener('dragstart', Kanban.tarefaDragstart);
+  tarefa.addEventListener('dragend', Kanban.tarefaDragend);
 });
 /******/ })()
 ;

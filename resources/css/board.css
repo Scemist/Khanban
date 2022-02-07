@@ -37,6 +37,9 @@ article * {
 	display: flex;
 	cursor: pointer;
 }
+.coluna-footer {
+	height: 100%;
+}
 .is-dragging {
     opacity: 0.5;
 	/* background: var(--d-blue); */
