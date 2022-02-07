@@ -6,6 +6,7 @@ section {
 }
 .tarefa {
 	-webkit-user-drag:element;
+	min-height: 3rem;
 }
 .highlight {
 	background: var(--p-blue);
@@ -14,7 +15,7 @@ article {
 	flex-grow: 1;
 	width: 16%;
 	margin: 0.3rem;
-
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 }
