@@ -83,6 +83,7 @@ label {
 	cursor: pointer;
 	justify-content: space-between;
 	margin-bottom: 5px;
+	transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1);
 }
 /* .tarefa:hover {
 	background-color: #e3e3e3;
