@@ -25,12 +25,10 @@ class Kanban {
 		Kanban.reorderIndex()
 	}
 	static tarefaDragstart() { 
-		this.style.opacity = '0.4'
 		this.classList.add('is-dragging')
 		colunas.forEach(coluna => coluna.classList.add('highlight'))
 	}
 	static tarefaDragend() { 
-		this.style.opacity = '1'
 		this.classList.remove('is-dragging')
 		colunas.forEach(coluna => coluna.classList.remove('highlight'))
 	}

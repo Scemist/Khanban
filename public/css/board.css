@@ -3,14 +3,13 @@ section {
 	flex-direction: row;
 	flex-wrap: wrap;
 	height: 95%;
+	min-width: 1000px;
 }
 .tarefa {
-	-webkit-user-drag:element;
+	-webkit-user-drag: element;
 	min-height: 3rem;
 }
-.highlight {
-	background: var(--p-blue);
-}
+.highlight { background: var(--p-blue); }
 article {
 	flex-grow: 1;
 	width: 16%;
@@ -19,12 +18,8 @@ article {
 	display: flex;
 	flex-direction: column;
 }
-article * {
-	transition: 400ms;
-}
-.coluna-head {
-	padding: 0.8rem;
-}
+article * { transition: 400ms; }
+.coluna-head { padding: 0.8rem; }
 .coluna-body {
 	padding: 1rem;
 	border-radius: 5px;
@@ -38,24 +33,17 @@ article * {
 	display: flex;
 	cursor: pointer;
 }
-.coluna-footer {
-	height: 100%;
-}
+.coluna-footer { height: 100%; }
 .is-dragging {
-    opacity: 0.5;
-	/* background: var(--d-blue); */
+    opacity: 0.4;
 	cursor: help !important;
 }
 .over {
 	background-color: var(--p-green);
 	cursor: pointer !important;
 }
-.add-tarefa:hover {
-	box-shadow: 1px 1px 0.5rem rgb(161, 161, 161);
-}
-.add-tarefa svg {
-	margin-right: 10px;
-}
+.add-tarefa:hover { box-shadow: 1px 1px 0.5rem rgb(161, 161, 161); }
+.add-tarefa svg { margin-right: 10px; }
 label {
 	color: #9692b4;
 	display: inline-block;
@@ -63,21 +51,11 @@ label {
 	margin-bottom: 0.5rem;
 	padding-bottom: 3px;
 }
-#aguardando {
-	border-bottom: 3px solid mediumaquamarine;
-}
-#andamento {
-	border-bottom: 3px solid sandybrown;
-}
-#concluido {
-	border-bottom: 3px solid seagreen;
-}
-#espera {
-	border-bottom: 3px solid peru;
-}
-#cancelado {
-	border-bottom: 3px solid purple;
-}
+#aguardando { border-bottom: 3px solid mediumaquamarine; }
+#andamento { border-bottom: 3px solid sandybrown; }
+#concluido { border-bottom: 3px solid seagreen; }
+#espera { border-bottom: 3px solid peru; }
+#cancelado { border-bottom: 3px solid purple; }
 .tarefa {
 	border-radius: 7px;
 	background-color: #ffffff;
@@ -89,10 +67,10 @@ label {
 	margin-bottom: 5px;
 	transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1);
 }
-/* .tarefa:hover {
-	background-color: #e3e3e3;
+.tarefa:hover {
+	background-color: #e1e7ee;
 	box-shadow: none;
-} */
+}
 .data {
 	font-size: 0.7rem;
 	align-self: flex-end;

@@ -50,7 +50,6 @@ var Kanban = /*#__PURE__*/function () {
   }, {
     key: "tarefaDragstart",
     value: function tarefaDragstart() {
-      this.style.opacity = '0.4';
       this.classList.add('is-dragging');
       colunas.forEach(function (coluna) {
         return coluna.classList.add('highlight');
@@ -59,7 +58,6 @@ var Kanban = /*#__PURE__*/function () {
   }, {
     key: "tarefaDragend",
     value: function tarefaDragend() {
-      this.style.opacity = '1';
       this.classList.remove('is-dragging');
       colunas.forEach(function (coluna) {
         return coluna.classList.remove('highlight');

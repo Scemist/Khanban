@@ -20,12 +20,12 @@
 		</div>
 
 		<div class="coluna-body">
+			<div class="tarefa" draggable="true" data-position="1">
+				<div class="nome">Criação da Index</div>
+				<div class="data">15/12</div>
+			</div>
 			
-				<div class="tarefa" draggable="true" data-position="1">
-					<div class="nome">Criação da Index</div>
-					<div class="data">15/12</div>
-				</div>
-				<div class="coluna-footer"></div>
+			<div class="coluna-footer"></div>
 		</div>
 	</article>
 	
@@ -39,12 +39,12 @@
 		</div>
 
 		<div class="coluna-body">
-			
-				<div class="tarefa" draggable="true" data-position="1">
-					<div class="nome">Estilização da Página Sobre</div>
-					<div class="data">15/12</div>
-				</div>
-				<div class="coluna-footer"></div>
+			<div class="tarefa" draggable="true" data-position="1">
+				<div class="nome">Estilização da Página Sobre</div>
+				<div class="data">15/12</div>
+			</div>
+
+			<div class="coluna-footer"></div>
 		</div>
 	</article>
 	
@@ -58,17 +58,17 @@
 		</div>
 
 		<div class="coluna-body">
-			
-				<div class="tarefa" draggable="true" data-position="1">
-					<div class="nome">Organizar o DER (Banco Principal)</div>
-					<div class="data">15/12</div>
-				</div>
-			
-				<div class="tarefa" draggable="true" data-position="2">
-					<div class="nome">Iniciar o Controller do Projeto</div>
-					<div class="data">15/12</div>
-				</div>
-				<div class="coluna-footer"></div>
+			<div class="tarefa" draggable="true" data-position="1">
+				<div class="nome">Organizar o DER (Banco Principal)</div>
+				<div class="data">15/12</div>
+			</div>
+	
+			<div class="tarefa" draggable="true" data-position="2">
+				<div class="nome">Iniciar o Controller do Projeto</div>
+				<div class="data">15/12</div>
+			</div>
+
+			<div class="coluna-footer"></div>
 		</div>
 	</article>
 	
@@ -82,12 +82,12 @@
 		</div>
 
 		<div class="coluna-body">
-			
-				<div class="tarefa" draggable="true" data-position="1">
-					<div class="nome">Backup da Semana</div>
-					<div class="data">14/12</div>
-				</div>
-				<div class="coluna-footer"></div>
+			<div class="tarefa" draggable="true" data-position="1">
+				<div class="nome">Backup da Semana</div>
+				<div class="data">14/12</div>
+			</div>
+
+			<div class="coluna-footer"></div>
 		</div>
 	</article>
 	
@@ -100,14 +100,13 @@
 			</div>
 		</div>
 
-		<div class="coluna-body">
-			
-				<div class="tarefa" draggable="true" data-position="1">
-					<div class="nome">Iniciar Ferramenta de Busca</div>
-					<div class="data">23/11</div>
-				</div>
-			
-				<div class="coluna-footer"></div>
+		<div class="coluna-body">		
+			<div class="tarefa" draggable="true" data-position="1">
+				<div class="nome">Iniciar Ferramenta de Busca</div>
+				<div class="data">23/11</div>
+			</div>
+		
+			<div class="coluna-footer"></div>
 		</div>
 	</article>
 </section>
