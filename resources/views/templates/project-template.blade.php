@@ -40,6 +40,12 @@
 				KhanBan
 			</div>
 
+			<div class="aside-group search">
+				<label for="">Pesquisar</label>
+				<input type="text">
+				<hr>
+			</div>
+
 			<div class="aside-group">
 				<label>Grupo</label>
 				<ul>	

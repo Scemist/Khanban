@@ -153,6 +153,18 @@ aside hr {
 	border-bottom: 1px solid #1f171d;
 	margin: 0 0.2rem;
 }
+aside .search { 
+	display: flex;
+	flex-direction: column;
+ }
+aside .search input {
+	background: #390a16;
+	color: snow;
+	padding: 7px 12px;
+	border-radius: 7px;
+	margin: 0.6rem;
+	border: none;
+}
 /* ------------------ Footer -------------------- */
 footer p, footer a {
 	line-height: 0;
