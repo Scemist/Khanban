@@ -208,7 +208,7 @@ fieldset {
 	
 		background-color: #f7f7f7;
 		color: #3b336e;
-		padding: 0 7%;
+		padding: 0 min(2rem, 7%);
 		overflow: auto;
 	}
 	footer {

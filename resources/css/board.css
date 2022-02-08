@@ -35,7 +35,7 @@ article * { transition: 400ms; }
 }
 .coluna-footer { height: 100%; }
 .is-dragging {
-    opacity: 0.4;
+    opacity: 0.3;
 	cursor: help !important;
 }
 .over {
@@ -59,19 +59,71 @@ label {
 .tarefa {
 	border-radius: 7px;
 	background-color: #ffffff;
-	padding: 1.1rem 1.3rem;
 	box-shadow: 0px 1px 0.5rem #dbdbec;
 	display: flex;
 	cursor: pointer;
 	justify-content: space-between;
 	margin-bottom: 5px;
 	transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1);
+	display: grid;
+	gap: 2px 5px;
+	padding: 8px;
+	grid-template:
+		"nome	   nome		 nome"		 1.6rem
+		"verificar termino	 prioridade" 1rem
+		"etiqueta  categoria designado"	 30px
+		/ 1fr	   1fr		 30px;
 }
 .tarefa:hover {
 	background-color: #e1e7ee;
 	box-shadow: none;
 }
-.data {
-	font-size: 0.7rem;
-	align-self: flex-end;
+/* ---------------------- Tarefa ---------------------- */
+.nome { grid-area: nome; }
+.prioridade { grid-area: prioridade; }
+.verificar { grid-area: verificar; }
+.termino { grid-area: termino; }
+.etiqueta { grid-area: etiqueta; }
+.categoria { grid-area: categoria; }
+.designado { grid-area: designado; }
+
+.termino, .verificar, span { font-size: 0.7rem; }
+.termino, .verificar {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	fill: gray;
+}
+.termino svg, .verificar svg {
+	margin-right: 3px;
+}
+.perfil {
+	width: 100%;
+	height: 100%;
+	border-radius: 5rem;
+}
+.categoria, .etiqueta {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+span {
+	flex: 1;
+	text-align: center;
+	color: white;
+	padding: 0.2rem;
+	border-radius: 0.3rem;
+}
+.etiqueta span { background: var(--d-red); }
+.categoria span { background: var(--d-blue); }
+.nome {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.prioridade {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	fill: var(--green);
 }
