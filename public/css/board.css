@@ -18,17 +18,17 @@ article {
 	display: flex;
 	flex-direction: column;
 }
-article * { transition: 400ms; }
+article > * { transition: 350ms; }
 .coluna-head { padding: 0.8rem; }
 .coluna-body {
-	padding: 1rem;
+	padding: 1rem 0.6rem;
 	border-radius: 5px;
 	flex: 1;
 }
 .add-tarefa {
 	border-radius: 0.5rem;
 	background-color: #ceced4;
-	padding: 1.1rem 1.3rem;
+	padding: 0.9rem 1.3rem;
 	box-shadow: 1px 1px 1.3rem #c9c9e3;
 	display: flex;
 	cursor: pointer;
@@ -36,13 +36,12 @@ article * { transition: 400ms; }
 .coluna-footer { height: 100%; }
 .is-dragging {
     opacity: 0.3;
-	cursor: help !important;
 }
 .over {
 	background-color: var(--p-green);
 	cursor: pointer !important;
 }
-.add-tarefa:hover { box-shadow: 1px 1px 0.5rem rgb(161, 161, 161); }
+.add-tarefa:hover { box-shadow: 0 1px 8px #67696a; }
 .add-tarefa svg { margin-right: 10px; }
 label {
 	color: #9692b4;
@@ -56,6 +55,7 @@ label {
 #concluido { border-bottom: 3px solid seagreen; }
 #espera { border-bottom: 3px solid peru; }
 #cancelado { border-bottom: 3px solid purple; }
+
 .tarefa {
 	border-radius: 7px;
 	background-color: #ffffff;
@@ -86,21 +86,20 @@ label {
 .etiqueta { grid-area: etiqueta; }
 .categoria { grid-area: categoria; }
 .designado { grid-area: designado; }
-
-.termino, .verificar, span { font-size: 0.7rem; }
 .termino, .verificar {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 	fill: gray;
 }
-.termino svg, .verificar svg {
-	margin-right: 3px;
-}
+.termino, .verificar, span { font-size: 0.7rem; }
+.verificar svg, .termino svg { margin-right: 3px; }
 .perfil {
+	-o-object-fit: cover;
+	   object-fit: cover;
 	width: 100%;
 	height: 100%;
-	border-radius: 5rem;
+	border-radius: 500px;
 }
 .categoria, .etiqueta {
 	display: flex;
@@ -120,10 +119,10 @@ span {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	font-size: 90%;
 }
 .prioridade {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	fill: var(--green);
 }
