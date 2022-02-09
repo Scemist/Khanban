@@ -2,18 +2,29 @@ h1 {
 	font-weight: 400;
 	padding: 0.5rem 1.5rem;
 }
-p {
-	line-height: 1.8rem;
-}
+p { line-height: 1.8rem; }
 .highlight {
 	background: #e9e7e1;
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	padding: 1rem 2rem 1rem 0;
 	border-top-right-radius: 0.5rem;
 	border-bottom-right-radius: 0.5rem;
+	justify-content: center;
+	align-items: center;
+}
+.highlight p {
+	padding: 0.7rem 3rem;
+	min-width: 15vw;
+	max-width: 30vw;
+	flex-shrink: 1;
+	flex-basis: 0;
+	flex-grow: 1;
 }
 img {
-	height: 36vh;
+	height: 30vh;
+	margin: 0.7rem 3rem;
 }
 table, td, th {
 	border: none;
@@ -60,7 +71,7 @@ main > * {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content:flex-start;
-	padding: 3rem;
+	padding: 0rem 2.5rem;
 }
 .projetos > * {
 	width: 20%;
