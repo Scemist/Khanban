@@ -21,8 +21,8 @@
 			@foreach ($projetos as $projeto)
 			<figure>
 				<a href="{{ route('projetos.board', $projeto->id) }}">	
-					<h3>{{ $projeto->titulo }}</h3>
-					<p>{{ $projeto->descricao }}</p>
+					<h3>{{ $projeto->title }}</h3>
+					<p>{{ $projeto->description }}</p>
 				</a>
 			</figure>
 			@endforeach

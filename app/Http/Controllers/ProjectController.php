@@ -29,9 +29,9 @@ class ProjectController extends Controller
 	public function store(Request $request)
 	{
 		$projeto = new Project;
-		$projeto->titulo = $request->titulo;
-		$projeto->descricao = $request->descricao;
-		$projeto->criador = Auth::id();
+		$projeto->title = $request->titulo;
+		$projeto->description = $request->descricao;
+		$projeto->owner_id = Auth::id();
 		$projeto->save();
 
 		return redirect()->route('inicio');
@@ -47,8 +47,8 @@ class ProjectController extends Controller
 	public function update($id, Request $request)
 	{
 		$projeto = Project::find($id);
-		$projeto->titulo = $request->titulo;
-		$projeto->descricao = $request->descricao;
+		$projeto->title = $request->titulo;
+		$projeto->description = $request->descricao;
 		$projeto->save();
 
 		return redirect()->route('projetos.show', $id);
