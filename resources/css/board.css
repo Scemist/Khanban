@@ -5,10 +5,6 @@ section {
 	height: 95%;
 	min-width: 1000px;
 }
-.tarefa {
-	-webkit-user-drag: element;
-	min-height: 3rem;
-}
 .highlight { background: var(--p-blue); }
 article {
 	flex-grow: 1;
@@ -57,10 +53,10 @@ label {
 #cancelado { border-bottom: 3px solid purple; }
 
 .tarefa {
+	-webkit-user-drag: element;
 	border-radius: 7px;
 	background-color: #ffffff;
 	box-shadow: 0px 1px 0.5rem #dbdbec;
-	display: flex;
 	cursor: pointer;
 	justify-content: space-between;
 	margin-bottom: 5px;
@@ -73,10 +69,6 @@ label {
 		"verificar termino	 prioridade" 1rem
 		"etiqueta  categoria designado"	 30px
 		/ 1fr	   1fr		 30px;
-}
-.tarefa:hover {
-	background-color: #e1e7ee;
-	box-shadow: none;
 }
 /* ---------------------- Tarefa ---------------------- */
 .nome { grid-area: nome; }
