@@ -31,7 +31,7 @@ return new class extends Migration
 				->on('categories');
 			$table->string('description');
 			$table->string('reference');
-			$table->integer('position');
+			$table->smallInteger('position');
 			$table->tinyText('color');
             $table->timestamps();
         });
