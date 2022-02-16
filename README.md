@@ -1,8 +1,8 @@
+<p align="center"><img src="public/images/print-3.png"></p>
+
 # Um sistema Kanban feito em Laravel, JavaScript e CSS apenas.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center"><img src="public/images/print-3.png"></p>
 
 ## To Run In Your PC
 
