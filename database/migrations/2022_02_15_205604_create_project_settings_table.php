@@ -15,10 +15,7 @@ return new class extends Migration
     {
         Schema::create('project_settings', function (Blueprint $table) {
             $table->id();
-			$table->foreignId('project_id')
-				->references('id')
-				->on('projects')
-				->onDelete('cascade');
+			$table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }

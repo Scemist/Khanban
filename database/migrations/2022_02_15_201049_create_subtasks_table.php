@@ -15,10 +15,7 @@ return new class extends Migration
     {
         Schema::create('subtasks', function (Blueprint $table) {
             $table->id();
-			$table->foreignId('task_id')
-				->references('id')
-				->on('tasks')
-				->onDelete('cascade');
+			$table->foreignId('task_id')->references('id')->on('tasks')->onDelete('cascade');
 			$table->string('description');
 			$table->smallInteger('stage');
 			$table->smallInteger('position');

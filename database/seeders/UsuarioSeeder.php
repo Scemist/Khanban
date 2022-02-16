@@ -15,18 +15,18 @@ class UsuarioSeeder extends Seeder
     public function run()
     {
         $dados = [
-			'name' => 'Lucas Scemist',
-			'email' => 'scemist.lucas@gmail.com',
-			'password' => bcrypt('nightmare')
+			'name' => 'admin',
+			'email' => 'admin@admin.com',
+			'password' => bcrypt('admin')
 		];
 
 		if (User::where('email', '=', $dados['email'])->count()) {
 			$usuario = User::where('email', '=', $dados['email'])->first();
 			$usuario->update($dados);
-			echo "Usuário Alterado!";
+			echo 'Usuário Alterado!', PHP_EOL;
 		} else {
 			User::create($dados);
-			echo "Usuário Criado!";
+			echo 'Usuário Criado!', PHP_EOL;
 		}
     }
 }

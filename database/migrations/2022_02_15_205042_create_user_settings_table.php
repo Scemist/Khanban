@@ -15,12 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_settings', function (Blueprint $table) {
             $table->id();
-			$table->foreignId('user_id')
-				->references('id')
-				->on('users')
-				->onDelete('cascade');
-			$table->boolean('notifications')
-				->default(false);
+			$table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->boolean('notifications')->default(false);
             $table->timestamps();
         });
     }

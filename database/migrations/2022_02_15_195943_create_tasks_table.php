@@ -15,20 +15,10 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('designated_id')
-				->references('id')
-				->on('users')
-				->onDelete('cascade');
-			$table->foreignId('column_id')
-				->references('id')
-				->on('columns')
-				->onDelete('cascade');
-			$table->foreignId('tag_id')
-				->references('id')
-				->on('tags');
-			$table->foreignId('category_id')
-				->references('id')
-				->on('categories');
+			$table->foreignId('designated_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('column_id')->references('id')->on('columns')->onDelete('cascade');
+			$table->foreignId('tag_id')->references('id')->on('tags');
+			$table->foreignId('category_id')->references('id')->on('categories');
 			$table->string('description');
 			$table->string('reference');
 			$table->smallInteger('position');

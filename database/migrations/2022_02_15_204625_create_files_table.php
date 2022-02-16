@@ -15,17 +15,11 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('task_id')
-				->references('id')
-				->on('tasks')
-				->onDelete('cascade');
-			$table->foreignId('user_id')
-				->references('id')
-				->on('users')
-				->onDelete('cascade');
-            $table->timestamps();
+			$table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('task_id')->references('id')->on('tasks')->onDelete('cascade');
 			$table->tinyText('path');
 			$table->tinyText('extension');
+			$table->timestamps();
         });
     }
 

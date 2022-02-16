@@ -15,14 +15,9 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+			$table->foreignId('task_id')->references('id')->on('tasks')->onDelete('cascade');
+			$table->foreignId('user_id')->references('id')->on('users');
 			$table->text('content');
-			$table->foreignId('task_id')
-				->references('id')
-				->on('tasks')
-				->onDelete('cascade');
-			$table->foreignId('user_id')
-				->references('id')
-				->on('users');
             $table->timestamps();
         });
     }

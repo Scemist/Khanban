@@ -15,16 +15,8 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-			$table->foreignId('user_id')
-				->references('id')
-				->on('users')
-				->onDelete('cascade')
-				->nullable();
-			$table->foreignId('task_id')
-				->references('id')
-				->on('users')
-				->onDelete('cascade')
-				->nullable();
+			$table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
+			$table->foreignId('task_id')->references('id')->on('users')->onDelete('cascade')->nullable();
 			$table->tinyText('path');
             $table->timestamps();
         });
