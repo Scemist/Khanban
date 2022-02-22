@@ -40,7 +40,7 @@
 		</div>
 
 		<blockquote>
-			<p>Ainda não tem cadastro? <a href="{{ route('join') }}">Faça aqui!</a></p>
+			<p>Ainda não tem cadastro? <a href="{{ route('users.create') }}">Faça aqui!</a></p>
 		</blockquote>
 	</main>	
 </body>

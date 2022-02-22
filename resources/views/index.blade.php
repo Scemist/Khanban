@@ -20,14 +20,14 @@
 		<div class="projetos">
 			@foreach ($projetos as $projeto)
 			<figure>
-				<a href="{{ route('projetos.board', $projeto->id) }}">	
+				<a href="{{ route('projects.board', $projeto->id) }}">	
 					<h3>{{ $projeto->title }}</h3>
 					<p>{{ $projeto->description }}</p>
 				</a>
 			</figure>
 			@endforeach
 			<figure>
-				<a href="{{ route('projetos.criar') }}">	
+				<a href="{{ route('projects.create') }}">	
 					<svg fill="currentColor" viewbox="0 0 16 16">
 						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
 					</svg>

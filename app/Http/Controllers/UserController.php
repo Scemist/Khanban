@@ -29,4 +29,9 @@ class UserController extends Controller
 
 		return 'Okay';
 	}
+
+	public function destroy()
+	{
+		return true;
+	}
 }

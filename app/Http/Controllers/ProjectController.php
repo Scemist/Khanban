@@ -34,7 +34,7 @@ class ProjectController extends Controller
 		$projeto->owner_id = Auth::id();
 		$projeto->save();
 
-		return redirect()->route('inicio');
+		return redirect()->route('users.home');
 	}
 
 	public function show($id)
@@ -51,14 +51,14 @@ class ProjectController extends Controller
 		$projeto->description = $request->descricao;
 		$projeto->save();
 
-		return redirect()->route('projetos.show', $id);
+		return redirect()->route('projects.show', $id);
 	}
 
 	public function destroy($id)
 	{
 		Project::destroy($id);
 
-		return redirect()->route('projetos.index');
+		return redirect()->route('projects.index');
 	}
 
 	public function board()

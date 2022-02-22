@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SkeletonController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -17,30 +17,42 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::view('/login', 'login')->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
-Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::view('/login', 'login')->name('login');
+
+Route::controller(AuthController::class)->group(function () {
+	Route::post('/login', 'login')->name('auth.login');
+	Route::get('/logout', 'logout')->name('auth.logout');
+});
 
 Route::group(['middleware' => 'auth'], function() {
-	Route::get('/', [UserController::class, 'index'])->name('inicio');
 
-	Route::view('/usuario/novo', 'join')->name('join');
-	Route::post('/usuario/novo', [UserController::class, 'store'])->name('user.join');
+	Route::view('/usuarios/criar', 'join')->name('users.create');
+	Route::controller(UserController::class)->group(function () {
+		Route::get('/', 'index')->name('users.home');
+		Route::post('/usuarios', 'store')->name('users.store');
+		Route::delete('/usuarios/{id}', 'destroy')->name('users.destroy');
+	});
 	
-	Route::get('/projetos', [ProjectController::class, 'index'])->name('projetos.lista');
+	Route::view('/projetos/criar', 'project-form')->name('projects.create');
+	Route::controller(ProjectController::class)->group(function () {
+		Route::get('/projetos', 'index')->name('projects.index');
+		Route::post('/projetos', 'store')->name('projects.store');
+		Route::delete('/projetos/{id}', 'destroy')->name('projects.destroy');
+		Route::get('/board/{id}', 'board')->name('projects.board');
+	});
 
-	Route::get('/board/{id}', [ProjectController::class, 'board'])->name('projetos.board');
-
-	Route::view('/projeto/novo', 'project-form')->name('projetos.criar');
-	Route::post('/projeto/novo', [ProjectController::class, 'store'])->name('projetos.store');
+	Route::view('/tarefas/criar', 'project-form')->name('tasks.create'); // Form view
+	Route::controller(TaskController::class)->group(function () {
+		Route::get('/tarefas', 'index')->name('tasks.index'); // Show all
+		Route::post('/tarefas', 'store')->name('tasks.store'); // Save on database
+		Route::get('/tarefas/{id}', 'show')->name('tasks.show'); // Show on
+		Route::get('/tarefas/{id}/editar', 'edit')->name('tasks.edit'); // Edit view
+		Route::patch('/tarefas/{id}', 'update')->name('tasks.update'); // Update on database
+		Route::delete('/tarefas/{id}', 'destroy')->name('tasks.destroy'); // Delete
+	});
 });
 
-Route::prefix('skeleton')->group(function () {
-	Route::get("/css", function() { return Redirect::to("css/home.min.css"); })->name('skeleton.css');
-	Route::get("/js", function() { return Redirect::to("js/home.min.js"); })->name('skeleton.js');
-});
-
-Route::get('/{any}', function ($search) {
+Route::get('/{any}', function () {
     return redirect()->route('inicio');
 })->where('any', '.*');

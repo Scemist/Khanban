@@ -28,7 +28,7 @@ class AuthController extends Controller
 		if(Auth::attempt($credenciais)) {
 			$request->session()->regenerate();
 			
-			return redirect()->route('inicio');
+			return redirect()->route('users.home');
 		}
 
 		return redirect()->route('login');
@@ -38,7 +38,7 @@ class AuthController extends Controller
 	{
 		Auth::logout();
 
-		return redirect()->route('inicio');
+		return redirect()->route('users.home');
 	}
 
 	public function join(Request $request)
