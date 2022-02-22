@@ -140,4 +140,65 @@
 		</div>
 	</article>
 </section>
+
+<template id="task-box">
+	<div id="task-modal-container">
+		<header>
+			<h3>Solicitação Provinda de Cliente</h3>	
+			<div>
+				<li>Etiqueta</li>
+				<li>Categoria</li>
+			</div>
+			<p>Email de 2022 às 23:54</p>
+		</header>
+
+		<hr>
+
+		<div>
+			<legend><strong>Descrição</strong></legend>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestias aspernatur at aut? Consequuntur, deleniti fugiat rem molestiae animi cupiditate neque perspiciatis praesentium illum nisi consectetur est impedit ad rerum, necessitatibus repellat dolorem quam.</p>
+			<p>If is that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam accusamus culpa!</p>
+		</div>
+
+		<hr>
+
+		<div>
+			<div class="check-group">
+				<div class="check-svg-group">
+					<svg viewBox="0 0 16 16" data-value="1"><circle cx="8" cy="8" r="8"/></svg>
+					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
+					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
+				</div>
+				<legend>Lorem ipsum dolor sit.</legend>
+			</div>
+			<div class="check-group">
+				<div class="check-svg-group">
+					<svg viewBox="0 0 16 16" data-value="1"><circle cx="8" cy="8" r="8"/></svg>
+					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
+					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
+				</div>
+				<legend>Uma duas tres quatro</legend>
+			</div>
+			<div class="check-group">
+				<div class="check-svg-group">
+					<svg viewBox="0 0 16 16" data-value="1"><circle cx="8" cy="8" r="8"/></svg>
+					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
+					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
+				</div>
+				<legend>Alahu akbarrra</legend>
+			</div>
+		</div>
+
+		<hr>
+
+		<div id="comments">
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium deserunt totam perferendis magnam eius incidunt placeat soluta, commodi corporis impedit facere, molestias quas?
+			</p>
+			<p>
+				Adipisicing elit. Accusantium, veniam. Soluta accusamus natus vel reprehenderit est placeat enim, et magnam porro odit. Consequatur, praesentium impedit. Soluta veniam facilis esse cupiditate unde explicabo eius animi?
+			</p>
+		</div>
+	</div>
+</template>
 @stop

@@ -35,7 +35,7 @@
 		</main>
 
 		<footer>
-			<p>Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a>© - 2021</p>
+			<p>Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a><small>©</small> - {{ now()->year }}</p>
 		</footer>
 	</body>
 </html>

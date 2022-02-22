@@ -93,6 +93,8 @@
 			<p>Todos os direitos reservados: <a href="https://github.com/Scemist">github.com/Scemist</a>© - 2021</p>
 		</footer>		
 
+		<div id="filter"></div>
+
 		@stack('scripts')
 	</body>
 </html>

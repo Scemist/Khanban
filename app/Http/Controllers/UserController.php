@@ -11,27 +11,23 @@ class UserController extends Controller
 {
 	public function index()
 	{
-		$projetos = Project::get();
+		$projetos = Project::orderBy('title')->get();
 
 		return view('index', ['projetos' => $projetos]);
 	}
 
-    public function store(Request $request)
+    public function store(Request $request): void
 	{
 		$user = new User;
 		$user->name = $request->nome;
 		$user->email = $request->email;
 		$user->password = Hash::make($request->senha);
-
 		$user->save();
 
 		dd($user);
-
-		return 'Okay';
 	}
 
-	public function destroy()
+	public function destroy(): void
 	{
-		return true;
 	}
 }
