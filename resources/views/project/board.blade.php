@@ -144,21 +144,22 @@
 <template id="task-box">
 	<div id="task-modal-container">
 		<header>
-			<h3>Solicitação Provinda de Cliente</h3>	
-			<div>
-				<li>Etiqueta</li>
-				<li>Categoria</li>
+			<h2>Solicitação Provinda de Cliente</h2>	
+			<div class="head head-1">
+				<p>Lucas Gonçalves</p>
+				<div class="items-group">
+					<div><span>Etiqueta</span></div>
+					<div><span>Categoria</span></div>
+				</div>
 			</div>
-			<p>Email de 2022 às 23:54</p>
+			<div class="head head-2">
+				<p id="referencia">Email de 2022 às 23:54</p>
+				<div class="items-group">
+					<input type="date" value="2022-02-26">
+					<input type="date" value="2022-03-03">
+				</div>
+			</div>
 		</header>
-
-		<hr>
-
-		<div>
-			<legend><strong>Descrição</strong></legend>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestias aspernatur at aut? Consequuntur, deleniti fugiat rem molestiae animi cupiditate neque perspiciatis praesentium illum nisi consectetur est impedit ad rerum, necessitatibus repellat dolorem quam.</p>
-			<p>If is that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam accusamus culpa!</p>
-		</div>
 
 		<hr>
 
@@ -191,13 +192,51 @@
 
 		<hr>
 
+		<div>
+			<legend><strong>Descrição</strong></legend>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestias aspernatur at aut? Consequuntur, deleniti fugiat rem molestiae animi cupiditate neque perspiciatis praesentium illum nisi consectetur est impedit ad rerum, necessitatibus repellat dolorem quam.</p>
+			<p>If is that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam accusamus culpa!</p>
+		</div>
+
+		<hr>
+
+		<p>
+			<small>Criado por Lucas Gonçalves em 02 de maio 2021</small>
+		</p>
+
+		<hr>
+
 		<div id="comments">
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium deserunt totam perferendis magnam eius incidunt placeat soluta, commodi corporis impedit facere, molestias quas?
-			</p>
-			<p>
-				Adipisicing elit. Accusantium, veniam. Soluta accusamus natus vel reprehenderit est placeat enim, et magnam porro odit. Consequatur, praesentium impedit. Soluta veniam facilis esse cupiditate unde explicabo eius animi?
-			</p>
+			<div class="comment-container">
+				<div class="comment-head">
+					<b>Lucas Gonçalves</b> 
+					<small> 22 de fevereiro de 2021 às 12:23</small>
+					<div class="comment-menu">
+						<a>Editar</a>
+					</div>
+				</div>
+				<div class="comment-body">
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet velit in adipisci.
+					</p>
+				</div>
+			</div>
+
+			<div class="comment-container">
+				<div class="comment-head">
+					<b>John Ruddley</b> 
+					<small> 13 de fevereiro de 2021 às 16:30</small>
+					<div class="comment-menu">
+						<a>Editar</a>
+					</div>
+				</div>
+				<div class="comment-body">
+					<p>
+						Ipsum dolor sit amet consectetur.<br>
+						<b>Alahu Akbar</b>
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>

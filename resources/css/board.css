@@ -73,6 +73,20 @@ label {
 .tarefa:hover {
 	box-shadow: 1px 1px 8px #b4b4b4;
 }
+::-webkit-scrollbar { 
+	width: 11px; 
+	height: 10px; 
+}
+::-webkit-scrollbar-track-piece  {
+	background-color: #d6d6d6;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #414141;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
 /* ---------------------- Tarefa ---------------------- */
 .nome { grid-area: nome; }
 .prioridade { grid-area: prioridade; }
@@ -129,7 +143,7 @@ span {
 	border-radius: 8px;
 	z-index: 4;
 	width: 50vw;
-	min-width: 600px;
+	min-width: 350px;
 	max-height: 80vh;
 	top: 0;
 	right: 0;
@@ -188,3 +202,68 @@ span {
 /* .check-group svg:nth-child(2) { fill: #2A2275; } */
 .check-group svg:nth-child(2) { fill: lightgray; }
 .check-group svg:nth-child(3) { fill: #009990; }
+
+#task-modal-container header > div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+#task-modal-container h2 {
+	width: 100%;
+}
+#task-modal-container header .head > p {
+	margin: 0;
+	margin-bottom: 14px;
+}
+#task-modal-container span {
+	background: #511aa8;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+.items-group {
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+.items-group > * {
+	margin: 3px 12px;
+}
+.items-group input[type=date] {
+	border: none;
+	background:#9692b4;
+	border-radius: 5px;
+	padding: 5px;
+	max-width: 7rem;
+	color: white;
+}
+.items-group input[type=date]::-webkit-calendar-picker-indicator{
+    margin-left: 3px;
+	cursor: pointer;
+	filter: invert(1);
+}
+.items-group input[type=date]::-webkit-datetime-edit { 
+	text-align: right;
+	padding: 0;
+}
+.comment-container {
+	margin: 0.5rem 0 0 0;
+}
+.comment-body {
+	padding: 4px 16px;
+	background-color: whitesmoke;
+	border-radius: 8px;
+	margin-bottom: 1.5rem;
+}
+.comment-body p {
+	font-size: 90%;
+}
+.comment-head {
+	color: #272727;
+	padding: 0 0 0.5rem 0;
+}
+.comment-head small{
+	color: #555555;
+	margin-left: 7px;
+}
+.comment-menu { float: right; }
+.comment-menu > * { cursor: pointer; }
