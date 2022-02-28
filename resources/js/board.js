@@ -1,7 +1,8 @@
 const tarefas = document.querySelectorAll('.tarefa')
 const colunas = document.querySelectorAll('.coluna-body')
 const rodapes = document.querySelectorAll('.coluna-footer')
-const filtro = document.querySelector('#filter')
+const filtroEscuro = document.querySelector('#filter')
+const adicionarTarefa = document.querySelectorAll('.add-tarefa')
 
 class Kanban {
 	static rodapeDragover() {
@@ -45,13 +46,27 @@ class Kanban {
 	}
 }
 
-openTaskModal = tarefa => {
-	const taskModalTemplate = document.querySelector('#task-modal-template')
-	const modalTask = taskModalTemplate.content.cloneNode(true)
+class Modal {
+	static openTask = tarefa => 
+		Modal.open('#task-modal-template')
 
-	document.querySelectorAll('body > *').forEach(tag => tag.classList.add('blur'))
-	document.querySelector('body').appendChild(modalTask)
-	document.querySelector('#filter').classList.add('filter')
+	static openTaskForm = coluna => 
+		Modal.open('#task-form-modal-template')
+
+	static open = templateModalId => {
+		const taskModalTemplate = document.querySelector(templateModalId)
+		const modalTask = taskModalTemplate.content.cloneNode(true)
+
+		document.querySelectorAll('body > *').forEach(tag => tag.classList.add('blur'))
+		document.querySelector('#filter').classList.add('filter')
+		document.querySelector('body').appendChild(modalTask)
+	}
+
+	static close = _ => {
+		document.querySelectorAll('body > *').forEach(tag => tag.classList.remove('blur'))
+		filtroEscuro.classList.remove('filter')
+		document.querySelector('.modal-container').remove()
+	}
 }
 
 rodapes.forEach(rodape => 
@@ -68,11 +83,11 @@ tarefas.forEach(tarefa => {
 	tarefa.addEventListener('dragstart', Kanban.tarefaDragstart)
 	tarefa.addEventListener('dragend', Kanban.tarefaDragend)
 
-	tarefa.addEventListener('click', tarefa => openTaskModal(tarefa))
+	tarefa.addEventListener('click', tarefa => Modal.openTask(tarefa))
 })
 
-filtro.addEventListener('click', _ => {
-	document.querySelectorAll('body > *').forEach(tag => tag.classList.remove('blur'))
-	filtro.classList.remove('filter')
-	document.querySelector('.modal-container').remove()
-})
+filtroEscuro.addEventListener('click', _ => Modal.close())
+
+adicionarTarefa.forEach(coluna => 
+	coluna.addEventListener('click', coluna => Modal.openTaskForm(coluna))
+)

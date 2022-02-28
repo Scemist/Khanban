@@ -3,6 +3,8 @@ var __webpack_exports__ = {};
 /*!*******************************!*\
   !*** ./resources/js/board.js ***!
   \*******************************/
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -12,7 +14,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var tarefas = document.querySelectorAll('.tarefa');
 var colunas = document.querySelectorAll('.coluna-body');
 var rodapes = document.querySelectorAll('.coluna-footer');
-var filtro = document.querySelector('#filter');
+var filtroEscuro = document.querySelector('#filter');
+var adicionarTarefa = document.querySelectorAll('.add-tarefa');
 
 var Kanban = /*#__PURE__*/function () {
   function Kanban() {
@@ -81,15 +84,35 @@ var Kanban = /*#__PURE__*/function () {
   return Kanban;
 }();
 
-openTaskModal = function openTaskModal(tarefa) {
-  var taskModalTemplate = document.querySelector('#task-modal-template');
+var Modal = /*#__PURE__*/_createClass(function Modal() {
+  _classCallCheck(this, Modal);
+});
+
+_defineProperty(Modal, "openTask", function (tarefa) {
+  return Modal.open('#task-modal-template');
+});
+
+_defineProperty(Modal, "openTaskForm", function (coluna) {
+  return Modal.open('#task-form-modal-template');
+});
+
+_defineProperty(Modal, "open", function (templateModalId) {
+  var taskModalTemplate = document.querySelector(templateModalId);
   var modalTask = taskModalTemplate.content.cloneNode(true);
   document.querySelectorAll('body > *').forEach(function (tag) {
     return tag.classList.add('blur');
   });
-  document.querySelector('body').appendChild(modalTask);
   document.querySelector('#filter').classList.add('filter');
-};
+  document.querySelector('body').appendChild(modalTask);
+});
+
+_defineProperty(Modal, "close", function (_) {
+  document.querySelectorAll('body > *').forEach(function (tag) {
+    return tag.classList.remove('blur');
+  });
+  filtroEscuro.classList.remove('filter');
+  document.querySelector('.modal-container').remove();
+});
 
 rodapes.forEach(function (rodape) {
   return rodape.addEventListener('dragover', Kanban.rodapeDragover);
@@ -103,15 +126,16 @@ tarefas.forEach(function (tarefa) {
   tarefa.addEventListener('dragstart', Kanban.tarefaDragstart);
   tarefa.addEventListener('dragend', Kanban.tarefaDragend);
   tarefa.addEventListener('click', function (tarefa) {
-    return openTaskModal(tarefa);
+    return Modal.openTask(tarefa);
   });
 });
-filtro.addEventListener('click', function (_) {
-  document.querySelectorAll('body > *').forEach(function (tag) {
-    return tag.classList.remove('blur');
+filtroEscuro.addEventListener('click', function (_) {
+  return Modal.close();
+});
+adicionarTarefa.forEach(function (coluna) {
+  return coluna.addEventListener('click', function (coluna) {
+    return Modal.openTaskForm(coluna);
   });
-  filtro.classList.remove('filter');
-  document.querySelector('.modal-container').remove();
 });
 /******/ })()
 ;
