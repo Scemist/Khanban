@@ -1,6 +1,7 @@
 const tarefas = document.querySelectorAll('.tarefa')
 const colunas = document.querySelectorAll('.coluna-body')
 const rodapes = document.querySelectorAll('.coluna-footer')
+const filtro = document.querySelector('#filter')
 
 class Kanban {
 	static rodapeDragover() {
@@ -44,15 +45,13 @@ class Kanban {
 	}
 }
 
-openTaskModal = _ => {
-	const taskModalTemplate = document.querySelector('template')
+openTaskModal = tarefa => {
+	const taskModalTemplate = document.querySelector('#task-modal-template')
 	const modalTask = taskModalTemplate.content.cloneNode(true)
+
+	document.querySelectorAll('body > *').forEach(tag => tag.classList.add('blur'))
 	document.querySelector('body').appendChild(modalTask)
-
-	document.querySelectorAll('body > *').forEach(tag => tag.classList.toggle('blur'))
 	document.querySelector('#filter').classList.add('filter')
-
-	loadSubtask()
 }
 
 rodapes.forEach(rodape => 
@@ -69,40 +68,11 @@ tarefas.forEach(tarefa => {
 	tarefa.addEventListener('dragstart', Kanban.tarefaDragstart)
 	tarefa.addEventListener('dragend', Kanban.tarefaDragend)
 
-	tarefa.addEventListener('click', _ => openTaskModal())
+	tarefa.addEventListener('click', tarefa => openTaskModal(tarefa))
 })
 
-document.querySelector('#filter').addEventListener('click', _ => {
+filtro.addEventListener('click', _ => {
 	document.querySelectorAll('body > *').forEach(tag => tag.classList.remove('blur'))
-	document.querySelector('#filter').classList.remove('filter')
-	document.querySelector('#task-modal-container').remove()
+	filtro.classList.remove('filter')
+	document.querySelector('.modal-container').remove()
 })
-
-function loadSubtask() {
-	document.querySelectorAll('.check-svg-group').forEach(grupo => {
-		grupo.addEventListener('click', _ => {
-			function change(posicao) {
-				for (let circle of grupo.children)
-					circle.dataset.value = 0 
-				if (posicao == 2) {
-					grupo.children[0].dataset.value = 1
-					return true
-				}
-				posicao++
-				grupo.children[posicao].dataset.value = 1
-			}
-
-			switch (true) {
-				case grupo.children[0].dataset.value == 1:
-					change('0')
-				break;
-				case grupo.children[1].dataset.value == 1:
-					change('1')
-				break;
-				case grupo.children[2].dataset.value == 1:
-					change('2')
-				break;
-			}
-		})
-	}) 
-}

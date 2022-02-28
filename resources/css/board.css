@@ -1,4 +1,10 @@
-section {
+.red-bg {  background: #ffb7b7 !important; }
+.pink-bg {  background: #f8b7ff !important; }
+.blue-bg {  background: #b7bfff !important; }
+.ciano-bg {  background: #b7ebff !important; }
+.green-bg {  background: #c3ffb7 !important; }
+.yellow-bg {  background: #fcffb7 !important; }
+main > section {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -130,13 +136,13 @@ span {
 	justify-content: center;
 }
 /* --------------------------- Modal Task --------------------------- */
-#task-modal-container {
+.modal-container {
 	position: absolute;
 	background-color: white;
 	color: #474747;
 	filter: drop-shadow(1px 1px 10px rgb(82, 82, 82));
 	border-radius: 8px;
-	z-index: 4;
+	z-index: 5;
 	width: 50vw;
 	min-width: 350px;
 	max-height: 80vh;
@@ -148,8 +154,8 @@ span {
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
-#task-modal-container > * { padding: 1rem 2.2rem; }
-#task-modal-container hr {
+.modal-container > * { padding: 1rem 2.2rem; }
+.modal-container hr {
 	border: none;
 	border-bottom: 1px solid #bbbbbb;
 	margin: 0.1rem 0;
@@ -165,7 +171,7 @@ span {
 	background-color: rgb(0, 0, 0, 0.5);
 }
 .blur { filter: blur(5px); }
-#referencia {
+.modal-container #referencia {
 	background: #c5c2b8;
 	border: none;
 	padding: 7px 10px;
@@ -173,11 +179,11 @@ span {
 	width: 100%;
 	min-width: 200px;
 }
-#details {
+.modal-container #details {
 	display: flex;
 	justify-content: space-between;
 }
-#details button {
+.modal-container #details button {
 	padding: 6px 8px;
 	border-radius: 4px;
 	border: none;
@@ -185,13 +191,13 @@ span {
 	color: white;
 	cursor: pointer;
 }
-#details button:hover { filter: brightness(0.9); }
-.checkbox-group {
+.modal-container #details button:hover { filter: brightness(0.9); }
+.modal-container .checkbox-group {
 	display: flex;
 	align-items: center;
 	padding: 5px 0;
 }
-.check-svg-group {
+.modal-container .check-svg-group {
 	display: flex;
 	align-items: center;
 	padding: 5px 0;
@@ -202,7 +208,7 @@ span {
 	align-items: center;
 	padding: 5px 0;
 }
-.check-group legend { margin-left: 5px; }
+.icon-group legend { margin-left: 5px; }
 .icon-group {
 	display: flex;
 	align-items: center;
@@ -217,38 +223,38 @@ span {
 	height: 1.1rem;
 	width: 1.1rem;
 }
-#task-modal-container header > div {
+.modal-container header > div {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 }
-#task-modal-container h2 { width: 100%; }
-#task-modal-container header .head > p {
+.modal-container h2 { width: 100%; }
+.modal-container header .head > p {
 	margin: 0;
 	margin-bottom: 14px;
 	display: flex;
 }
-#task-modal-container span {
+.modal-container span {
 	background: #511aa8;
 	padding: 4px 8px;
 	cursor: pointer;
 }
-.items-group.x {
+.modal-container .items-group.x {
 	display: inline-flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-end;
 }
-.items-group.y {
+.modal-container .items-group.y {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
 #subtasks {  padding: 1rem 10%; }
-.items-group.x > * { margin: 3px 12px; }
-.items-group.y > * { margin: 7px 0; }
-.items-group input[type=date] {
+.modal-container .items-group.x > * { margin: 3px 12px; }
+.modal-container .items-group.y > * { margin: 7px 0; }
+.modal-container .items-group input[type=date] {
 	border: none;
 	background:#9692b4;
 	border-radius: 5px;
@@ -256,30 +262,30 @@ span {
 	max-width: 7rem;
 	color: white;
 }
-.items-group input[type=date]::-webkit-calendar-picker-indicator{
+.modal-container .items-group input[type=date]::-webkit-calendar-picker-indicator{
     margin-left: 3px;
 	cursor: pointer;
 	color-scheme: dark;
 }
-.items-group input[type=date]::-webkit-datetime-edit { 
+.modal-container .items-group input[type=date]::-webkit-datetime-edit { 
 	text-align: right;
 	padding: 0;
 }
-.comment-container { margin: 0.5rem 0 0 0; }
-.comment-body {
+.modal-container .comment-container { margin: 0.5rem 0 0 0; }
+.modal-container .comment-body {
 	padding: 4px 16px;
 	background-color: whitesmoke;
 	border-radius: 8px;
 	margin-bottom: 1.5rem;
 }
-.comment-body p { font-size: 90%; }
-.comment-head {
+.modal-container .comment-body p { font-size: 90%; }
+.modal-container .comment-head {
 	color: #272727;
 	padding: 0 0 0.5rem 0;
 }
-.comment-head small{
+.modal-container .comment-head small{
 	color: #555555;
 	margin-left: 7px;
 }
-.comment-menu { float: right; }
-.comment-menu > * { cursor: pointer; }
+.modal-container .comment-menu { float: right; }
+.modal-container .comment-menu > * { cursor: pointer; }

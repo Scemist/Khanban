@@ -126,7 +126,7 @@
 		</div>
 
 		<div class="coluna-body">		
-			<div class="tarefa" draggable="true" data-position="1">
+			<div class="tarefa red-bg" draggable="true" data-position="1">
 				<div class="nome">Iniciar Ferramenta de Busca</div>
 				<div class="prioridade"></div>
 				<div class="verificar"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>07/02</div>
@@ -141,104 +141,11 @@
 	</article>
 </section>
 
-<template id="task-box">
-	<div id="task-modal-container">
-		<header>
-			<div class="head head-1">
-				<div>
-					<h2 id="task-title">Solicitação Provinda de Cliente</h2>	
-				</div>
-				<div class="items-group x">
-					<div><span>Etiqueta</span></div>
-					<div><span>Categoria</span></div>
-				</div>
-			</div>
-			<hr>
-			
-			<div class="head head-2">
-				<div class="items-group y">
-					<p>
-						<b>Lucas Gonçalves</b>
-						<small> como designado.</small>
-					</p>
-					<input type="text" id="referencia" value="Email de 2022 às 23:54">
-				</div>
+<template id="task-modal-template">
+	@include('project.snippets.task-modal')
+</template>
 
-				<div class="items-group y">
-					<div class="items-group x">
-						Check-in
-						<input type="date" value="2022-02-26">
-					</div>
-					<div class="items-group x">
-						Vencimento
-						<input type="date" value="2022-03-03">
-					</div>
-				</div>
-			</div>
-		</header>
-		<hr>
-
-		<div id="subtasks">
-			<div class="icon-group">
-				<input type="checkbox">
-				<label>A lorem ipsum subtask</label>
-			</div>
-			<div class="icon-group">
-				<input type="checkbox">
-				<label>Alahu akbar</label>
-			</div>
-			<div class="icon-group">
-				<input type="checkbox">
-				<label>Ukranian test</label>
-			</div>
-		</div>
-		<hr>
-
-		<div>
-			<legend><strong>Descrição</strong></legend>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestias aspernatur at aut? Consequuntur, deleniti fugiat rem molestiae animi cupiditate neque perspiciatis praesentium illum nisi consectetur est impedit ad rerum, necessitatibus repellat dolorem quam.</p>
-			<p>If is that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam accusamus culpa!</p>
-		</div>
-		<hr>
-
-		<div id="details">
-			<small>Criado por Lucas Gonçalves em 02 de maio 2021</small>
-			<button>Ações da Tarefa</button>
-		</div>
-		<hr>
-
-		<div id="comments">
-			<div class="comment-container">
-				<div class="comment-head">
-					<b>Lucas Gonçalves</b> 
-					<small> 22 de fevereiro de 2021 às 12:23</small>
-					<div class="comment-menu">
-						<a>Editar</a>
-					</div>
-				</div>
-				<div class="comment-body">
-					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet velit in adipisci.
-					</p>
-				</div>
-			</div>
-
-			<div class="comment-container">
-				<div class="comment-head">
-					<b>John Ruddley</b> 
-					<small> 13 de fevereiro de 2021 às 16:30</small>
-					<div class="comment-menu">
-						<a>Editar</a>
-					</div>
-				</div>
-				<div class="comment-body">
-					<p>
-						Ipsum dolor sit amet consectetur.<br>
-						<b>Alahu Akbar</b>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<template id="task-form-modal-template">
+	@include('project.snippets.task-form-modal')
 </template>
 @stop
