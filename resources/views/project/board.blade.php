@@ -144,52 +144,54 @@
 <template id="task-box">
 	<div id="task-modal-container">
 		<header>
-			<h2>Solicitação Provinda de Cliente</h2>	
 			<div class="head head-1">
-				<p>Lucas Gonçalves</p>
-				<div class="items-group">
+				<div>
+					<h2 id="task-title">Solicitação Provinda de Cliente</h2>	
+				</div>
+				<div class="items-group x">
 					<div><span>Etiqueta</span></div>
 					<div><span>Categoria</span></div>
 				</div>
 			</div>
+			<hr>
+			
 			<div class="head head-2">
-				<p id="referencia">Email de 2022 às 23:54</p>
-				<div class="items-group">
-					<input type="date" value="2022-02-26">
-					<input type="date" value="2022-03-03">
+				<div class="items-group y">
+					<p>
+						<b>Lucas Gonçalves</b>
+						<small> como designado.</small>
+					</p>
+					<input type="text" id="referencia" value="Email de 2022 às 23:54">
+				</div>
+
+				<div class="items-group y">
+					<div class="items-group x">
+						Check-in
+						<input type="date" value="2022-02-26">
+					</div>
+					<div class="items-group x">
+						Vencimento
+						<input type="date" value="2022-03-03">
+					</div>
 				</div>
 			</div>
 		</header>
-
 		<hr>
 
-		<div>
-			<div class="check-group">
-				<div class="check-svg-group">
-					<svg viewBox="0 0 16 16" data-value="1"><circle cx="8" cy="8" r="8"/></svg>
-					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
-					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
-				</div>
-				<legend>Lorem ipsum dolor sit.</legend>
+		<div id="subtasks">
+			<div class="icon-group">
+				<input type="checkbox">
+				<label>A lorem ipsum subtask</label>
 			</div>
-			<div class="check-group">
-				<div class="check-svg-group">
-					<svg viewBox="0 0 16 16" data-value="1"><circle cx="8" cy="8" r="8"/></svg>
-					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
-					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
-				</div>
-				<legend>Uma duas tres quatro</legend>
+			<div class="icon-group">
+				<input type="checkbox">
+				<label>Alahu akbar</label>
 			</div>
-			<div class="check-group">
-				<div class="check-svg-group">
-					<svg viewBox="0 0 16 16" data-value="1"><circle cx="8" cy="8" r="8"/></svg>
-					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
-					<svg viewBox="0 0 16 16" data-value="0"><circle cx="8" cy="8" r="8"/></svg>
-				</div>
-				<legend>Alahu akbarrra</legend>
+			<div class="icon-group">
+				<input type="checkbox">
+				<label>Ukranian test</label>
 			</div>
 		</div>
-
 		<hr>
 
 		<div>
@@ -197,13 +199,12 @@
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestias aspernatur at aut? Consequuntur, deleniti fugiat rem molestiae animi cupiditate neque perspiciatis praesentium illum nisi consectetur est impedit ad rerum, necessitatibus repellat dolorem quam.</p>
 			<p>If is that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam accusamus culpa!</p>
 		</div>
-
 		<hr>
 
-		<p>
+		<div id="details">
 			<small>Criado por Lucas Gonçalves em 02 de maio 2021</small>
-		</p>
-
+			<button>Ações da Tarefa</button>
+		</div>
 		<hr>
 
 		<div id="comments">
