@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+	public function columns()
+	{
+		return $this->hasMany(Column::class);
+	}
 }
