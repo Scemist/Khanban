@@ -62,10 +62,10 @@ class ProjectController extends Controller
 		return redirect()->route('projects.index');
 	}
 
-	public function board()
+	public function board($id)
 	{
 		$users = User::get();
 
-		return view('project.board', ['users' => $users]);
+		return view('project.board', ['users' => $users, 'project' => $id]);
 	}
 }

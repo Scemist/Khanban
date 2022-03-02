@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
+use Illuminate\Support\Facades\Redirect;
+use Auth;
 
 class TaskController extends Controller
 {
@@ -34,7 +37,22 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->titulo);
+		$task = new Task;
+
+		$task->owner_id = Auth::id();
+		$task->title = $request->titulo;
+		$task->description = $request->descricao;
+		$task->reference = $request->referencia;
+		$task->color = $request->cor;
+
+		$task->designated_id = $request->designado;
+		// $task->column_id = null;
+		// $task->tag_id = $request->etiqueta;
+		// $task->category_id = $request->categoria;
+
+		$task->save();
+
+        return Redirect::route('projects.board', $request->projeto);
     }
 
     /**

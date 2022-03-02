@@ -291,7 +291,6 @@ span {
 .modal-container .comment-menu { float: right; }
 .modal-container .comment-menu > * { cursor: pointer; }
 /* ------------------------------ Task Modal Form ---------------------------- */
-
 #task-form-modal form {
 	display: flex;
 	flex-wrap: wrap;
@@ -304,9 +303,7 @@ span {
 	margin: 0;
 	padding: 4px;
 }
-#task-form-modal form *:last-child { 
-	height: 2rem;
-}
+#task-form-modal form *:last-child {  height: 2rem; }
 #task-form-modal fieldset {
 	display: inline-block;
 	overflow: hidden;
@@ -320,6 +317,4 @@ span {
 	border-radius: 6px;
 	box-sizing: border-box;
 }
-#task-form-modal textarea[name="descricao"] {
-	height: 5rem;
-}
+#task-form-modal textarea[name="descricao"] { height: 5rem; }

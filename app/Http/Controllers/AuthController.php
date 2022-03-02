@@ -40,16 +40,4 @@ class AuthController extends Controller
 
 		return redirect()->route('users.home');
 	}
-
-	public function join(Request $request)
-	{
-		$credencias = [
-			'nome' => $request->nome,
-			'celuar' => $request->celular,
-			'email' => $request->email,
-			'password' => $request->senha
-		];
-
-		return redirect()->route('inicio');
-	}
 }

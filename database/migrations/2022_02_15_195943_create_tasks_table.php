@@ -13,16 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {	
 			$table->id();
-			$table->foreignId('designated_id')->references('id')->on('users')->onDelete('cascade');
-			$table->foreignId('column_id')->references('id')->on('columns')->onDelete('cascade');
-			$table->foreignId('tag_id')->references('id')->on('tags');
-			$table->foreignId('category_id')->references('id')->on('categories');
-			$table->string('description');
-			$table->string('reference');
-			$table->smallInteger('position');
-			$table->tinyText('color');
+			$table->foreignId('designated_id')->nullable()->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('column_id')->nullable()->references('id')->on('columns')->onDelete('cascade');
+			$table->foreignId('tag_id')->nullable()->references('id')->on('tags');
+			$table->foreignId('category_id')->nullable()->references('id')->on('categories');
+			$table->foreignId('owner_id')->references('id')->on('users');
+
+			$table->string('title');
+			$table->string('description')->nullable();
+			$table->string('reference')->nullable();
+			$table->smallInteger('position')->nullable();
+			$table->tinyText('color')->nullable();
+			
             $table->timestamps();
         });
     }
