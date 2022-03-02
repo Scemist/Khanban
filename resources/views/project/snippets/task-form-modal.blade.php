@@ -7,24 +7,31 @@
 	<main>
 		<form action="{{ route('tasks.store') }}" method="POST">
 			@csrf
+			
 			<fieldset>
 				<label>Título</label>
-				<input type="text">
+				<input type="text" name="titulo" required>
 			</fieldset>
 
 			<fieldset>
 				<label>Referência</label>
-				<input type="text">
+				<input type="text" name="referencia">
 			</fieldset>
 
 			<fieldset>
 				<label>Cor</label>
-				<input type="color">
+				<select name="cor">
+					<option></option>
+					<option value="vermelho">Vermelho</option>
+					<option value="verde">Verde</option>
+					<option value="amarelo">Amarelo</option>
+				</select>
 			</fieldset>
 
 			<fieldset>
 				<label>Categoria</label>
-				<select name="designado">
+				<select name="categoria">
+					<option></option>
 					<option value="453">Humanas</option>
 					<option value="626">Exatas</option>
 					<option value="654">Abstrato</option>
@@ -33,24 +40,25 @@
 
 			<fieldset>
 				<label>Etiqueta</label>
-				<input type="text" name="" id="">
+				<input type="text" name="etiqueta" id="">
+			</fieldset>
+
+			<fieldset>
+				<label>Designado</label>
+				<select name="designado">
+					<option></option>
+					@foreach ($users as $user)
+						<option value="{{ $user->id }}">{{ $user->name }}
+					@endforeach
+				</select>
 			</fieldset>
 
 			<fieldset>
 				<label>Descrição</label>
 				<textarea name="descricao" rows="5"></textarea>
 			</fieldset>
-
-			<fieldset>
-				<label>Designado</label>
-				<select name="designado">
-					<option value="123">Nietszche</option>
-					<option value="746">Vladimir</option>
-					<option value="365">Dmitri</option>
-				</select>
-			</fieldset>
-
-			<input type="submit">
+			
+			<input type="submit" class="btn blue">
 		</form>
 	</main>
 </div>

@@ -289,3 +289,36 @@ span {
 }
 .modal-container .comment-menu { float: right; }
 .modal-container .comment-menu > * { cursor: pointer; }
+/* ------------------------------ Task Modal Form ---------------------------- */
+
+#task-form-modal form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;	
+}
+#task-form-modal form textarea { resize: none; }
+#task-form-modal form > * { 
+	width: 30%;
+	margin: 0;
+	padding: 4px;
+}
+#task-form-modal form *:last-child { 
+	height: 2rem;
+}
+#task-form-modal fieldset {
+	display: inline-block;
+	overflow: hidden;
+}
+#task-form-modal fieldset > *:last-child {
+	width: 100%;
+	display: inline-block;
+	border: none;
+	padding: 8px 12px;
+	background: var(--p-yellow);
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+#task-form-modal textarea[name="descricao"] {
+	height: 5rem;
+}

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,8 @@ class ProjectController extends Controller
 
 	public function board()
 	{
-		return view('project.board');
+		$users = User::get();
+
+		return view('project.board', ['users' => $users]);
 	}
 }
