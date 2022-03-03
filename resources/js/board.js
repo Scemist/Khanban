@@ -30,9 +30,14 @@ class Kanban {
 		this.classList.add('is-dragging')
 		colunas.forEach(coluna => coluna.classList.add('highlight'))
 	}
-	static tarefaDragend() { 
-		this.classList.remove('is-dragging')
+	static tarefaDragend(tarefa) { 
 		colunas.forEach(coluna => coluna.classList.remove('highlight'))
+		tarefa.classList.remove('is-dragging')
+
+		const coluna = tarefa.parentNode.parentNode.getAttribute('data-column')
+		const tarefaId = tarefa.getAttribute('data-id')
+		console.log(tarefaId)
+		// Ajax.request(coluna, tarefaId)
 	}
 	static reorderIndex() {
 		colunas.forEach(coluna => {
@@ -47,11 +52,14 @@ class Kanban {
 }
 
 class Modal {
-	static openTask = tarefa => 
+	static openTask = _ =>
 		Modal.open('#task-modal-template')
 
-	static openTaskForm = coluna => 
+	static openTaskForm = coluna => {
 		Modal.open('#task-form-modal-template')
+		// console.log(coluna.getAttribute('data-column'))
+		document.querySelector('input[name=coluna]').value = coluna.getAttribute('data-column')
+	}
 
 	static open = templateModalId => {
 		const taskModalTemplate = document.querySelector(templateModalId)
@@ -81,13 +89,13 @@ colunas.forEach(coluna => {
 tarefas.forEach(tarefa => {
 	tarefa.addEventListener('dragover', Kanban.tarefaDragover)
 	tarefa.addEventListener('dragstart', Kanban.tarefaDragstart)
-	tarefa.addEventListener('dragend', Kanban.tarefaDragend)
+	tarefa.addEventListener('dragend', _ => Kanban.tarefaDragend(tarefa))
 
-	tarefa.addEventListener('click', tarefa => Modal.openTask(tarefa))
+	tarefa.addEventListener('click', Modal.openTask)
 })
 
-filtroEscuro.addEventListener('click', _ => Modal.close())
+filtroEscuro.addEventListener('click', Modal.close)
 
 adicionarTarefa.forEach(coluna => 
-	coluna.addEventListener('click', coluna => Modal.openTaskForm(coluna))
+	coluna.addEventListener('click', _ => Modal.openTaskForm(coluna))
 )

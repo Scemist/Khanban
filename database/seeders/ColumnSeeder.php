@@ -20,7 +20,7 @@ class ColumnSeeder extends Seeder
 			['name' => 'Em Andamento'], 
 			['name' => 'Concluído'], 
 			['name' => 'Em Espera'], 
-			['name' => 'Cancelado'],
+			// ['name' => 'Cancelado'],
 		];
 
 		foreach ($colunas as $key => $coluna) {

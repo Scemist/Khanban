@@ -8,6 +8,7 @@
 		<form action="{{ route('tasks.store') }}" method="POST">
 			@csrf
 			<input type="hidden" name="projeto" value="{{ $project }}">
+			<input type="hidden" name="coluna">
 			
 			<fieldset>
 				<label>Título</label>

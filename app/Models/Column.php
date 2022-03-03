@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Column extends Model
 {
     use HasFactory;
+
+	public function tasks()
+	{
+		return $this->hasMany(Task::class);
+	}
 }

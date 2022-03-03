@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
-use App\Models\Task;
+use App\Models\Column;
 use App\Models\User;
 
 /*
@@ -66,15 +66,22 @@ class ProjectController extends Controller
 	public function board($id)
 	{
 		$users = User::get();
-		$project = Project::find($id);
-		$columns = Project::find($id)->columns->sortBy('position');
+		$project = Project::find(1);
 
-		// dd($columns);
+		$project = $project::with('columns.tasks')->first();
+		
+		foreach ($project->columns as $column) {
+			foreach ($column->tasks as $task) {
+				echo $task->title . '<br>';
+			}
+		}
+
+		// dd($project->columns[3]->tasks[0]->title);
 
 		return view('project.board', [
-			'users' => $users, 
-			'project' => $id, 
-			'columns' => $columns,
+			'project' => $project, 
+			'users' => $users,
+			'columns' => $project->columns,
 		]);
 	}
 }

@@ -1,9 +1,9 @@
-.red-bg {  background: #ffb7b7 !important; }
-.pink-bg {  background: #f8b7ff !important; }
-.blue-bg {  background: #b7bfff !important; }
+.vermelho-bg {  background: #ffb7b7 !important; }
+.rosa-bg {  background: #f8b7ff !important; }
+.azul-bg {  background: #b7bfff !important; }
 .ciano-bg {  background: #b7ebff !important; }
-.green-bg {  background: #c3ffb7 !important; }
-.yellow-bg {  background: #fcffb7 !important; }
+.verde-bg {  background: #c3ffb7 !important; }
+.amarelo-bg {  background: #fcffb7 !important; }
 main > section {
 	display: flex;
 	flex-direction: row;
@@ -50,11 +50,11 @@ label {
 	margin-bottom: 0.5rem;
 	padding-bottom: 3px;
 }
-#aguardando { border-bottom: 3px solid mediumaquamarine; }
-#andamento { border-bottom: 3px solid sandybrown; }
-#concluido { border-bottom: 3px solid seagreen; }
-#espera { border-bottom: 3px solid peru; }
-#cancelado { border-bottom: 3px solid purple; }
+.faixa-azul { border-bottom: 3px solid mediumaquamarine; }
+.faixa-amarelo { border-bottom: 3px solid sandybrown; }
+.faixa-verde { border-bottom: 3px solid seagreen; }
+.faixa-laranja { border-bottom: 3px solid peru; }
+.faixa-roxo { border-bottom: 3px solid purple; }
 .tarefa {
 	-webkit-user-drag: element;
 	border-radius: 7px;

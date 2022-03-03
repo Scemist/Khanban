@@ -46,7 +46,7 @@ class TaskController extends Controller
 		$task->color = $request->cor;
 
 		$task->designated_id = $request->designado;
-		// $task->column_id = null;
+		$task->column_id = $request->coluna;
 		// $task->tag_id = $request->etiqueta;
 		// $task->category_id = $request->categoria;
 
