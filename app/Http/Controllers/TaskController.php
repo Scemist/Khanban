@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 use Auth;
 
 class TaskController extends Controller
@@ -38,21 +40,27 @@ class TaskController extends Controller
     public function store(Request $request)
     {
 		$task = new Task;
-
 		$task->owner_id = Auth::id();
 		$task->title = $request->titulo;
 		$task->description = $request->descricao;
 		$task->reference = $request->referencia;
 		$task->color = $request->cor;
-
 		$task->designated_id = $request->designado;
 		$task->column_id = $request->coluna;
-		// $task->tag_id = $request->etiqueta;
 		// $task->category_id = $request->categoria;
-
 		$task->save();
+		$taskId = $task->id;
 
-        return Redirect::route('projects.board', $request->projeto);
+		if (isset($request->tag)) {	
+			$tag = new Tag();
+			$tag->title = $request->etiqueta;
+			$tag->task_id = $taskId;
+			$tag->save();
+		}
+
+		// dd($task->tags());
+
+        return Redirect::route('projects.board', $request->projetoId);
     }
 
     /**

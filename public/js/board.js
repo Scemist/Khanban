@@ -113,6 +113,7 @@ _defineProperty(Modal, "open", function (templateModalId) {
   });
   document.querySelector('#filter').classList.add('filter');
   document.querySelector('body').appendChild(modalTask);
+  if (document.querySelectorAll('.above-menu').length > 0) AboveMenu.addListener();
 });
 
 _defineProperty(Modal, "close", function (_) {
@@ -121,6 +122,24 @@ _defineProperty(Modal, "close", function (_) {
   });
   filtroEscuro.classList.remove('filter');
   document.querySelector('.modal-container').remove();
+});
+
+var AboveMenu = /*#__PURE__*/_createClass(function AboveMenu() {
+  _classCallCheck(this, AboveMenu);
+});
+
+_defineProperty(AboveMenu, "addListener", function (_) {
+  document.querySelectorAll('.above-menu').forEach(function (aboveMenu) {
+    var aboveBotao = aboveMenu.querySelector('button');
+    aboveBotao.addEventListener('click', function (_) {
+      return AboveMenu.toggleVisible(aboveMenu);
+    });
+    console.log(aboveMenu);
+  });
+});
+
+_defineProperty(AboveMenu, "toggleVisible", function (element) {
+  return element.querySelector('.menu').classList.toggle('visivel');
 });
 
 rodapes.forEach(function (rodape) {

@@ -1,15 +1,17 @@
-.vermelho-bg {  background: #ffb7b7 !important; }
-.rosa-bg {  background: #f8b7ff !important; }
-.azul-bg {  background: #b7bfff !important; }
-.ciano-bg {  background: #b7ebff !important; }
-.verde-bg {  background: #c3ffb7 !important; }
-.amarelo-bg {  background: #fcffb7 !important; }
+.bg.vermelho {  background: #ffb7b7 !important; }
+.bg.rosa {  background: #f8b7ff !important; }
+.bg.roxo {  background: #b7bfff !important; }
+.bg.azul {  background: #b7ebff !important; }
+.bg.verde {  background: #c3ffb7 !important; }
+.bg.amarelo {  background: #fcffb7 !important; }
 main > section {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	height: 95%;
 	min-width: 1000px;
+	max-width: 1500px;
+	margin: auto;
 }
 .highlight { background: var(--p-blue); }
 article {

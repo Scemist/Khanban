@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
 use App\Models\Column;
@@ -68,15 +69,19 @@ class ProjectController extends Controller
 		$users = User::get();
 		$project = Project::find(1);
 
-		$project = $project::with('columns.tasks')->first();
-		
-		foreach ($project->columns as $column) {
-			foreach ($column->tasks as $task) {
-				echo $task->title . '<br>';
-			}
-		}
+		$project = $project::with('columns.tasks.tags')->first();
 
-		// dd($project->columns[3]->tasks[0]->title);
+		// dd($project);
+		
+		// foreach ($project->columns as $column) {
+		// 	foreach ($column->tasks as $task) {
+		// 		if (!empty($task->tags))
+		// 			dump($task->tags->title);
+		// 		echo $task->title . '<br>';
+		// 	}
+		// }
+
+		// dd($project->columns[1]->tasks[1]->tags->title);
 
 		return view('project.board', [
 			'project' => $project, 

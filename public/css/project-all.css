@@ -270,3 +270,47 @@ footer a { color: white; }
 	margin-bottom: 1rem;
 	font-size: larger;
 }
+/* ------------------- Above-menu ------------------ */
+.above-menu { 
+	float: right;
+	position: relative;
+}
+.above-menu .menu { 
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+	width: 150px;
+	background-color: rgb(255, 255, 255);
+	margin: 10px 0px;
+	z-index: 100;
+	padding: 15px;
+	border-radius: 8px;
+	outline: 1px solid rgb(190, 190, 190);
+	filter: drop-shadow(1px 0px 7px rgb(206, 206, 206));
+}
+.above-menu .visivel { visibility: visible; }
+.above-menu ul, .above-menu li {
+	margin: 0;
+	padding: 0;
+}
+.above-menu button {
+	border-radius: 6px;
+	border: none;
+	background: rgb(107, 99, 86);
+	color: rgb(255, 255, 255);
+	padding: 7px 14px;
+	cursor: pointer;
+}
+.above-menu li {
+	/* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+	list-style-type: none;
+	border-radius: 4px;
+	padding: 6px 13px;
+	margin: 10px 0;
+	background: rgb(236, 232, 227);
+	/* font-weight: 400; */
+}
+.above-menu li:hover {
+	cursor: pointer;
+	background: rgb(209, 203, 195);
+}

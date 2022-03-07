@@ -59,7 +59,14 @@
 
 	<section id="details">
 		<small>Criado por Lucas Gonçalves em 02 de maio 2021</small>
-		<button>Ações da Tarefa</button>
+		
+		<div class="task above-menu">
+			<button>Acões da Tarefa</button>
+			<ul class="menu">
+				<li>Arquivar</li>
+				<li>Excluir tarefa</li>
+			</ul>
+		</div>
 	</section>
 	<hr>
 

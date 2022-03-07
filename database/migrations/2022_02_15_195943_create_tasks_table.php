@@ -17,7 +17,6 @@ return new class extends Migration
 			$table->id();
 			$table->foreignId('designated_id')->nullable()->references('id')->on('users')->onDelete('cascade');
 			$table->foreignId('column_id')->nullable()->references('id')->on('columns')->onDelete('cascade');
-			$table->foreignId('tag_id')->nullable()->references('id')->on('tags');
 			$table->foreignId('category_id')->nullable()->references('id')->on('categories');
 			$table->foreignId('owner_id')->references('id')->on('users');
 

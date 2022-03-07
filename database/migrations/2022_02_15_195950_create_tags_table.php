@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-			$table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
+			$table->foreignId('task_id')->references('id')->on('tasks');
 			$table->tinyText('title');
-			$table->string('description');
-			$table->tinyText('color');
+			$table->string('description')->nullable();
+			$table->tinyText('color')->nullable();
             $table->timestamps();
         });
     }

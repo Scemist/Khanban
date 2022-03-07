@@ -7,7 +7,7 @@
 	<main>
 		<form action="{{ route('tasks.store') }}" method="POST">
 			@csrf
-			<input type="hidden" name="projeto" value="{{ $project }}">
+			<input type="hidden" name="projetoId" value="{{ $project->id }}">
 			<input type="hidden" name="coluna">
 			
 			<fieldset>
@@ -23,10 +23,13 @@
 			<fieldset>
 				<label>Cor</label>
 				<select name="cor">
-					<option></option>
+					<option>Branco</option>
+					<option value="azul">Azul</option>
 					<option value="vermelho">Vermelho</option>
 					<option value="verde">Verde</option>
 					<option value="amarelo">Amarelo</option>
+					<option value="rosa">Rosa</option>
+					<option value="roxo">Roxo</option>
 				</select>
 			</fieldset>
 

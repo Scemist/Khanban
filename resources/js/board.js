@@ -61,13 +61,16 @@ class Modal {
 		document.querySelector('input[name=coluna]').value = coluna.getAttribute('data-column')
 	}
 
-	static open = templateModalId => {
+	static open = (templateModalId) => {
 		const taskModalTemplate = document.querySelector(templateModalId)
 		const modalTask = taskModalTemplate.content.cloneNode(true)
 
 		document.querySelectorAll('body > *').forEach(tag => tag.classList.add('blur'))
 		document.querySelector('#filter').classList.add('filter')
 		document.querySelector('body').appendChild(modalTask)
+			
+		if (document.querySelectorAll('.above-menu').length > 0)
+			AboveMenu.addListener()
 	}
 
 	static close = _ => {
@@ -75,6 +78,19 @@ class Modal {
 		filtroEscuro.classList.remove('filter')
 		document.querySelector('.modal-container').remove()
 	}
+}
+
+class AboveMenu {
+	static addListener = _ => {
+		document.querySelectorAll('.above-menu').forEach(aboveMenu => {
+			const aboveBotao = aboveMenu.querySelector('button')
+			aboveBotao.addEventListener('click', _ => AboveMenu.toggleVisible(aboveMenu))
+			console.log(aboveMenu)
+		})
+	}
+
+	static toggleVisible = element =>
+		element.querySelector('.menu').classList.toggle('visivel')
 }
 
 rodapes.forEach(rodape => 
