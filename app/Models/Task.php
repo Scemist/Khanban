@@ -9,6 +9,11 @@ class Task extends Model
 {
     use HasFactory;
 
+	public function columns()
+	{
+		return $this->belongsTo(Column::class);
+	}
+
 	public function tags()
 	{
 		return $this->hasOne(Tag::class);

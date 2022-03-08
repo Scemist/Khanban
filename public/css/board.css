@@ -8,14 +8,16 @@ main > section {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 	height: 95%;
 	min-width: 1000px;
 	max-width: 1500px;
 	margin: auto;
 }
-.highlight { background: var(--p-blue); }
+.highlight { background: #eaeaf2; }
 article {
 	flex-grow: 1;
+	max-width: 400px;
 	width: 16%;
 	margin: 0.3rem;
 	overflow: hidden;
@@ -26,7 +28,7 @@ article > * { transition: 350ms; }
 .coluna-head { padding: 0.8rem; }
 .coluna-body {
 	padding: 1rem 0.6rem;
-	border-radius: 5px;
+	border-radius: 8px;
 	flex: 1;
 }
 .add-tarefa {
@@ -38,9 +40,12 @@ article > * { transition: 350ms; }
 	cursor: pointer;
 }
 .coluna-footer { height: 100%; }
-.is-dragging { opacity: 0.3; }
+.is-dragging { 
+	opacity: 0.3;
+	outline: 1px solid rgb(53, 47, 79);
+}
 .over {
-	background-color: var(--p-green);
+	background-color: #e0deea;
 	cursor: pointer !important;
 }
 .add-tarefa:hover { box-shadow: 0 1px 8px #67696a; }
@@ -81,14 +86,14 @@ label {
 	height: 10px; 
 }
 ::-webkit-scrollbar-track-piece  {
-	background-color: #d6d6d6;
+	background-color: #c5babb;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #414141;
+	background-color: var(--d-red);
 	border-radius: 8px;
-	-webkit-border-radius: 8px;
+	-webkit-border-radius: 4px;
 }
 /* ---------------------- Tarefa ---------------------- */
 .nome { grid-area: nome; }
@@ -137,6 +142,10 @@ span {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.shadow:hover {
+	filter: drop-shadow(0px 8px 3px rgb(180, 180, 180, 0.7));
+	box-shadow: 0px 4px 5px grey;
 }
 /* --------------------------- Modal Task --------------------------- */
 .modal-container {
