@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::post('/projetos', 'store')->name('projects.store');
 		Route::delete('/projetos/{id}', 'destroy')->name('projects.destroy');
 		Route::get('/board/{id}', 'board')->name('projects.board');
+		Route::post('/board/{id}/reorder', 'saveTasksOrder');
 	});
 
 	Route::view('/tarefas/criar', 'project-form')->name('tasks.create'); // Form view

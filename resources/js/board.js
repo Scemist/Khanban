@@ -3,6 +3,8 @@ const colunas = document.querySelectorAll('.coluna-body')
 const rodapes = document.querySelectorAll('.coluna-footer')
 const filtroEscuro = document.querySelector('#filter')
 const adicionarTarefa = document.querySelectorAll('.add-tarefa')
+const projetoId = document.querySelector('#projeto-id').textContent
+const token = document.querySelector('main > input[name="_token"]').value
 
 class Kanban {
 	static rodapeDragenter() {
@@ -105,8 +107,44 @@ class AboveMenu {
 }
 
 class Ajax {
-	static saveTasksPosition = _ =>
-		console.log('Saving...');
+	static saveTasksPosition = _ => {
+		let dados = {}
+		colunas.forEach(coluna => {
+			coluna.querySelectorAll('.tarefa').forEach(tarefa => {
+				const posicao = tarefa.getAttribute('data-position')
+				const tarefaId = tarefa.getAttribute('data-id')
+				const colunaId = coluna.parentNode.getAttribute('data-id')
+				Object.assign(dados, {
+					[tarefaId]: {
+						"coluna": colunaId,
+						"posicao": posicao
+					}
+				})
+			})
+		})
+		Ajax.request(JSON.stringify(dados))
+	}
+
+	static request = json => {
+		const host = window.location.protocol + '//' + window.location.host;
+		const url = host + `/board/${projetoId}/reorder`
+		const data = `json=${json}`
+		const xhr = new XMLHttpRequest()
+
+		xhr.open('POST', url)
+		xhr.setRequestHeader('X-CSRF-TOKEN', token)
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+		xhr.onreadystatechange = _ => {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+					console.log(xhr.responseText)
+				} else {
+					console.log('Problema')
+				}
+			}
+		}
+		xhr.send(data)
+	}
 }
 
 rodapes.forEach(rodape => 

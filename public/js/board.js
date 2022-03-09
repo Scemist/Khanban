@@ -20,6 +20,8 @@ var colunas = document.querySelectorAll('.coluna-body');
 var rodapes = document.querySelectorAll('.coluna-footer');
 var filtroEscuro = document.querySelector('#filter');
 var adicionarTarefa = document.querySelectorAll('.add-tarefa');
+var projetoId = document.querySelector('#projeto-id').textContent;
+var token = document.querySelector('main > input[name="_token"]').value;
 
 var Kanban = /*#__PURE__*/function () {
   function Kanban() {
@@ -164,7 +166,41 @@ var Ajax = /*#__PURE__*/_createClass(function Ajax() {
 });
 
 _defineProperty(Ajax, "saveTasksPosition", function (_) {
-  return console.log('Saving...');
+  var dados = {};
+  colunas.forEach(function (coluna) {
+    coluna.querySelectorAll('.tarefa').forEach(function (tarefa) {
+      var posicao = tarefa.getAttribute('data-position');
+      var tarefaId = tarefa.getAttribute('data-id');
+      var colunaId = coluna.parentNode.getAttribute('data-id');
+      Object.assign(dados, _defineProperty({}, tarefaId, {
+        "coluna": colunaId,
+        "posicao": posicao
+      }));
+    });
+  });
+  Ajax.request(JSON.stringify(dados));
+});
+
+_defineProperty(Ajax, "request", function (json) {
+  var host = window.location.protocol + '//' + window.location.host;
+  var url = host + "/board/".concat(projetoId, "/reorder");
+  var data = "json=".concat(json);
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', url);
+  xhr.setRequestHeader('X-CSRF-TOKEN', token);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onreadystatechange = function (_) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+      } else {
+        console.log('Problema');
+      }
+    }
+  };
+
+  xhr.send(data);
 });
 
 rodapes.forEach(function (rodape) {

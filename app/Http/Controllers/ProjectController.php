@@ -72,4 +72,15 @@ class ProjectController extends Controller
 			'columns' => $project->columns,
 		]);
 	}
+
+	public function saveTasksOrder(Request $request)
+	{
+		$projetoId = $request->id;
+		$dados = json_decode($request->json, true);
+
+		foreach ($dados as $key => $tarefa) {
+		}
+
+		echo 'ok';
+	}
 }
