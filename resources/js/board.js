@@ -5,26 +5,39 @@ const filtroEscuro = document.querySelector('#filter')
 const adicionarTarefa = document.querySelectorAll('.add-tarefa')
 
 class Kanban {
-	static rodapeDragover() {
+	static rodapeDragenter() {
 		const tarefaSendoArrastada = document.querySelector('.is-dragging')
 		this.before(tarefaSendoArrastada)
 	}
-	static colunaDragover() {
+	static colunaDragenter() {
 		this.classList.add('over')
+		console.log(123);
 	}
 	static colunaDragleave() {
 		this.classList.remove('over')
 	}
-	static tarefaDragover() { 
+	static colunaDragend() {
+		colunas.forEach(coluna => coluna.classList.remove('over'))
+	}
+	static tarefaDragenter() {
 		const tarefaSendoArrastada = document.querySelector('.is-dragging')
-		
-		if(tarefaSendoArrastada.getAttribute('data-position') > this.getAttribute('data-position')) {
-			this.before(tarefaSendoArrastada)
-		} else {
-			this.after(tarefaSendoArrastada)
-		}
 
-		Kanban.reorderIndex()
+		if (this != tarefaSendoArrastada) { 
+			// Se ele só não entrou nele mesmo)
+			if (tarefaSendoArrastada.parentNode.parentNode.getAttribute('data-column') != this.parentNode.parentNode.getAttribute('data-column')) {
+				// Se a coluna for diferente, insere before do que entrou e mata o problema
+				this.before(tarefaSendoArrastada)
+				Kanban.reorderIndex()
+			} else {
+				// Se a coluna for igual, verifíca 
+				if (tarefaSendoArrastada.getAttribute('data-position') < this.getAttribute('data-position')) {
+					this.after(tarefaSendoArrastada)
+				} else {
+					this.before(tarefaSendoArrastada)
+				}
+				Kanban.reorderIndex()
+			}
+		}
 	}
 	static tarefaDragstart() { 
 		this.classList.add('is-dragging')
@@ -33,16 +46,16 @@ class Kanban {
 	static tarefaDragend(tarefa) { 
 		colunas.forEach(coluna => coluna.classList.remove('highlight'))
 		tarefa.classList.remove('is-dragging')
+		Kanban.reorderIndex()
 
-		const coluna = tarefa.parentNode.parentNode.getAttribute('data-column')
-		const tarefaId = tarefa.getAttribute('data-id')
-		console.log(tarefaId)
-		// Ajax.request(coluna, tarefaId)
+		// const coluna = tarefa.parentNode.parentNode.getAttribute('data-column')
+		// const tarefaId = tarefa.getAttribute('data-id')
+		Ajax.saveTasksPosition()
 	}
 	static reorderIndex() {
 		colunas.forEach(coluna => {
 			let count = 1
-			let tarefas = Array.from(coluna.children)
+			const tarefas = Array.from(coluna.children)
 			tarefas.forEach(tarefa => {
 				tarefa.setAttribute('data-position' , count)
 				count++
@@ -57,7 +70,6 @@ class Modal {
 
 	static openTaskForm = coluna => {
 		Modal.open('#task-form-modal-template')
-		// console.log(coluna.getAttribute('data-column'))
 		document.querySelector('input[name=coluna]').value = coluna.getAttribute('data-column')
 	}
 
@@ -85,7 +97,6 @@ class AboveMenu {
 		document.querySelectorAll('.above-menu').forEach(aboveMenu => {
 			const aboveBotao = aboveMenu.querySelector('button')
 			aboveBotao.addEventListener('click', _ => AboveMenu.toggleVisible(aboveMenu))
-			console.log(aboveMenu)
 		})
 	}
 
@@ -93,17 +104,22 @@ class AboveMenu {
 		element.querySelector('.menu').classList.toggle('visivel')
 }
 
+class Ajax {
+	static saveTasksPosition = _ =>
+		console.log('Saving...');
+}
+
 rodapes.forEach(rodape => 
-	rodape.addEventListener('dragover', Kanban.rodapeDragover)
+	rodape.addEventListener('dragenter', Kanban.rodapeDragenter)
 )
 
 colunas.forEach(coluna => {
-	coluna.addEventListener('dragover', Kanban.colunaDragover)
-	coluna.addEventListener('dragleave', Kanban.colunaDragleave)	
+	// coluna.addEventListener('dragenter', Kanban.colunaDragenter)
+	// coluna.addEventListener('dragleave', Kanban.colunaDragleave)
 })
 
 tarefas.forEach(tarefa => {
-	tarefa.addEventListener('dragover', Kanban.tarefaDragover)
+	tarefa.addEventListener('dragenter', Kanban.tarefaDragenter)
 	tarefa.addEventListener('dragstart', Kanban.tarefaDragstart)
 	tarefa.addEventListener('dragend', _ => Kanban.tarefaDragend(tarefa))
 

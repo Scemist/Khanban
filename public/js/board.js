@@ -27,15 +27,16 @@ var Kanban = /*#__PURE__*/function () {
   }
 
   _createClass(Kanban, null, [{
-    key: "rodapeDragover",
-    value: function rodapeDragover() {
+    key: "rodapeDragenter",
+    value: function rodapeDragenter() {
       var tarefaSendoArrastada = document.querySelector('.is-dragging');
       this.before(tarefaSendoArrastada);
     }
   }, {
-    key: "colunaDragover",
-    value: function colunaDragover() {
+    key: "colunaDragenter",
+    value: function colunaDragenter() {
       this.classList.add('over');
+      console.log(123);
     }
   }, {
     key: "colunaDragleave",
@@ -43,17 +44,34 @@ var Kanban = /*#__PURE__*/function () {
       this.classList.remove('over');
     }
   }, {
-    key: "tarefaDragover",
-    value: function tarefaDragover() {
+    key: "colunaDragend",
+    value: function colunaDragend() {
+      colunas.forEach(function (coluna) {
+        return coluna.classList.remove('over');
+      });
+    }
+  }, {
+    key: "tarefaDragenter",
+    value: function tarefaDragenter() {
       var tarefaSendoArrastada = document.querySelector('.is-dragging');
 
-      if (tarefaSendoArrastada.getAttribute('data-position') > this.getAttribute('data-position')) {
-        this.before(tarefaSendoArrastada);
-      } else {
-        this.after(tarefaSendoArrastada);
-      }
+      if (this != tarefaSendoArrastada) {
+        // Se ele só não entrou nele mesmo)
+        if (tarefaSendoArrastada.parentNode.parentNode.getAttribute('data-column') != this.parentNode.parentNode.getAttribute('data-column')) {
+          // Se a coluna for diferente, insere before do que entrou e mata o problema
+          this.before(tarefaSendoArrastada);
+          Kanban.reorderIndex();
+        } else {
+          // Se a coluna for igual, verifíca 
+          if (tarefaSendoArrastada.getAttribute('data-position') < this.getAttribute('data-position')) {
+            this.after(tarefaSendoArrastada);
+          } else {
+            this.before(tarefaSendoArrastada);
+          }
 
-      Kanban.reorderIndex();
+          Kanban.reorderIndex();
+        }
+      }
     }
   }, {
     key: "tarefaDragstart",
@@ -70,9 +88,10 @@ var Kanban = /*#__PURE__*/function () {
         return coluna.classList.remove('highlight');
       });
       tarefa.classList.remove('is-dragging');
-      var coluna = tarefa.parentNode.parentNode.getAttribute('data-column');
-      var tarefaId = tarefa.getAttribute('data-id');
-      console.log(tarefaId); // Ajax.request(coluna, tarefaId)
+      Kanban.reorderIndex(); // const coluna = tarefa.parentNode.parentNode.getAttribute('data-column')
+      // const tarefaId = tarefa.getAttribute('data-id')
+
+      Ajax.saveTasksPosition();
     }
   }, {
     key: "reorderIndex",
@@ -100,8 +119,7 @@ _defineProperty(Modal, "openTask", function (_) {
 });
 
 _defineProperty(Modal, "openTaskForm", function (coluna) {
-  Modal.open('#task-form-modal-template'); // console.log(coluna.getAttribute('data-column'))
-
+  Modal.open('#task-form-modal-template');
   document.querySelector('input[name=coluna]').value = coluna.getAttribute('data-column');
 });
 
@@ -134,7 +152,6 @@ _defineProperty(AboveMenu, "addListener", function (_) {
     aboveBotao.addEventListener('click', function (_) {
       return AboveMenu.toggleVisible(aboveMenu);
     });
-    console.log(aboveMenu);
   });
 });
 
@@ -142,15 +159,22 @@ _defineProperty(AboveMenu, "toggleVisible", function (element) {
   return element.querySelector('.menu').classList.toggle('visivel');
 });
 
-rodapes.forEach(function (rodape) {
-  return rodape.addEventListener('dragover', Kanban.rodapeDragover);
+var Ajax = /*#__PURE__*/_createClass(function Ajax() {
+  _classCallCheck(this, Ajax);
 });
-colunas.forEach(function (coluna) {
-  coluna.addEventListener('dragover', Kanban.colunaDragover);
-  coluna.addEventListener('dragleave', Kanban.colunaDragleave);
+
+_defineProperty(Ajax, "saveTasksPosition", function (_) {
+  return console.log('Saving...');
+});
+
+rodapes.forEach(function (rodape) {
+  return rodape.addEventListener('dragenter', Kanban.rodapeDragenter);
+});
+colunas.forEach(function (coluna) {// coluna.addEventListener('dragenter', Kanban.colunaDragenter)
+  // coluna.addEventListener('dragleave', Kanban.colunaDragleave)
 });
 tarefas.forEach(function (tarefa) {
-  tarefa.addEventListener('dragover', Kanban.tarefaDragover);
+  tarefa.addEventListener('dragenter', Kanban.tarefaDragenter);
   tarefa.addEventListener('dragstart', Kanban.tarefaDragstart);
   tarefa.addEventListener('dragend', function (_) {
     return Kanban.tarefaDragend(tarefa);
