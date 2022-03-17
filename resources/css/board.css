@@ -18,6 +18,7 @@ article {
 	flex-grow: 1;
 	max-width: 400px;
 	width: 16%;
+	min-height: 70vh;
 	margin: 0.4rem;
 	overflow: hidden;
 	display: flex;
@@ -27,7 +28,7 @@ article > * { transition: background 350ms ease-out; }
 .coluna-head { padding: 0.8rem; }
 .coluna-body {
 	padding: 1rem 0.6rem;
-	border-radius: 8px;
+	border-radius: 10px;
 	flex: 1;
 }
 .add-tarefa {
@@ -74,10 +75,10 @@ label {
 	gap: 2px 5px;
 	padding: 8px;
 	grid-template:
-		"nome	   nome		 nome"		 1.6rem
-		"verificar termino	 prioridade" 1rem
-		"etiqueta  categoria designado"	 30px
-		/ 1fr	   1fr		 30px;
+		"nome      nome      nome"       1.3rem
+		"verificar termino   prioridade" 1rem
+		"etiqueta  categoria designado"  27px
+	 	/ 1fr      1fr       27px
 }
 .tarefa:hover { box-shadow: 1px 1px 8px #b4b4b4; }
 ::-webkit-scrollbar { 
@@ -125,7 +126,7 @@ span {
 	flex: 1;
 	text-align: center;
 	color: white;
-	padding: 0.2rem;
+	padding: 0.15rem;
 	border-radius: 0.4rem;
 }
 .etiqueta span { background: var(--d-red); }

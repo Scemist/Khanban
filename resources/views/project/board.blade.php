@@ -13,7 +13,7 @@
 	@csrf
 	<section>
 		@foreach ($columns as $column)
-			<article data-id="{{ $column->id }}">
+			<article data-column-id="{{ $column->id }}">
 				<div class="coluna-head">
 					<label class="faixa-roxo">{{ $column->name }}</label>
 					<div class="add-tarefa" data-column="{{ $column->id }}">

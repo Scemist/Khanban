@@ -26,7 +26,7 @@ class Kanban {
 
 		if (this != tarefaSendoArrastada) { 
 			// Se ele só não entrou nele mesmo)
-			if (tarefaSendoArrastada.parentNode.parentNode.getAttribute('data-column') != this.parentNode.parentNode.getAttribute('data-column')) {
+			if (tarefaSendoArrastada.parentNode.parentNode.getAttribute('data-column-id') != this.parentNode.parentNode.getAttribute('data-column-id')) {
 				// Se a coluna for diferente, insere before do que entrou e mata o problema
 				this.before(tarefaSendoArrastada)
 				Kanban.reorderIndex()
