@@ -32,7 +32,7 @@ class Kanban {
 				Kanban.reorderIndex()
 			} else {
 				// Se a coluna for igual, verifíca 
-				if (tarefaSendoArrastada.getAttribute('data-position') < this.getAttribute('data-position')) {
+				if (Number(tarefaSendoArrastada.getAttribute('data-position')) < Number(this.getAttribute('data-position'))) {
 					this.after(tarefaSendoArrastada)
 				} else {
 					this.before(tarefaSendoArrastada)
@@ -162,6 +162,10 @@ tarefas.forEach(tarefa => {
 	tarefa.addEventListener('dragend', _ => Kanban.tarefaDragend(tarefa))
 
 	tarefa.addEventListener('click', Modal.openTask)
+
+	tarefa.addEventListener('mousedown', _ => taskMouseUp(tarefa))
+	tarefa.addEventListener('mouseup', _ => taskMouseDown(tarefa))
+	tarefa.addEventListener('dragend', _ => taskMouseDown(tarefa))
 })
 
 filtroEscuro.addEventListener('click', Modal.close)
@@ -169,3 +173,6 @@ filtroEscuro.addEventListener('click', Modal.close)
 adicionarTarefa.forEach(coluna => 
 	coluna.addEventListener('click', _ => Modal.openTaskForm(coluna))
 )
+
+const taskMouseUp = tarefa => tarefa.classList.add('task-click-animated')
+const taskMouseDown = tarefa => tarefa.classList.remove('task-click-animated')

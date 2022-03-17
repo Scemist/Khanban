@@ -1,4 +1,4 @@
-<div class="modal-container" id="task-modal">
+<div class="modal-container open-task-animated" id="task-modal">
 	<header>
 		<div class="head head-1">
 			<div>

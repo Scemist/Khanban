@@ -24,7 +24,7 @@ article {
 	display: flex;
 	flex-direction: column;
 }
-article > * { transition: 350ms; }
+article > * { transition: background 350ms ease-out; }
 .coluna-head { padding: 0.8rem; }
 .coluna-body {
 	padding: 1rem 0.6rem;
@@ -70,7 +70,7 @@ label {
 	cursor: pointer;
 	justify-content: space-between;
 	margin-bottom: 5px;
-	transition: 0.3s cubic-bezier(0.2, 1, 0.1, 1);
+	transition: box-shadow 200ms ease-out;
 	display: grid;
 	gap: 2px 5px;
 	padding: 8px;
@@ -144,7 +144,7 @@ span {
 	justify-content: center;
 }
 .shadow:hover {
-	filter: drop-shadow(0px 8px 3px rgb(180, 180, 180, 0.7));
+	/* filter: drop-shadow(0px 8px 3px rgb(180, 180, 180, 0.7)); */
 	box-shadow: 0px 4px 5px grey;
 }
 /* --------------------------- Modal Task --------------------------- */
@@ -152,7 +152,8 @@ span {
 	position: absolute;
 	background-color: white;
 	color: #474747;
-	filter: drop-shadow(1px 1px 10px rgb(82, 82, 82));
+	/* filter: drop-shadow(1px 1px 10px rgb(82, 82, 82)); */
+	box-shadow: 1px 1px 15px rgb(82, 82, 82);
 	border-radius: 8px;
 	z-index: 5;
 	width: 50vw;
@@ -180,9 +181,24 @@ span {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: rgb(0, 0, 0, 0.5);
+	background-color: rgb(0, 0, 0, 0.7);
 }
-.blur { filter: blur(5px); }
+@-webkit-keyframes blur-animation {
+	from { /* filter: blur(0); */ }
+	to { /* filter: blur(5px); */ }
+}
+@keyframes blur-animation {
+	from { /* filter: blur(0); */ }
+	to { /* filter: blur(5px); */ }
+}
+.blur { 
+	-webkit-animation-name: blur-animation; 
+	        animation-name: blur-animation;
+	-webkit-animation-duration: 200ms;
+	        animation-duration: 200ms;
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
+}
 .modal-container #referencia {
 	background: #c5c2b8;
 	border: none;
@@ -203,7 +219,7 @@ span {
 	color: white;
 	cursor: pointer;
 }
-.modal-container #details button:hover { filter: brightness(0.9); }
+.modal-container #details button:hover { background:rgb(116, 112, 98); }
 .modal-container .checkbox-group {
 	display: flex;
 	align-items: center;
@@ -263,7 +279,7 @@ span {
 	flex-direction: column;
 	flex-wrap: wrap;
 }
-#subtasks {  padding: 1rem 10%; }
+.modal-container #subtasks {  padding: 1rem 10%; }
 .modal-container .items-group.x > * { margin: 3px 12px; }
 .modal-container .items-group.y > * { margin: 7px 0; }
 .modal-container .items-group input[type=date] {
@@ -329,3 +345,51 @@ span {
 	box-sizing: border-box;
 }
 #task-form-modal textarea[name="descricao"] { height: 5rem; }
+@-webkit-keyframes task-click-animation {
+	from { transform: scale(100%); }
+	to { transform: scale(105%); }
+}
+@keyframes task-click-animation {
+	from { transform: scale(100%); }
+	to { transform: scale(105%); }
+}
+.task-click-animated {
+	-webkit-animation-name: task-click-animation;
+	        animation-name: task-click-animation;
+	-webkit-animation-duration: 50ms;
+	        animation-duration: 50ms;
+	-webkit-animation-timing-function: ease-out;
+	        animation-timing-function: ease-out;
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
+}
+@-webkit-keyframes open-task-animation {
+	from {
+		opacity: 0;
+		transform: translateY(60%);
+	}
+	50% { opacity: 0.3; }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes open-task-animation {
+	from {
+		opacity: 0;
+		transform: translateY(60%);
+	}
+	50% { opacity: 0.3; }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.open-task-animated {
+	-webkit-animation-name: open-task-animation;
+	        animation-name: open-task-animation;
+	-webkit-animation-duration: 200ms;
+	        animation-duration: 200ms;
+	-webkit-animation-timing-function: ease-out;
+	        animation-timing-function: ease-out;
+}

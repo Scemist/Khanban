@@ -65,7 +65,7 @@ var Kanban = /*#__PURE__*/function () {
           Kanban.reorderIndex();
         } else {
           // Se a coluna for igual, verifíca 
-          if (tarefaSendoArrastada.getAttribute('data-position') < this.getAttribute('data-position')) {
+          if (Number(tarefaSendoArrastada.getAttribute('data-position')) < Number(this.getAttribute('data-position'))) {
             this.after(tarefaSendoArrastada);
           } else {
             this.before(tarefaSendoArrastada);
@@ -216,6 +216,15 @@ tarefas.forEach(function (tarefa) {
     return Kanban.tarefaDragend(tarefa);
   });
   tarefa.addEventListener('click', Modal.openTask);
+  tarefa.addEventListener('mousedown', function (_) {
+    return taskMouseUp(tarefa);
+  });
+  tarefa.addEventListener('mouseup', function (_) {
+    return taskMouseDown(tarefa);
+  });
+  tarefa.addEventListener('dragend', function (_) {
+    return taskMouseDown(tarefa);
+  });
 });
 filtroEscuro.addEventListener('click', Modal.close);
 adicionarTarefa.forEach(function (coluna) {
@@ -223,6 +232,14 @@ adicionarTarefa.forEach(function (coluna) {
     return Modal.openTaskForm(coluna);
   });
 });
+
+var taskMouseUp = function taskMouseUp(tarefa) {
+  return tarefa.classList.add('task-click-animated');
+};
+
+var taskMouseDown = function taskMouseDown(tarefa) {
+  return tarefa.classList.remove('task-click-animated');
+};
 
 /***/ }),
 
