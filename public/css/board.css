@@ -9,7 +9,6 @@ main > section {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	height: 95%;
 	min-width: 1000px;
 	max-width: 1500px;
 	margin: auto;
@@ -19,7 +18,7 @@ article {
 	flex-grow: 1;
 	max-width: 400px;
 	width: 16%;
-	margin: 0.3rem;
+	margin: 0.4rem;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -64,12 +63,12 @@ label {
 .faixa-roxo { border-bottom: 3px solid purple; }
 .tarefa {
 	-webkit-user-drag: element;
-	border-radius: 7px;
+	border-radius: 10px;
 	background-color: #ffffff;
 	box-shadow: 0px 1px 0.5rem #dbdbec;
 	cursor: pointer;
 	justify-content: space-between;
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 	transition: box-shadow 200ms ease-out;
 	display: grid;
 	gap: 2px 5px;
@@ -128,7 +127,7 @@ span {
 	text-align: center;
 	color: white;
 	padding: 0.2rem;
-	border-radius: 0.3rem;
+	border-radius: 0.4rem;
 }
 .etiqueta span { background: var(--d-red); }
 .categoria span { background: var(--d-blue); }
@@ -347,11 +346,11 @@ span {
 #task-form-modal textarea[name="descricao"] { height: 5rem; }
 @-webkit-keyframes task-click-animation {
 	from { transform: scale(100%); }
-	to { transform: scale(105%); }
+	to { transform: scale(104%); }
 }
 @keyframes task-click-animation {
 	from { transform: scale(100%); }
-	to { transform: scale(105%); }
+	to { transform: scale(104%); }
 }
 .task-click-animated {
 	-webkit-animation-name: task-click-animation;
