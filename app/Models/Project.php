@@ -11,6 +11,6 @@ class Project extends Model
 
 	public function columns()
 	{
-		return $this->hasMany(Column::class);
+		return $this->hasMany(Column::class)->orderBy('position');
 	}
 }

@@ -171,7 +171,7 @@ aside {
 	z-index: 2;
 	filter: drop-shadow(2px 4px 6px rgb(0, 0, 0, 0.3));
 }
-main {
+body > main {
 	grid-area: main;
 	background-image: linear-gradient(233deg, #faf4ff, #e8fbff);
 	color: #3b336e;

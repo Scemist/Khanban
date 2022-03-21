@@ -142,22 +142,19 @@ span {
 	align-items: center;
 	justify-content: center;
 }
-.shadow:hover {
-	/* filter: drop-shadow(0px 8px 3px rgb(180, 180, 180, 0.7)); */
-	box-shadow: 0px 4px 5px grey;
-}
+.shadow:hover { box-shadow: 0px 4px 5px grey; }
 /* --------------------------- Modal Task --------------------------- */
 .modal-container {
 	position: absolute;
 	background-color: white;
 	color: #474747;
-	/* filter: drop-shadow(1px 1px 10px rgb(82, 82, 82)); */
 	box-shadow: 1px 1px 15px rgb(82, 82, 82);
 	border-radius: 8px;
 	z-index: 5;
 	width: 50vw;
 	min-width: 350px;
 	max-height: 80vh;
+	height: fit-content;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -167,6 +164,7 @@ span {
 	overflow-x: hidden;
 }
 .modal-container > * { padding: 1rem 2.2rem; }
+.modal-container > main { padding-bottom: 2.2rem; }
 .modal-container hr {
 	border: none;
 	border-bottom: 1px solid #bbbbbb;
@@ -181,15 +179,6 @@ span {
 	top: 0;
 	left: 0;
 	background-color: rgb(0, 0, 0, 0.7);
-}
-@keyframes blur-animation {
-	from { /* filter: blur(0); */ }
-	to { /* filter: blur(5px); */ }
-}
-.blur { 
-	animation-name: blur-animation;
-	animation-duration: 200ms;
-	animation-fill-mode: forwards;
 }
 .modal-container #referencia {
 	background: #c5c2b8;
@@ -320,12 +309,18 @@ span {
 #task-form-modal form > * { 
 	width: 30%;
 	margin: 0;
+	flex-grow: 1;
 	padding: 4px;
 }
-#task-form-modal form *:last-child {  height: 2rem; }
+#task-form-modal form > *:last-child {  
+	height: 2rem; 
+	margin: 20px;
+	border-radius: 5px;
+}
 #task-form-modal fieldset {
 	display: inline-block;
 	overflow: hidden;
+	margin: 12px 1px;
 }
 #task-form-modal fieldset > *:last-child {
 	width: 100%;
@@ -337,6 +332,7 @@ span {
 	box-sizing: border-box;
 }
 #task-form-modal textarea[name="descricao"] { height: 5rem; }
+/* ------------------------------  ---------------------------- */
 @keyframes task-click-animation {
 	from { transform: scale(100%); }
 	to { transform: scale(104%); }

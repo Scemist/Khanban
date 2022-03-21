@@ -55,5 +55,5 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 Route::get('/{any}', function () {
-    return redirect()->route('inicio');
+    return redirect()->route('users.home');
 })->where('any', '.*');

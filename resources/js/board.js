@@ -113,7 +113,7 @@ class Ajax {
 			coluna.querySelectorAll('.tarefa').forEach(tarefa => {
 				const posicao = tarefa.getAttribute('data-position')
 				const tarefaId = tarefa.getAttribute('data-id')
-				const colunaId = coluna.parentNode.getAttribute('data-id')
+				const colunaId = coluna.parentNode.getAttribute('data-column-id')
 				Object.assign(dados, {
 					[tarefaId]: {
 						"coluna": colunaId,
@@ -139,7 +139,7 @@ class Ajax {
 				if (xhr.status === 200) {
 					console.log(xhr.responseText)
 				} else {
-					console.log('Problema')
+					console.log(`Problema: ${xhr.responseText}`)
 				}
 			}
 		}

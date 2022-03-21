@@ -171,7 +171,7 @@ _defineProperty(Ajax, "saveTasksPosition", function (_) {
     coluna.querySelectorAll('.tarefa').forEach(function (tarefa) {
       var posicao = tarefa.getAttribute('data-position');
       var tarefaId = tarefa.getAttribute('data-id');
-      var colunaId = coluna.parentNode.getAttribute('data-id');
+      var colunaId = coluna.parentNode.getAttribute('data-column-id');
       Object.assign(dados, _defineProperty({}, tarefaId, {
         "coluna": colunaId,
         "posicao": posicao
@@ -195,7 +195,7 @@ _defineProperty(Ajax, "request", function (json) {
       if (xhr.status === 200) {
         console.log(xhr.responseText);
       } else {
-        console.log('Problema');
+        console.log("Problema: ".concat(xhr.responseText));
       }
     }
   };

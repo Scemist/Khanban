@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Task;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,12 +77,24 @@ class ProjectController extends Controller
 
 	public function saveTasksOrder(Request $request)
 	{
-		$projetoId = $request->id;
-		$dados = json_decode($request->json, true);
+		try {
+			$dados = json_decode($request->json, true);
 
-		foreach ($dados as $key => $tarefa) {
+			DB::beginTransaction();
+			foreach ($dados as $id_tarefa => $tarefa) {
+				$task = Task::find($id_tarefa);
+				$task->column_id = $tarefa['coluna'];
+				$task->position = $tarefa['posicao'];
+				$task->save();
+			}
+			DB::commit();
+
+		} catch (Throwable $erro) {
+			DB::rollBack();
+			echo "Erro ao salvar ordem das tarefas: {$erro}";
+			die;
 		}
 
-		echo 'ok';
+		echo 'Ordem atualizada com sucesso!';
 	}
 }
