@@ -2,7 +2,7 @@
 	<header>
 		<div class="head head-1">
 			<div>
-				<h2 id="task-title">Solicitação Provinda de Cliente</h2>	
+				<h2 id="task-title">Carregando carregação carregada...</h2>	
 			</div>
 			<div class="items-group x">
 				<div><span>Etiqueta</span></div>

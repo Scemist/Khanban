@@ -13,7 +13,7 @@ class Kanban {
 	}
 	static colunaDragenter() {
 		this.classList.add('over')
-		console.log(123);
+		console.log(123)
 	}
 	static colunaDragleave() {
 		this.classList.remove('over')
@@ -67,8 +67,10 @@ class Kanban {
 }
 
 class Modal {
-	static openTask = _ =>
+	static openTask = tarefa => {
 		Modal.open('#task-modal-template')
+		Ajax.getTaskData(tarefa)
+	}
 
 	static openTaskForm = coluna => {
 		Modal.open('#task-form-modal-template')
@@ -122,11 +124,11 @@ class Ajax {
 				})
 			})
 		})
-		Ajax.request(JSON.stringify(dados))
+		Ajax.requestReorder(JSON.stringify(dados))
 	}
 
-	static request = json => {
-		const host = window.location.protocol + '//' + window.location.host;
+	static requestReorder = json => {
+		const host = window.location.protocol + '//' + window.location.host
 		const url = host + `/board/${projetoId}/reorder`
 		const data = `json=${json}`
 		const xhr = new XMLHttpRequest()
@@ -139,13 +141,20 @@ class Ajax {
 				if (xhr.status === 200) {
 					console.log(xhr.responseText)
 				} else {
-					console.log(`Problema: ${xhr.responseText}`)
+					console.log(`Problema ao atualizar ordem: ${xhr.responseText}`)
 				}
 			}
 		}
 		xhr.send(data)
 	}
+
+	static getTaskData = _ => {
+		console.log('Pegando dados da tarefa...')
+	}
 }
+
+const taskMouseUp = tarefa => tarefa.classList.add('task-click-animated')
+const taskMouseDown = tarefa => tarefa.classList.remove('task-click-animated')
 
 rodapes.forEach(rodape => 
 	rodape.addEventListener('dragenter', Kanban.rodapeDragenter)
@@ -161,7 +170,7 @@ tarefas.forEach(tarefa => {
 	tarefa.addEventListener('dragstart', Kanban.tarefaDragstart)
 	tarefa.addEventListener('dragend', _ => Kanban.tarefaDragend(tarefa))
 
-	tarefa.addEventListener('click', Modal.openTask)
+	tarefa.addEventListener('click', _ => Modal.openTask(tarefa))
 
 	tarefa.addEventListener('mousedown', _ => taskMouseUp(tarefa))
 	tarefa.addEventListener('mouseup', _ => taskMouseDown(tarefa))
@@ -173,6 +182,3 @@ filtroEscuro.addEventListener('click', Modal.close)
 adicionarTarefa.forEach(coluna => 
 	coluna.addEventListener('click', _ => Modal.openTaskForm(coluna))
 )
-
-const taskMouseUp = tarefa => tarefa.classList.add('task-click-animated')
-const taskMouseDown = tarefa => tarefa.classList.remove('task-click-animated')

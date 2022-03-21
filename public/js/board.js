@@ -116,8 +116,9 @@ var Modal = /*#__PURE__*/_createClass(function Modal() {
   _classCallCheck(this, Modal);
 });
 
-_defineProperty(Modal, "openTask", function (_) {
-  return Modal.open('#task-modal-template');
+_defineProperty(Modal, "openTask", function (tarefa) {
+  Modal.open('#task-modal-template');
+  Ajax.getTaskData(tarefa);
 });
 
 _defineProperty(Modal, "openTaskForm", function (coluna) {
@@ -178,10 +179,10 @@ _defineProperty(Ajax, "saveTasksPosition", function (_) {
       }));
     });
   });
-  Ajax.request(JSON.stringify(dados));
+  Ajax.requestReorder(JSON.stringify(dados));
 });
 
-_defineProperty(Ajax, "request", function (json) {
+_defineProperty(Ajax, "requestReorder", function (json) {
   var host = window.location.protocol + '//' + window.location.host;
   var url = host + "/board/".concat(projetoId, "/reorder");
   var data = "json=".concat(json);
@@ -195,13 +196,25 @@ _defineProperty(Ajax, "request", function (json) {
       if (xhr.status === 200) {
         console.log(xhr.responseText);
       } else {
-        console.log("Problema: ".concat(xhr.responseText));
+        console.log("Problema ao atualizar ordem: ".concat(xhr.responseText));
       }
     }
   };
 
   xhr.send(data);
 });
+
+_defineProperty(Ajax, "getTaskData", function (_) {
+  console.log('Pegando dados da tarefa...');
+});
+
+var taskMouseUp = function taskMouseUp(tarefa) {
+  return tarefa.classList.add('task-click-animated');
+};
+
+var taskMouseDown = function taskMouseDown(tarefa) {
+  return tarefa.classList.remove('task-click-animated');
+};
 
 rodapes.forEach(function (rodape) {
   return rodape.addEventListener('dragenter', Kanban.rodapeDragenter);
@@ -215,7 +228,9 @@ tarefas.forEach(function (tarefa) {
   tarefa.addEventListener('dragend', function (_) {
     return Kanban.tarefaDragend(tarefa);
   });
-  tarefa.addEventListener('click', Modal.openTask);
+  tarefa.addEventListener('click', function (_) {
+    return Modal.openTask(tarefa);
+  });
   tarefa.addEventListener('mousedown', function (_) {
     return taskMouseUp(tarefa);
   });
@@ -232,14 +247,6 @@ adicionarTarefa.forEach(function (coluna) {
     return Modal.openTaskForm(coluna);
   });
 });
-
-var taskMouseUp = function taskMouseUp(tarefa) {
-  return tarefa.classList.add('task-click-animated');
-};
-
-var taskMouseDown = function taskMouseDown(tarefa) {
-  return tarefa.classList.remove('task-click-animated');
-};
 
 /***/ }),
 

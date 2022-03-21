@@ -9,16 +9,6 @@ use App\Models\Project;
 use App\Models\User;
 use App\Models\Task;
 
-/*
-|--------------------------------------------------------------------------
-| AuthController
-|--------------------------------------------------------------------------
-|
-| Responsável pela manipulação de projetos, os métodos são:
-| Index, Store, Show, Update, Destroy e Board 
-|
-*/
-
 class ProjectController extends Controller
 {
 	public function index()
