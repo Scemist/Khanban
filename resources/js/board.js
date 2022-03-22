@@ -6,6 +6,8 @@ const adicionarTarefa = document.querySelectorAll('.add-tarefa')
 const projetoId = document.querySelector('#projeto-id').textContent
 const token = document.querySelector('main > input[name="_token"]').value
 
+const taskMouseUp = tarefa => tarefa.classList.add('task-click-animated')
+const taskMouseDown = tarefa => tarefa.classList.remove('task-click-animated')
 class Kanban {
 	static rodapeDragenter() {
 		const tarefaSendoArrastada = document.querySelector('.is-dragging')
@@ -65,7 +67,6 @@ class Kanban {
 		})
 	}
 }
-
 class Modal {
 	static openTask = tarefa => {
 		Modal.open('#task-modal-template')
@@ -95,7 +96,6 @@ class Modal {
 		document.querySelector('.modal-container').remove()
 	}
 }
-
 class AboveMenu {
 	static addListener = _ => {
 		document.querySelectorAll('.above-menu').forEach(aboveMenu => {
@@ -107,7 +107,6 @@ class AboveMenu {
 	static toggleVisible = element =>
 		element.querySelector('.menu').classList.toggle('visivel')
 }
-
 class Ajax {
 	static saveTasksPosition = _ => {
 		let dados = {}
@@ -161,14 +160,14 @@ class Ajax {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
 					const resposta = JSON.parse(xhr.responseText)
+					console.log(resposta)
+
 					document.querySelector('#task-modal #task-title').innerText = resposta.title
 					document.querySelector('#task-modal .descricao').innerText = resposta.description
 					// document.querySelector('#task-modal .etiqueta').innerText = resposta.tag
 					// document.querySelector('#task-modal .categoria').innerText = resposta.category
 					// document.querySelector('#task-modal .designado').innerText = resposta.title
 					// document.querySelector('#task-modal #referencia').innerHTML = resposta.title
-
-					console.log(resposta)
 				} else {
 					console.log(`Problema ao buscar dados da tarefa: ${xhr.responseText}`)
 				}
@@ -178,17 +177,9 @@ class Ajax {
 	}
 }
 
-const taskMouseUp = tarefa => tarefa.classList.add('task-click-animated')
-const taskMouseDown = tarefa => tarefa.classList.remove('task-click-animated')
-
 rodapes.forEach(rodape => 
 	rodape.addEventListener('dragenter', Kanban.rodapeDragenter)
 )
-
-colunas.forEach(coluna => {
-	// coluna.addEventListener('dragenter', Kanban.colunaDragenter)
-	// coluna.addEventListener('dragleave', Kanban.colunaDragleave)
-})
 
 tarefas.forEach(tarefa => {
 	tarefa.addEventListener('dragenter', Kanban.tarefaDragenter)

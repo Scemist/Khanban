@@ -91,7 +91,6 @@ body {
 fieldset {
 	border: none;
 }
-
 @media screen and (max-width: 575px) { 
 	/* Extra Small */
 	body {
