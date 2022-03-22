@@ -2,11 +2,11 @@
 	<header>
 		<div class="head head-1">
 			<div>
-				<h2 id="task-title">Carregando carregação carregada...</h2>	
+				<h2 id="task-title">Carregando...</h2>	
 			</div>
 			<div class="items-group x">
-				<div><span>Etiqueta</span></div>
-				<div><span>Categoria</span></div>
+				<div><span class="etiqueta">Etiqueta</span></div>
+				<div><span class="categoria">Categoria</span></div>
 			</div>
 		</div>
 		<hr>
@@ -14,7 +14,7 @@
 		<div class="head head-2">
 			<div class="items-group y">
 				<p>
-					<b>Lucas Gonçalves</b>
+					<b class="designado">Lucas Gonçalves</b>
 					<small> como designado.</small>
 				</p>
 				<input type="text" id="referencia" value="Email de 2022 às 23:54" placeholder="Referência ou origem da tarefa?">
@@ -50,10 +50,9 @@
 	</section>
 	<hr>
 
-	<section>
-		<legend><strong>Descrição</strong></legend>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestias aspernatur at aut? Consequuntur, deleniti fugiat rem molestiae animi cupiditate neque perspiciatis praesentium illum nisi consectetur est impedit ad rerum, necessitatibus repellat dolorem quam.</p>
-		<p>If is that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam totam accusamus culpa!</p>
+	<section class="descricao">
+		<legend><strong>Acalme-se</strong></legend>
+		<p>Carregando...</p>
 	</section>
 	<hr>
 

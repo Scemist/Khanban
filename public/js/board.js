@@ -204,8 +204,33 @@ _defineProperty(Ajax, "requestReorder", function (json) {
   xhr.send(data);
 });
 
-_defineProperty(Ajax, "getTaskData", function (_) {
+_defineProperty(Ajax, "getTaskData", function (tarefa) {
   console.log('Pegando dados da tarefa...');
+  var host = window.location.protocol + '//' + window.location.host;
+  var url = host + "/tarefas/".concat(tarefa.getAttribute('data-id'));
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.setRequestHeader('X-CSRF-TOKEN', token);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onreadystatechange = function (_) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var resposta = JSON.parse(xhr.responseText);
+        document.querySelector('#task-modal #task-title').innerText = resposta.title;
+        document.querySelector('#task-modal .descricao').innerText = resposta.description; // document.querySelector('#task-modal .etiqueta').innerText = resposta.tag
+        // document.querySelector('#task-modal .categoria').innerText = resposta.category
+        // document.querySelector('#task-modal .designado').innerText = resposta.title
+        // document.querySelector('#task-modal #referencia').innerHTML = resposta.title
+
+        console.log(resposta);
+      } else {
+        console.log("Problema ao buscar dados da tarefa: ".concat(xhr.responseText));
+      }
+    }
+  };
+
+  xhr.send();
 });
 
 var taskMouseUp = function taskMouseUp(tarefa) {

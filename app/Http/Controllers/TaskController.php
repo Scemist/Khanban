@@ -44,6 +44,9 @@ class TaskController extends Controller
 
 	public function show($id)
 	{
+		$tarefa = Task::find($id);
+
+		echo json_encode($tarefa);
 	}
 
 	public function edit($id)

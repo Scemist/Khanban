@@ -148,8 +148,33 @@ class Ajax {
 		xhr.send(data)
 	}
 
-	static getTaskData = _ => {
+	static getTaskData = tarefa => {
 		console.log('Pegando dados da tarefa...')
+		const host = window.location.protocol + '//' + window.location.host
+		const url = host + `/tarefas/${tarefa.getAttribute('data-id')}`
+		const xhr = new XMLHttpRequest()
+
+		xhr.open('GET', url)
+		xhr.setRequestHeader('X-CSRF-TOKEN', token)
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+		xhr.onreadystatechange = _ => {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+					const resposta = JSON.parse(xhr.responseText)
+					document.querySelector('#task-modal #task-title').innerText = resposta.title
+					document.querySelector('#task-modal .descricao').innerText = resposta.description
+					// document.querySelector('#task-modal .etiqueta').innerText = resposta.tag
+					// document.querySelector('#task-modal .categoria').innerText = resposta.category
+					// document.querySelector('#task-modal .designado').innerText = resposta.title
+					// document.querySelector('#task-modal #referencia').innerHTML = resposta.title
+
+					console.log(resposta)
+				} else {
+					console.log(`Problema ao buscar dados da tarefa: ${xhr.responseText}`)
+				}
+			}
+		}
+		xhr.send()
 	}
 }
 
