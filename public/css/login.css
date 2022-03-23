@@ -1,3 +1,92 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap);
+:root {
+	font-size: 16px;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	font-family: 'Open Sans', sans-serif;
+
+	--smoke: whitesmoke;
+
+	--blue: #2A2275;
+	--p-blue: #e4e2ec;
+	--d-blue: #3b336e;
+	--o-blue: #3b336ecc;
+
+	--red: #DB3E34;
+	--p-red: #e9e2e2;
+	--d-red: #4F1131;
+
+	--yellow: #F0E445;
+	--p-yellow: #e9e7e1;
+	--d-yellow: #5f532e;
+
+	--green: #009990;
+	--p-green: #d2e1d9;
+	--d-green: #365142;
+}
+* {
+	outline: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+.green {
+	background-color: var(--green);
+	color: var(--smoke);
+}
+.yellow {
+	background-color: var(--blue);
+	color: var(--smoke);
+}
+.red {
+	background-color: var(--red);
+	color: var(--smoke);
+}
+.blue {
+	background-color: var(--blue);
+	color: var(--smoke);
+}
+.white {
+	background-color: var(--smoke);
+	color: var(--d-blue);
+}
+.svg-blue {
+	fill: var(--p-blue);
+	cursor: pointer;
+}
+.btn {
+	padding: 0.7rem 1rem;
+	margin: 0.1rem;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	min-width: 6rem;
+	text-align: center;
+	text-decoration: none;
+	transition: box-shadow 170ms ease;
+}
+.btn:hover { box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5); }
+.btn:focus-visible {
+	outline: 1px solid var(--d-red);
+	filter: brightness(90%);
+}
+.in {
+	padding: 0.7rem 1rem;
+	border: 1px solid gray;
+	border-radius: 0.3rem;
+	background-color: #97cadb;
+	border: none;
+	cursor: pointer;	
+}
+fieldset { border: none; }
 body {
 	background-image: linear-gradient(to right bottom, #001b48, #02457a);
 	background-repeat: no-repeat;
@@ -13,7 +102,6 @@ main {
 .card {
 	background: white;
 	padding: 2rem 3rem;
-	/* border-radius: 7px; */
 	box-shadow: 1px 1px 12px rgb(0, 0, 0, 0.5);
 	min-width: 20vw;
 }
@@ -33,9 +121,7 @@ blockquote {
 	text-align: right;
 	color: lightgray;
 }
-blockquote a {
-	color: snow;
-}
+blockquote a { color: snow; }
 label {
 	margin: 2px;
 	color: var(--o-blue);

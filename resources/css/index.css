@@ -37,9 +37,7 @@ table, td, th {
 	width: 80%;
 	display: block;
 }
-main {
-	display: flex;
-}
+main { display: flex; }
 figure {
 	background-color: var(--d-blue);
 	border-radius: 0.5rem;
@@ -60,12 +58,8 @@ figure p {
 	line-height: normal;
 	color: #a6a7c7;
 }
-h3 {
-	font-size: 12px;
-}
-main > * {
-	flex: 1;
-}
+h3 { font-size: 12px; }
+main > * { flex: 1; }
 .projetos {
 	display: flex;
 	flex-wrap: wrap;
@@ -81,9 +75,7 @@ main > * {
 	overflow: hidden;
 	transition: filter 170ms ease;
 }
-.projetos > *:hover {
-	filter: drop-shadow(1px 1px 10px rgba(70, 70, 70, 0.739));
-}
+.projetos > *:hover { filter: drop-shadow(1px 1px 10px rgba(70, 70, 70, 0.739)); }
 figure:last-child {
 	text-align: center;
 	display: flex;

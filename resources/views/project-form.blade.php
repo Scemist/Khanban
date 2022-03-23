@@ -1,7 +1,7 @@
 @extends('templates.index-template')
 
 @push('styles')
-	<link rel="stylesheet" href="{{ asset('css/criar.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/projeto-form.css') }}">
 @endpush
 
 @section('conteudo')

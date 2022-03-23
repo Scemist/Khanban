@@ -73,9 +73,7 @@ body {
 	text-decoration: none;
 	transition: box-shadow 170ms ease;
 }
-.btn:hover {
-	box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5);
-}
+.btn:hover { box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5); }
 .btn:focus-visible {
 	outline: 1px solid var(--d-red);
 	filter: brightness(90%);
@@ -88,9 +86,7 @@ body {
 	border: none;
 	cursor: pointer;	
 }
-fieldset {
-	border: none;
-}
+fieldset { border: none; }
 @media screen and (max-width: 575px) { 
 	/* Extra Small */
 	body {
@@ -301,13 +297,11 @@ footer a { color: white; }
 	cursor: pointer;
 }
 .above-menu li {
-	/* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 	list-style-type: none;
 	border-radius: 4px;
 	padding: 6px 13px;
 	margin: 10px 0;
 	background: rgb(236, 232, 227);
-	/* font-weight: 400; */
 }
 .above-menu li:hover {
 	cursor: pointer;

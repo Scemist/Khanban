@@ -1,12 +1,10 @@
 {
-    "/css/projeto.css": "/css/projeto.css",
-    "/css/login.css": "/css/login.css",
-    "/css/lista.css": "/css/lista.css",
-    "/css/index.css": "/css/index.css",
-    "/css/criar.css": "/css/criar.css",
-    "/css/board.css": "/css/board.css",
     "/fonts/opensans.css": "/fonts/opensans.css",
-    "/js/board.js": "/js/board.js",
+    "/css/projeto-form.css": "/css/projeto-form.css",
+    "/css/board.css": "/css/board.css",
+    "/css/index.css": "/css/index.css",
     "/css/project-all.css": "/css/project-all.css",
-    "/css/index-all.css": "/css/index-all.css"
+    "/css/index-all.css": "/css/index-all.css",
+    "/css/login.css": "/css/login.css",
+    "/js/board.js": "/js/board.js"
 }

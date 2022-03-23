@@ -14,40 +14,46 @@ const mix = require('laravel-mix');
 mix
 
 	/*-------------------------------------------------------------------------
-	| Constrói os arquivos de estilo da aplicação
+	| Constrói os arquivos de estilo da aplicação.
 	|------------------------------------------------------------------------*/
 
-	.postCss('resources/css/board.css', 'public/css')
-	.postCss('resources/css/criar.css', 'public/css')
 	.postCss('resources/css/index.css', 'public/css')
-	.postCss('resources/css/lista.css', 'public/css')
-	.postCss('resources/css/login.css', 'public/css')
-	.postCss('resources/css/projeto.css', 'public/css')
+	.postCss('resources/css/board.css', 'public/css')
+	.postCss('resources/css/projeto-form.css', 'public/css')
 	.postCss('resources/fonts/opensans.css', 'public/fonts')
 
 	/*-------------------------------------------------------------------------
-	| Junta e minifica todos os modulos do kanban
+	| Junta o CSS root com o CSS do template.
 	|------------------------------------------------------------------------*/
 
-	.combine([
+	.styles([
+		'resources/css/root.css',
+		'resources/css/project-template.css'
+	], 'public/css/project-all.css', true)
+
+	.styles([
+		'resources/css/root.css',
+		'resources/css/index-template.css'
+	], 'public/css/index-all.css', true)
+
+	/*-------------------------------------------------------------------------
+	| Login é a unica página que não tem template. Portanto precisa do root.
+	|------------------------------------------------------------------------*/
+
+	.styles([
+		'resources/css/root.css',
+		'resources/css/login.css',
+	], 'public/css/login.css', true)
+
+	/*-------------------------------------------------------------------------
+	| Junta e minifica todos os modulos JS do kanban.
+	|------------------------------------------------------------------------*/
+
+	.scripts([
 		'resources/js/board/set.js',
 		'resources/js/board/kanban-module.js',
 		'resources/js/board/modal-module.js',
 		'resources/js/board/above-menu-module.js',
 		'resources/js/board/ajax-module.js',
 		'resources/js/board/init.js'
-	], 'public/js/board.js', true)
-
-	/*-------------------------------------------------------------------------
-	| Junta o CSS root com o CSS do template
-	|------------------------------------------------------------------------*/
-
-	.combine([
-		'resources/css/root.css',
-		'resources/css/project-template.css'
-	], 'public/css/project-all.css', true)
-
-	.combine([
-		'resources/css/root.css',
-		'resources/css/index-template.css'
-	], 'public/css/index-all.css', true);
+	], 'public/js/board.js', true);

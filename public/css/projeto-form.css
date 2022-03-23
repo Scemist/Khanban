@@ -19,9 +19,7 @@ textarea {
 	resize: none;
 	color: gray;
 }
-fieldset {
-	border: none;
-}
+fieldset { border: none; }
 #card {
 	min-width: 40vw;
 	background: white;
@@ -36,11 +34,7 @@ main {
 	justify-content: center;
 	align-items: center;
 }
-
-#cadastrar {
-	float: right;
-}
-
+#cadastrar { float: right; }
 fieldset {
 	display: grid;
 	grid-template-columns: auto 1fr;

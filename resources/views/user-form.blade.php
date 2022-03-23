@@ -1,10 +1,10 @@
-@extends('templates/home')
+@extends('templates.index-template')
 
 @section('conteudo')
 	<div class="card">
 		<h2>Cadastre-se e tenha acesso a tudo</h2>
 
-		<form action="{{ route('user.join') }}" method="POST">
+		<form action="{{ route('users.store') }}" method="POST">
 			@csrf
 			<fieldset>
 				<div class="in-group nome">

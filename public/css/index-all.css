@@ -73,9 +73,7 @@ body {
 	text-decoration: none;
 	transition: box-shadow 170ms ease;
 }
-.btn:hover {
-	box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5);
-}
+.btn:hover { box-shadow: 1px 1px 0.5rem rgb(0, 0, 0, 0.5); }
 .btn:focus-visible {
 	outline: 1px solid var(--d-red);
 	filter: brightness(90%);
@@ -88,9 +86,7 @@ body {
 	border: none;
 	cursor: pointer;	
 }
-fieldset {
-	border: none;
-}
+fieldset { border: none; }
 body {
 	display: grid;
 	grid-template: 
