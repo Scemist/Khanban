@@ -10,14 +10,6 @@ use Auth;
 
 class TaskController extends Controller
 {
-	public function index()
-	{
-	}
-
-	public function create()
-	{
-	}
-
 	public function store(Request $request)
 	{
 		$task = new Task;
@@ -28,7 +20,6 @@ class TaskController extends Controller
 		$task->color = $request->cor;
 		$task->designated_id = $request->designado;
 		$task->column_id = $request->coluna;
-		// $task->category_id = $request->categoria;
 		$task->save();
 		$taskId = $task->id;
 
@@ -47,17 +38,5 @@ class TaskController extends Controller
 		$tarefa = Task::find($id);
 
 		echo json_encode($tarefa);
-	}
-
-	public function edit($id)
-	{
-	}
-
-	public function update(Request $request, $id)
-	{
-	}
-
-	public function destroy($id)
-	{
 	}
 }

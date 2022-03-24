@@ -18,4 +18,19 @@ class Task extends Model
 	{
 		return $this->hasOne(Tag::class);
 	}
+
+	public function categories()
+	{
+		return $this->hasOne(Category::class);
+	}
+
+	public function subtasks()
+	{
+		return $this->hasMany(Subtask::class);
+	}
+
+	public function comments()
+	{
+		return $this->hasMany(Comment::class);
+	}
 }

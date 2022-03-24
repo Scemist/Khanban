@@ -13,4 +13,9 @@ class Project extends Model
 	{
 		return $this->hasMany(Column::class)->orderBy('position');
 	}
+
+	public function projectsettings()
+	{
+		return $this->hasMany(ProjectSetting::class);
+	}
 }
