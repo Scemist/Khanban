@@ -17,8 +17,8 @@ return new class extends Migration
 			$table->id();
 			$table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
 			$table->tinyText('title');
-			$table->string('description');
-			$table->tinyText('color');
+			$table->string('description')->nullable();
+			$table->tinyText('color')->nullable();
             $table->timestamps();
         });
     }

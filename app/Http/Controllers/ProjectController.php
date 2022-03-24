@@ -56,12 +56,19 @@ class ProjectController extends Controller
 	public function board($id)
 	{
 		$users = User::get();
-		$project = Project::with('columns.tasks.tags')->find($id);
+
+		$project = Project::with([
+			'columns.tasks.tag',
+			'columns.tasks.category',
+		])->find($id);
+
+		$categories = Project::find($id)->categories;
 
 		return view('project.board', [
 			'project' => $project,
-			'users' => $users,
 			'columns' => $project->columns,
+			'users' => $users,
+			'categories' => $categories,
 		]);
 	}
 
@@ -78,7 +85,7 @@ class ProjectController extends Controller
 				$task->save();
 			}
 			DB::commit();
-
+			
 		} catch (Throwable $erro) {
 			DB::rollBack();
 			echo "Erro ao salvar ordem das tarefas: {$erro}";

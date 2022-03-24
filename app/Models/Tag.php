@@ -9,7 +9,7 @@ class Tag extends Model
 {
     use HasFactory;
 
-	public function tasks()
+	public function task()
 	{
 		return $this->belongsTo(Task::class);
 	}

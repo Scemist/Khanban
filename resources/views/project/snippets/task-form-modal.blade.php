@@ -37,9 +37,9 @@
 				<label>Categoria</label>
 				<select name="categoria">
 					<option></option>
-					<option value="453">Humanas</option>
-					<option value="626">Exatas</option>
-					<option value="654">Abstrato</option>
+					@foreach ($categories as $category)
+						<option value="{{ $category->id }}">{{ $category->title }}</option>
+					@endforeach
 				</select>
 			</fieldset>
 
@@ -53,7 +53,7 @@
 				<select name="designado">
 					<option></option>
 					@foreach ($users as $user)
-						<option value="{{ $user->id }}">{{ $user->name }}
+						<option value="{{ $user->id }}">{{ $user->name }}</option>
 					@endforeach
 				</select>
 			</fieldset>

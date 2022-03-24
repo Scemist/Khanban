@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
 	public function tasks()
 	{
-		return $this->belongsTo(Task::class);
+		return $this->hasMany(Task::class);
+	}
+
+	public function project()
+	{
+		return $this->belongsTo(Project::class);
 	}
 }

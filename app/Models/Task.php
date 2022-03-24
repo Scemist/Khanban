@@ -9,19 +9,19 @@ class Task extends Model
 {
     use HasFactory;
 
-	public function columns()
+	public function column()
 	{
 		return $this->belongsTo(Column::class);
 	}
 
-	public function tags()
+	public function tag()
 	{
 		return $this->hasOne(Tag::class);
 	}
 
-	public function categories()
+	public function category()
 	{
-		return $this->hasOne(Category::class);
+		return $this->belongsTo(Category::class);
 	}
 
 	public function subtasks()
