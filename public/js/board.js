@@ -217,11 +217,46 @@ _defineProperty(Ajax, "getTaskData", function (tarefa) {
       if (xhr.status === 200) {
         var resposta = JSON.parse(xhr.responseText);
         console.log(resposta);
-        document.querySelector('#task-modal #task-title').innerText = resposta.title;
-        document.querySelector('#task-modal .descricao').innerText = resposta.description; // document.querySelector('#task-modal .etiqueta').innerText = resposta.tag
-        // document.querySelector('#task-modal .categoria').innerText = resposta.category
-        // document.querySelector('#task-modal .designado').innerText = resposta.title
-        // document.querySelector('#task-modal #referencia').innerHTML = resposta.title
+
+        var setValue = function setValue(identifier, value) {
+          return document.querySelector("#task-modal ".concat(identifier)).innerText = value;
+        };
+
+        if (resposta.title != null) {
+          setValue('#task-title', resposta.title);
+        } else {
+          setValue('#task-title', '');
+        }
+
+        if (resposta.description != null) {
+          setValue('.descricao', resposta.description);
+        } else {
+          setValue('.descricao', '');
+        }
+
+        if (resposta.owner != null) {
+          setValue('.criador', resposta.owner['name']);
+        } else {
+          setValue('.criador', '');
+        }
+
+        if (resposta.tag != null) {
+          setValue('.etiqueta', resposta.tag['title']);
+        } else {
+          setValue('.etiqueta', '');
+        }
+
+        if (resposta.category != null) {
+          setValue('.categoria', resposta.category['title']);
+        } else {
+          setValue('.categoria', '');
+        }
+
+        if (resposta.designated != null) {
+          setValue('.designado', resposta.designated['name']);
+        } else {
+          setValue('.designado', '');
+        }
       } else {
         console.log("Problema ao buscar dados da tarefa: ".concat(xhr.responseText));
       }

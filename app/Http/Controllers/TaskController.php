@@ -33,7 +33,6 @@ class TaskController extends Controller
 				$tag->task_id = $taskId;
 				$tag->save();
 			}
-			
 		} catch (PDOException $erro) {
 			DB::rollBack();
 			return 'Erro no PDO';
@@ -45,7 +44,7 @@ class TaskController extends Controller
 
 	public function show($id)
 	{
-		$tarefa = Task::with('tag')->find($id);
+		$tarefa = Task::with(['tag', 'category', 'subtasks', 'comments', 'owner', 'designated'])->find($id);
 
 		echo json_encode($tarefa);
 	}

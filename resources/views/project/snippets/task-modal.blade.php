@@ -2,32 +2,32 @@
 	<header>
 		<div class="head head-1">
 			<div>
-				<h2 id="task-title">Carregando...</h2>	
+				<h2 id="task-title"><mark class="loader"></mark></h2>	
 			</div>
 			<div class="items-group x">
-				<div><span class="etiqueta">Etiqueta</span></div>
-				<div><span class="categoria">Categoria</span></div>
+				<div><span class="etiqueta"></span></div>
+				<div><span class="categoria"></span></div>
 			</div>
 		</div>
 		<hr>
 		
 		<div class="head head-2">
 			<div class="items-group y">
-				<p>
-					<b class="designado">Lucas Gonçalves</b>
+				<div>
+					<b class="designado"><mark class="loader"></mark></b>
 					<small> como designado.</small>
-				</p>
-				<input type="text" id="referencia" value="Email de 2022 às 23:54" placeholder="Referência ou origem da tarefa?">
+				</div>
+				<input type="text" id="referencia" value=" " placeholder="Referência ou origem da tarefa?">
 			</div>
 
 			<div class="items-group y">
 				<div class="items-group x">
 					Check-in
-					<input type="date" value="2022-02-26">
+					<input type="date" value=" ">
 				</div>
 				<div class="items-group x">
 					Vencimento
-					<input type="date" value="2022-03-03">
+					<input type="date" value=" ">
 				</div>
 			</div>
 		</div>
@@ -37,27 +37,26 @@
 	<section id="subtasks">
 		<div class="icon-group">
 			<input type="checkbox">
-			<label>A lorem ipsum subtask</label>
+			<label><mark class="loader"></mark></label>
 		</div>
 		<div class="icon-group">
 			<input type="checkbox">
-			<label>Alahu akbar</label>
+			<label><mark class="loader"></mark></label>
 		</div>
 		<div class="icon-group">
 			<input type="checkbox">
-			<label>Ukranian test</label>
+			<label><mark class="loader"></mark></label>
 		</div>
 	</section>
 	<hr>
 
 	<section class="descricao">
-		<legend><strong>Acalme-se</strong></legend>
-		<p>Carregando...</p>
+		<mark class="loader"></mark>
 	</section>
 	<hr>
 
 	<section id="details">
-		<small>Criado por Lucas Gonçalves em 02 de maio 2021</small>
+		<small>Criado por <cite class="criador"><mark class="loader"></mark></cite> em <mark class="loader"></mark></small>
 		
 		<div class="task above-menu">
 			<button>Acões da Tarefa</button>
@@ -72,31 +71,31 @@
 	<section id="comments">
 		<div class="comment-container">
 			<div class="comment-head">
-				<b>Lucas Gonçalves</b> 
-				<small> 22 de fevereiro de 2021 às 12:23</small>
+				<b><mark class="loader"></mark></b> 
+				<small><mark class="loader"></mark></small>
 				<div class="comment-menu">
 					<a>Editar</a>
 				</div>
 			</div>
 			<div class="comment-body">
 				<p>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet velit in adipisci.
+					<mark class="loader"></mark>
 				</p>
 			</div>
 		</div>
 
 		<div class="comment-container">
 			<div class="comment-head">
-				<b>John Ruddley</b> 
-				<small> 13 de fevereiro de 2021 às 16:30</small>
+				<b><mark class="loader"></mark></b> 
+				<small><mark class="loader"></mark></small>
 				<div class="comment-menu">
 					<a>Editar</a>
 				</div>
 			</div>
 			<div class="comment-body">
 				<p>
-					Ipsum dolor sit amet consectetur.<br>
-					<b>Alahu Akbar</b>
+					<mark class="loader"></mark><br>
+					<b><mark class="loader"></mark></b>
 				</p>
 			</div>
 		</div>

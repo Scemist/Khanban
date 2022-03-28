@@ -16,7 +16,7 @@ class UserController extends Controller
 		return view('index', ['projetos' => $projetos]);
 	}
 
-    public function store(Request $request): void
+	public function store(Request $request): void
 	{
 		$user = new User;
 		$user->name = $request->nome;
@@ -25,9 +25,5 @@ class UserController extends Controller
 		$user->save();
 
 		dd($user);
-	}
-
-	public function destroy(): void
-	{
 	}
 }

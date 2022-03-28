@@ -33,4 +33,14 @@ class Task extends Model
 	{
 		return $this->hasMany(Comment::class);
 	}
+
+	public function owner()
+	{
+		return $this->hasOne(User::class, 'id', 'owner_id');
+	}
+
+	public function designated()
+	{
+		return $this->hasOne(User::class, 'id', 'designated_id');
+	}
 }

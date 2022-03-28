@@ -74,23 +74,22 @@ class ProjectController extends Controller
 
 	public function saveTasksOrder(Request $request)
 	{
+		DB::beginTransaction();
 		try {
 			$dados = json_decode($request->json, true);
 
-			DB::beginTransaction();
 			foreach ($dados as $id_tarefa => $tarefa) {
 				$task = Task::find($id_tarefa);
 				$task->column_id = $tarefa['coluna'];
 				$task->position = $tarefa['posicao'];
 				$task->save();
 			}
-			DB::commit();
-			
 		} catch (Throwable $erro) {
 			DB::rollBack();
 			echo "Erro ao salvar ordem das tarefas: {$erro}";
 			die;
 		}
+		DB::commit();
 
 		echo 'Ordem atualizada com sucesso!';
 	}
