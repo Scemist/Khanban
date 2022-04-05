@@ -1,4 +1,4 @@
-<div class="modal-container" id="task-form-modal">
+<div class="modal-container open-task-animated" id="task-form-modal">
 	<header>
 		<h2>Criar Tarefa</h2>
 	</header>
@@ -15,9 +15,23 @@
 				<input type="text" name="titulo" required>
 			</fieldset>
 
+			
+			<fieldset class="cor">
+				<label>Cor</label>
+				<select name="cor">
+					<option>Branco</option>
+					<option value="azul">Azul</option>
+					<option value="vermelho">Vermelho</option>
+					<option value="verde">Verde</option>
+					<option value="amarelo">Amarelo</option>
+					<option value="rosa">Rosa</option>
+					<option value="roxo">Roxo</option>
+				</select>
+			</fieldset>
+
 			<fieldset class="descricao">
 				<label>Descrição</label>
-				<textarea name="descricao"></textarea>
+				<textarea name="descricao" rows="5"></textarea>
 			</fieldset>
 
 			<fieldset class="categoria">
@@ -50,18 +64,6 @@
 				<input type="text" name="referencia">
 			</fieldset>
 
-			<fieldset class="cor">
-				<label>Cor</label>
-				<select name="cor">
-					<option>Branco</option>
-					<option value="azul">Azul</option>
-					<option value="vermelho">Vermelho</option>
-					<option value="verde">Verde</option>
-					<option value="amarelo">Amarelo</option>
-					<option value="rosa">Rosa</option>
-					<option value="roxo">Roxo</option>
-				</select>
-			</fieldset>
 
 			<fieldset class="evento">
 				<label>Data do evento</label>

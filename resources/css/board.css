@@ -300,29 +300,27 @@ span {
 #task-modal .comment-menu { float: right; }
 #task-modal .comment-menu > * { cursor: pointer; }
 /* ------------------------------ Task Modal Form ---------------------------- */
-
-
-		#task-form-modal form {
-			display: grid;
-			grid-template:
-				"tf-titulo    tf-titulo     tf-descricao" auto
-				"tf-categoria tf-etiqueta   tf-descricao" auto
-				"tf-designado tf-referencia tf-cor"       auto
-				"tf-evento    tf-vencimento tf-enviar"    auto
-				/ 1fr         1fr           1fr;
-		}
-		#task-form-modal .titulo { grid-area: tf-titulo; }
-		#task-form-modal .descricao { grid-area: tf-descricao; }
-		#task-form-modal .categoria { grid-area: tf-categoria; }
-		#task-form-modal .etiqueta { grid-area: tf-etiqueta; }
-		#task-form-modal .designado { grid-area: tf-designado; }
-		#task-form-modal .referencia { grid-area: tf-referencia; }
-		#task-form-modal .cor { grid-area: tf-cor; }
-		#task-form-modal .evento { grid-area: tf-evento; }
-		#task-form-modal .vencimento { grid-area: tf-vencimento; }
-		#task-form-modal .enviar { grid-area: tf-enviar; }
-
-
+#task-form-modal form {
+	display: grid;
+	gap: 1.5rem 0.7rem;
+	grid-template:
+		"tf-titulo    tf-titulo    tf-cor"        auto
+		"tf-descricao tf-descricao tf-descricao"  auto
+		"tf-categoria tf-etiqueta  tf-referencia" auto
+		"tf-designado tf-evento    tf-vencimento" auto
+		".            .            tf-enviar"     auto
+		/ 1fr         1fr          1fr;
+}
+#task-form-modal .titulo { grid-area: tf-titulo; }
+#task-form-modal .descricao { grid-area: tf-descricao; }
+#task-form-modal .categoria { grid-area: tf-categoria; }
+#task-form-modal .etiqueta { grid-area: tf-etiqueta; }
+#task-form-modal .designado { grid-area: tf-designado; }
+#task-form-modal .referencia { grid-area: tf-referencia; }
+#task-form-modal .cor { grid-area: tf-cor; }
+#task-form-modal .evento { grid-area: tf-evento; }
+#task-form-modal .vencimento { grid-area: tf-vencimento; }
+#task-form-modal .enviar { grid-area: tf-enviar; }
 #task-form-modal fieldset {
 	flex-direction: column;
 	display: flex;
@@ -330,7 +328,10 @@ span {
 }
 #task-form-modal .categoria select,
 #task-form-modal .etiqueta input { width: 100%; }
-#task-form-modal .descricao textarea { height: 100%; }
+#task-form-modal .descricao textarea { 
+	height: 100%;
+	resize: vertical;
+}
 #task-form-modal fieldset > input,
 #task-form-modal fieldset > textarea,
 #task-form-modal fieldset > select {
@@ -345,19 +346,7 @@ span {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
-	text-align: center;
 }
-/* #task-form-modal form textarea { resize: none; }
-#task-form-modal form > *:last-child {  
-	height: 2rem; 
-	border-radius: 5px;
-}
-#task-form-modal fieldset {
-	display: inline-block;
-	overflow: hidden;
-	margin: 12px 1px;
-}
-#task-form-modal textarea[name="descricao"] { height: 5rem; } */
 /* ------------------------------  ---------------------------- */
 @keyframes task-click-animation {
 	from { transform: scale(100%); }
