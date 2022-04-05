@@ -17,7 +17,7 @@
 					<b class="designado"><mark class="loader"></mark></b>
 					<small> como designado.</small>
 				</div>
-				<input type="text" id="referencia" value=" " placeholder="Referência ou origem da tarefa?">
+				<input type="text" class="referencia" value=" " placeholder="Referência ou origem da tarefa?">
 			</div>
 
 			<div class="items-group y">
@@ -56,7 +56,7 @@
 	<hr>
 
 	<section id="details">
-		<small>Criado por <cite class="criador"><mark class="loader"></mark></cite> em <mark class="loader"></mark></small>
+		<small>Criado por <cite class="criador"><mark class="loader"></mark></cite> em <cite class="criado-em"><mark class="loader"></mark></cite></small>
 		
 		<div class="task above-menu">
 			<button>Acões da Tarefa</button>

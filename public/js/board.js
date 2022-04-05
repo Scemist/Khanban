@@ -240,22 +240,34 @@ _defineProperty(Ajax, "getTaskData", function (tarefa) {
           setValue('.criador', '');
         }
 
+        if (resposta.created_at != null) {
+          setValue('.criado-em', resposta.created_at);
+        } else {
+          setValue('.criado-em', '');
+        }
+
         if (resposta.tag != null) {
           setValue('.etiqueta', resposta.tag['title']);
         } else {
-          setValue('.etiqueta', '');
+          document.querySelector('#task-modal .etiqueta').style.visibility = 'hidden';
         }
 
         if (resposta.category != null) {
           setValue('.categoria', resposta.category['title']);
         } else {
-          setValue('.categoria', '');
+          document.querySelector('#task-modal .categoria').style.visibility = 'hidden';
         }
 
         if (resposta.designated != null) {
           setValue('.designado', resposta.designated['name']);
         } else {
           setValue('.designado', '');
+        }
+
+        if (resposta.reference != null) {
+          document.querySelector('#task-modal .referencia').value = resposta.reference;
+        } else {
+          document.querySelector('#task-modal .referencia').value = '';
         }
       } else {
         console.log("Problema ao buscar dados da tarefa: ".concat(xhr.responseText));

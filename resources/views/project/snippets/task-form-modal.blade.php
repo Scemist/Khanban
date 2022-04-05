@@ -10,17 +10,47 @@
 			<input type="hidden" name="projetoId" value="{{ $project->id }}">
 			<input type="hidden" name="coluna">
 			
-			<fieldset>
+			<fieldset class="titulo">
 				<label>Título</label>
 				<input type="text" name="titulo" required>
 			</fieldset>
 
-			<fieldset>
+			<fieldset class="descricao">
+				<label>Descrição</label>
+				<textarea name="descricao"></textarea>
+			</fieldset>
+
+			<fieldset class="categoria">
+				<label>Categoria</label>
+				<select name="categoria">
+					<option></option>
+					@foreach ($categories as $category)
+						<option value="{{ $category->id }}">{{ $category->title }}</option>
+					@endforeach
+				</select>
+			</fieldset>
+
+			<fieldset class="etiqueta">
+				<label>Etiqueta</label>
+				<input type="text" name="etiqueta" id="">
+			</fieldset>
+
+			<fieldset class="designado">
+				<label>Designado</label>
+				<select name="designado">
+					<option></option>
+					@foreach ($users as $user)
+						<option value="{{ $user->id }}">{{ $user->name }}</option>
+					@endforeach
+				</select>
+			</fieldset>
+
+			<fieldset class="referencia">
 				<label>Referência</label>
 				<input type="text" name="referencia">
 			</fieldset>
 
-			<fieldset>
+			<fieldset class="cor">
 				<label>Cor</label>
 				<select name="cor">
 					<option>Branco</option>
@@ -33,37 +63,19 @@
 				</select>
 			</fieldset>
 
-			<fieldset>
-				<label>Categoria</label>
-				<select name="categoria">
-					<option></option>
-					@foreach ($categories as $category)
-						<option value="{{ $category->id }}">{{ $category->title }}</option>
-					@endforeach
-				</select>
+			<fieldset class="evento">
+				<label>Data do evento</label>
+				<input type="date" name="evento">
 			</fieldset>
 
-			<fieldset>
-				<label>Etiqueta</label>
-				<input type="text" name="etiqueta" id="">
+			<fieldset class="vencimento">
+				<label>Vencimento</label>
+				<input type="date" name="vencimento">
 			</fieldset>
 
-			<fieldset>
-				<label>Designado</label>
-				<select name="designado">
-					<option></option>
-					@foreach ($users as $user)
-						<option value="{{ $user->id }}">{{ $user->name }}</option>
-					@endforeach
-				</select>
-			</fieldset>
-
-			<fieldset>
-				<label>Descrição</label>
-				<textarea name="descricao" rows="5"></textarea>
-			</fieldset>
-			
-			<input type="submit" class="btn blue">
+			<div class="enviar">
+				<input type="submit" class="btn blue">
+			</div>
 		</form>
 	</main>
 </div>

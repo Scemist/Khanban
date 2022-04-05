@@ -25,6 +25,8 @@ return new class extends Migration
 			$table->string('reference')->nullable();
 			$table->smallInteger('position')->nullable();
 			$table->tinyText('color')->nullable();
+			$table->date('event')->nullable();
+			$table->date('expiration')->nullable();
 			
             $table->timestamps();
         });
