@@ -1,0 +1,40 @@
+name: khanban
+
+networks:
+  internal:
+  database:
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    restart: unless-stopped
+    depends_on: 
+      - postgre
+    networks:
+      - internal
+      - database
+    volumes:
+      - /app
+
+  nginx:
+    build: 
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile.dev
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    networks:
+      - internal
+    volumes_from:
+      - php
+
+  postgre:
+    image: postgres:15.2-alpine3.17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=b1937gfjs1
+      - POSTGRES_DB=khanban
+    networks:
+      - database
